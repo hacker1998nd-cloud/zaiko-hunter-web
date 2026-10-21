@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0d0f14">
+<title>Zaiko Hunter</title>
+<style>
+:root {
+  color-scheme: dark;
+  --bg: #0d0f14;
+  --card: #181b23;
+  --line: #292e3a;
+  --muted: #9ca3b4;
+  --green: #54dfa0;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: #f5f6fa;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+main { max-width: 650px; margin: auto; padding: 22px 16px 40px; }
+header { display: flex; align-items: center; gap: 12px; margin-bottom: 22px; }
+.logo { font-size: 28px; background: var(--card); padding: 12px; border-radius: 15px; }
+h1 { font-size: 23px; margin: 0 0 4px; }
+h2 { font-size: 17px; margin: 0 0 8px; }
+.sub, .muted { color: var(--muted); font-size: 13px; }
+.summary { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 17px; padding: 16px; margin: 12px 0; }
+.big { font-size: 27px; font-weight: 750; margin: 7px 0; }
+.product { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 13px 0; border-top: 1px solid var(--line); font-size: 14px; }
+.status { font-size: 12px; color: var(--muted); background: #292e3a; padding: 6px 9px; border-radius: 20px; white-space: nowrap; }
+button { border: 0; border-radius: 12px; padding: 14px; width: 100%; margin-top: 10px; font-size: 14px; font-weight: 700; background: #f3f4f6; color: #111318; cursor: pointer; }
+.secondary { background: #292e3a; color: white; }
+footer { color: var(--muted); font-size: 12px; line-height: 1.6; margin-top: 20px; }
+</style>
+</head>
+<body>
+<main>
+<header>
+  <div class="logo">📱</div>
+  <div>
+    <h1>Zaiko Hunter</h1>
+    <div class="sub">APPLE JAPAN · STOCK DASHBOARD</div>
+  </div>
+</header>
+
+<section class="summary">
+  <div class="card">
+    <div class="muted">Bot Umeda</div>
+    <div class="big">3</div>
+    <div class="sub">Dung lượng theo dõi</div>
+  </div>
+  <div class="card">
+    <div class="muted">Bot 3 cửa hàng</div>
+    <div class="big">9</div>
+    <div class="sub">Tổ hợp theo dõi</div>
+  </div>
+</section>
+
+<section class="card">
+  <h2>🍷 iPhone 18 Pro Max</h2>
+  <div class="muted">Burgundy · Apple Nhật Bản</div>
+  <div class="product"><span>256GB</span><span class="status">Chưa kết nối</span></div>
+  <div class="product"><span>512GB</span><span class="status">Chưa kết nối</span></div>
+  <div class="product"><span>1TB</span><span class="status">Chưa kết nối</span></div>
+</section>
+
+<section class="card">
+  <h2>Bot 1 — Umeda riêng</h2>
+  <div class="muted">Apple 梅田</div>
+  <p class="sub">Theo dõi 3 dung lượng Burgundy. Bot hiện tại vẫn hoạt động độc lập.</p>
+</section>
+
+<section class="card">
+  <h2>Bot 2 — Ba cửa hàng</h2>
+  <div class="product"><span>梅田 · Umeda</span><span class="status">3 bản</span></div>
+  <div class="product"><span>心斎橋 · Shinsaibashi</span><span class="status">3 bản</span></div>
+  <div class="product"><span>京都 · Kyoto</span><span class="status">3 bản</span></div>
+</section>
+
+<button onclick="window.open('https://www.apple.com/jp/shop/buy-iphone/iphone-18-pro','_blank')">Mở trang Apple Nhật ↗</button>
+<button class="secondary" onclick="window.open('https://github.com/hacker1998nd-cloud','_blank')">Mở GitHub</button>
+
+<footer>
+  Đây là giao diện ban đầu. Trạng thái tồn kho thực tế chưa được kết nối. Không nhập Telegram token hoặc mật khẩu vào file này.
+</footer>
+</main>
+</body>
+</html>
