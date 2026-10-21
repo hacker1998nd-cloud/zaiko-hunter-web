@@ -9,34 +9,31 @@
 <style>
 :root {
   color-scheme: dark;
-  --bg: #0d0f14;
-  --card: #181b23;
-  --line: #292e3a;
-  --muted: #9ca3b4;
-  --green: #54dfa0;
+  --bg:#0d0f14; --card:#181b23; --line:#292e3a;
+  --muted:#9ca3b4; --green:#54dfa0;
 }
-* { box-sizing: border-box; }
+* { box-sizing:border-box; }
 body {
-  margin: 0; background: var(--bg); color: #f5f6fa;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  margin:0; background:var(--bg); color:#f5f6fa;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
 }
-main { max-width: 650px; margin: auto; padding: 22px 16px 40px; }
-header { display: flex; align-items: center; gap: 12px; margin-bottom: 22px; }
-.logo { font-size: 28px; background: var(--card); padding: 12px; border-radius: 15px; }
-h1 { font-size: 23px; margin: 0 0 4px; }
-h2 { font-size: 17px; margin: 0 0 8px; }
-.sub, .muted { color: var(--muted); font-size: 13px; }
-.summary { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.card { background: var(--card); border: 1px solid var(--line); border-radius: 17px; padding: 16px; margin: 12px 0; }
-.big { font-size: 27px; font-weight: 750; margin: 7px 0; }
-.product { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 13px 0; border-top: 1px solid var(--line); font-size: 14px; }
-.status { font-size: 12px; color: var(--muted); background: #292e3a; padding: 6px 9px; border-radius: 20px; white-space: nowrap; }
-.status.available { color: #54dfa0; background: #123528; }
-.status.unavailable { color: #ff9292; background: #3b2025; }
-.status.unknown { color: #ffd58a; background: #393020; }
-button { border: 0; border-radius: 12px; padding: 14px; width: 100%; margin-top: 10px; font-size: 14px; font-weight: 700; background: #f3f4f6; color: #111318; cursor: pointer; }
-.secondary { background: #292e3a; color: white; }
-footer { color: var(--muted); font-size: 12px; line-height: 1.6; margin-top: 20px; }
+main { max-width:700px; margin:auto; padding:22px 16px 40px; }
+header { display:flex; align-items:center; gap:12px; margin-bottom:22px; }
+.logo { font-size:28px; background:var(--card); padding:12px; border-radius:15px; }
+h1 { font-size:23px; margin:0 0 4px; }
+h2 { font-size:17px; margin:0 0 8px; }
+.sub,.muted { color:var(--muted); font-size:13px; }
+.summary { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.card { background:var(--card); border:1px solid var(--line); border-radius:17px; padding:16px; margin:12px 0; }
+.big { font-size:27px; font-weight:750; margin:7px 0; }
+.product { display:flex; align-items:center; justify-content:space-between; gap:10px; padding:13px 0; border-top:1px solid var(--line); font-size:14px; }
+.status { font-size:12px; color:var(--muted); background:#292e3a; padding:6px 9px; border-radius:20px; white-space:nowrap; }
+.status.available { color:#54dfa0; background:#123528; }
+.status.unavailable { color:#ff9292; background:#3b2025; }
+.status.unknown { color:#ffd58a; background:#393020; }
+button { border:0; border-radius:12px; padding:14px; width:100%; margin-top:10px; font-size:14px; font-weight:700; background:#f3f4f6; color:#111318; cursor:pointer; }
+.secondary { background:#292e3a; color:white; }
+footer { color:var(--muted); font-size:12px; line-height:1.6; margin-top:20px; }
 </style>
 </head>
 <body>
@@ -51,7 +48,7 @@ footer { color: var(--muted); font-size: 12px; line-height: 1.6; margin-top: 20p
 
 <section class="summary">
   <div class="card">
-    <div class="muted">Bot Umeda</div>
+    <div class="muted">Bot Umeda riêng</div>
     <div class="big">3</div>
     <div class="sub">Dung lượng theo dõi</div>
   </div>
@@ -63,85 +60,91 @@ footer { color: var(--muted); font-size: 12px; line-height: 1.6; margin-top: 20p
 </section>
 
 <section class="card">
-  <h2>🍷 iPhone 18 Pro Max</h2>
-  <div class="muted">Burgundy · Apple Nhật Bản</div>
-  <div id="overall-status" class="sub" style="margin-top:12px">Đang tải dữ liệu...</div>
-  <div id="products">
-    <div class="product"><span>256GB</span><span class="status">Đang tải...</span></div>
-    <div class="product"><span>512GB</span><span class="status">Đang tải...</span></div>
-    <div class="product"><span>1TB</span><span class="status">Đang tải...</span></div>
-  </div>
-  <div id="updated" class="sub" style="margin-top:12px">Đang kiểm tra thời gian cập nhật...</div>
-  <button class="secondary" onclick="loadUmeda()">↻ Cập nhật ngay</button>
+  <h2>🍷 Bot 1 — Umeda riêng</h2>
+  <div class="muted">iPhone 18 Pro Max Burgundy · 梅田</div>
+  <div id="umeda-status" class="sub" style="margin-top:12px">Đang tải...</div>
+  <div id="umeda-products"></div>
+  <div id="umeda-updated" class="sub" style="margin-top:12px"></div>
 </section>
 
 <section class="card">
-  <h2>Bot 1 — Umeda riêng</h2>
-  <div class="muted">Apple 梅田</div>
-  <p class="sub">Theo dõi 3 dung lượng Burgundy. Bot hoạt động độc lập.</p>
+  <h2>🏬 Bot 2 — Ba cửa hàng</h2>
+  <div class="muted">iPhone 18 Pro Max Burgundy · 9 tổ hợp</div>
+  <div id="stores-status" class="sub" style="margin-top:12px">Đang tải...</div>
+  <div id="stores-list"></div>
+  <div id="stores-updated" class="sub" style="margin-top:12px"></div>
 </section>
 
-<section class="card">
-  <h2>Bot 2 — Ba cửa hàng</h2>
-  <div class="product"><span>梅田 · Umeda</span><span class="status">Chưa kết nối</span></div>
-  <div class="product"><span>心斎橋 · Shinsaibashi</span><span class="status">Chưa kết nối</span></div>
-  <div class="product"><span>京都 · Kyoto</span><span class="status">Chưa kết nối</span></div>
-</section>
-
+<button class="secondary" onclick="refreshAll()">↻ Cập nhật ngay</button>
 <button onclick="window.open('https://www.apple.com/jp/shop/buy-iphone/iphone-18-pro','_blank')">Mở trang Apple Nhật ↗</button>
-<button class="secondary" onclick="window.open('https://github.com/hacker1998nd-cloud','_blank')">Mở GitHub</button>
+<button class="secondary" onclick="window.open('https://github.com/hacker1998nd-cloud/zaiko-hunter-web','_blank')">Mở dữ liệu GitHub ↗</button>
 
 <footer>
-  Dữ liệu được đọc từ file trạng thái công khai trên GitHub. AVAILABLE là có thể đặt nhận tại cửa hàng theo phản hồi gần nhất của Apple; hãy xác minh lại trước khi mua.
+  Dashboard đọc dữ liệu công khai từ GitHub. Dữ liệu thể hiện lần kiểm tra gần nhất được bot ghi nhận, không đảm bảo máy vẫn còn khi đặt mua. Nếu Apple trả HTTP 541, dữ liệu có thể chưa được cập nhật.
 </footer>
 </main>
 
 <script>
-const DATA_URL =
-  "https://raw.githubusercontent.com/hacker1998nd-cloud/zaiko-hunter-web/main/umeda-status.json";
+const BASE =
+  "https://raw.githubusercontent.com/hacker1998nd-cloud/zaiko-hunter-web/main/";
 
-const capacities = [
-  { id: "MJX74J/A", label: "256GB" },
-  { id: "MJXC4J/A", label: "512GB" },
-  { id: "MJXG4J/A", label: "1TB" }
+const CAPACITIES = [
+  { id:"MJX74J/A", label:"256GB" },
+  { id:"MJXC4J/A", label:"512GB" },
+  { id:"MJXG4J/A", label:"1TB" }
 ];
 
-function showStatus(status) {
-  const normalized = String(status || "UNKNOWN").toUpperCase();
+function statusInfo(value) {
+  const s = String(value || "UNKNOWN").toUpperCase();
+  if (s === "AVAILABLE") return { text:"🟢 CÓ HÀNG", cls:"available" };
+  if (s === "UNAVAILABLE") return { text:"🔴 HẾT HÀNG", cls:"unavailable" };
+  return { text:"🟡 CHƯA XÁC ĐỊNH", cls:"unknown" };
+}
 
-  if (normalized === "AVAILABLE") {
-    return { text: "🟢 CÓ HÀNG", cls: "available" };
-  }
-  if (normalized === "UNAVAILABLE") {
-    return { text: "🔴 HẾT HÀNG", cls: "unavailable" };
-  }
-  return { text: "🟡 CHƯA XÁC ĐỊNH", cls: "unknown" };
+function makeRow(label, value) {
+  const info = statusInfo(value);
+  const row = document.createElement("div");
+  row.className = "product";
+
+  const name = document.createElement("span");
+  name.textContent = label;
+
+  const badge = document.createElement("span");
+  badge.className = "status " + info.cls;
+  badge.textContent = info.text;
+
+  row.append(name, badge);
+  return row;
+}
+
+function formatTime(value) {
+  if (!value) return "Không có thời gian cập nhật.";
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return "Thời gian cập nhật không hợp lệ.";
+  return "Cập nhật: " + date.toLocaleString("ja-JP", {
+    timeZone:"Asia/Tokyo"
+  }) + " (giờ Nhật)";
+}
+
+async function fetchJson(file) {
+  const response = await fetch(BASE + file + "?t=" + Date.now(), {
+    cache:"no-store"
+  });
+  if (!response.ok) throw new Error("HTTP " + response.status);
+  return response.json();
 }
 
 async function loadUmeda() {
-  const overall = document.getElementById("overall-status");
-  const products = document.getElementById("products");
-  const updated = document.getElementById("updated");
-
-  overall.textContent = "Đang tải dữ liệu từ GitHub...";
-  updated.textContent = "";
+  const statusEl = document.getElementById("umeda-status");
+  const listEl = document.getElementById("umeda-products");
+  const timeEl = document.getElementById("umeda-updated");
 
   try {
-    const response = await fetch(DATA_URL + "?t=" + Date.now(), {
-      cache: "no-store"
-    });
-
-    if (!response.ok) {
-      throw new Error("HTTP " + response.status);
-    }
-
-    const data = await response.json();
-
+    const data = await fetchJson("umeda-status.json");
     const list = Array.isArray(data.products)
       ? data.products
-      : Object.entries(data.products || {}).map(([part_number, item]) => ({
-          part_number,
-          ...item
+      : Object.entries(data.products || {}).map(([part_number,item]) => ({
+          part_number, ...item
         }));
 
     const byId = {};
@@ -149,45 +152,72 @@ async function loadUmeda() {
       if (item.part_number) byId[item.part_number] = item;
     });
 
-    products.innerHTML = "";
-
-    capacities.forEach(capacity => {
-      const item = byId[capacity.id];
-      const status = showStatus(item && item.status);
-
-      const row = document.createElement("div");
-      row.className = "product";
-
-      const name = document.createElement("span");
-      name.textContent = capacity.label;
-
-      const badge = document.createElement("span");
-      badge.className = "status " + status.cls;
-      badge.textContent = status.text;
-
-      row.append(name, badge);
-      products.appendChild(row);
+    listEl.replaceChildren();
+    CAPACITIES.forEach(cap => {
+      listEl.appendChild(makeRow(
+        cap.label,
+        byId[cap.id] ? byId[cap.id].status : "UNKNOWN"
+      ));
     });
 
-    overall.textContent = "Dữ liệu cửa hàng 梅田 · Umeda đã tải";
-    updated.textContent = data.updated_at
-      ? "Lần cập nhật dữ liệu: " +
-        new Date(data.updated_at).toLocaleString("ja-JP", {
-          timeZone: "Asia/Tokyo"
-        }) + " (giờ Nhật)"
-      : "Không có thời gian cập nhật trong dữ liệu.";
-
+    statusEl.textContent = "Đã tải dữ liệu bot Umeda riêng.";
+    timeEl.textContent = formatTime(data.updated_at);
   } catch (error) {
-    overall.textContent = "Không đọc được dữ liệu Umeda.";
-    products.innerHTML =
-      '<div class="product"><span>Kiểm tra kết nối GitHub</span>' +
-      '<span class="status unknown">LỖI</span></div>';
-    updated.textContent = "Chi tiết: " + error.message;
+    statusEl.textContent = "Không đọc được dữ liệu Umeda: " + error.message;
+    timeEl.textContent = "Kiểm tra file umeda-status.json trên GitHub.";
   }
 }
 
-loadUmeda();
-setInterval(loadUmeda, 60000);
+async function loadStores() {
+  const statusEl = document.getElementById("stores-status");
+  const listEl = document.getElementById("stores-list");
+  const timeEl = document.getElementById("stores-updated");
+
+  try {
+    const data = await fetchJson("stores-status.json");
+    const stores = Array.isArray(data.stores) ? data.stores : [];
+
+    listEl.replaceChildren();
+
+    const names = ["梅田", "心斎橋", "京都"];
+    names.forEach(name => {
+      const store = stores.find(item => item.store === name);
+      const card = document.createElement("div");
+      card.style.marginTop = "16px";
+
+      const heading = document.createElement("h2");
+      heading.textContent = name + (
+        store && store.store_en ? " · " + store.store_en : ""
+      );
+      card.appendChild(heading);
+
+      CAPACITIES.forEach(cap => {
+        const product = store && Array.isArray(store.products)
+          ? store.products.find(item => item.part_number === cap.id)
+          : null;
+        card.appendChild(makeRow(
+          cap.label,
+          product ? product.status : "UNKNOWN"
+        ));
+      });
+
+      listEl.appendChild(card);
+    });
+
+    statusEl.textContent = "Đã tải dữ liệu bot 3 cửa hàng.";
+    timeEl.textContent = formatTime(data.updated_at);
+  } catch (error) {
+    statusEl.textContent = "Không đọc được dữ liệu 3 cửa hàng: " + error.message;
+    timeEl.textContent = "Kiểm tra file stores-status.json trên GitHub.";
+  }
+}
+
+async function refreshAll() {
+  await Promise.all([loadUmeda(), loadStores()]);
+}
+
+refreshAll();
+setInterval(refreshAll, 60000);
 </script>
 </body>
 </html>
