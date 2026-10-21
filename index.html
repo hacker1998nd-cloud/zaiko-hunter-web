@@ -212,9 +212,35 @@ async function loadStores() {
   }
 }
 
+
 async function refreshAll() {
-  await Promise.all([loadUmeda(), loadStores()]);
+  const secret = prompt("Nhập mã bảo vệ TRIGGER_SECRET:");
+  if (!secret) return;
+
+  try {
+    const response = await fetch(
+      "https://zaiko-refresh.tuan0343412390.workers.dev/",
+      {
+        method: "POST",
+        headers: {
+          "X-Trigger-Secret": secret
+        }
+      }
+    );
+
+    if (!response.ok) {
+      alert("Không gọi được hai bot. Kiểm tra mã bảo vệ hoặc cấu hình Worker.");
+      return;
+    }
+
+    alert("Đã yêu cầu chạy cả hai bot! Chờ khoảng 30–60 giây rồi bấm cập nhật lại để tải dữ liệu mới.");
+
+    await Promise.all([loadUmeda(), loadStores()]);
+  } catch (error) {
+    alert("Lỗi kết nối Worker: " + error.message);
+  }
 }
+
 
 refreshAll();
 setInterval(refreshAll, 60000);
