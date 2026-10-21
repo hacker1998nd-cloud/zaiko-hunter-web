@@ -229,9 +229,10 @@ async function refreshAll() {
     );
 
     if (!response.ok) {
-      alert("Không gọi được hai bot. Kiểm tra mã bảo vệ hoặc cấu hình Worker.");
-      return;
-    }
+  const detail = await response.text();
+  alert("Lỗi HTTP " + response.status + ": " + detail);
+  return;
+}
 
     alert("Đã yêu cầu chạy cả hai bot! Chờ khoảng 30–60 giây rồi bấm cập nhật lại để tải dữ liệu mới.");
 
