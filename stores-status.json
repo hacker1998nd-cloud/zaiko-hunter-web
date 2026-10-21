@@ -1,0 +1,68 @@
+{
+  "updated_at": "2026-10-21T08:20:39.422273+00:00",
+  "stores": [
+    {
+      "store": "梅田",
+      "store_en": "Umeda",
+      "products": [
+        {
+          "part_number": "MJX74J/A",
+          "name": "256GB Burgundy",
+          "status": "UNAVAILABLE"
+        },
+        {
+          "part_number": "MJXC4J/A",
+          "name": "512GB Burgundy",
+          "status": "UNAVAILABLE"
+        },
+        {
+          "part_number": "MJXG4J/A",
+          "name": "1TB Burgundy",
+          "status": "UNAVAILABLE"
+        }
+      ]
+    },
+    {
+      "store": "心斎橋",
+      "store_en": "Shinsaibashi",
+      "products": [
+        {
+          "part_number": "MJX74J/A",
+          "name": "256GB Burgundy",
+          "status": "UNAVAILABLE"
+        },
+        {
+          "part_number": "MJXC4J/A",
+          "name": "512GB Burgundy",
+          "status": "UNAVAILABLE"
+        },
+        {
+          "part_number": "MJXG4J/A",
+          "name": "1TB Burgundy",
+          "status": "UNAVAILABLE"
+        }
+      ]
+    },
+    {
+      "store": "京都",
+      "store_en": "Kyoto",
+      "products": [
+        {
+          "part_number": "MJX74J/A",
+          "name": "256GB Burgundy",
+          "status": "UNAVAILABLE"
+        },
+        {
+          "part_number": "MJXC4J/A",
+          "name": "512GB Burgundy",
+          "status": "UNAVAILABLE"
+        },
+        {
+          "part_number": "MJXG4J/A",
+          "name": "1TB Burgundy",
+          "status": "UNAVAILABLE"
+        }
+      ]
+    }
+  ]
+}
