@@ -8,13 +8,18 @@
 <title>Zaiko Hunter</title>
 <style>
 :root {
-  color-scheme: dark;
-  --bg:#0d0f14; --card:#181b23; --line:#292e3a;
-  --muted:#9ca3b4; --green:#54dfa0;
+  color-scheme:dark;
+  --bg:#0d0f14;
+  --card:#181b23;
+  --line:#292e3a;
+  --muted:#9ca3b4;
+  --green:#54dfa0;
 }
 * { box-sizing:border-box; }
 body {
-  margin:0; background:var(--bg); color:#f5f6fa;
+  margin:0;
+  background:var(--bg);
+  color:#f5f6fa;
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
 }
 main { max-width:760px; margin:auto; padding:22px 16px 40px; }
@@ -27,32 +32,36 @@ h3 { font-size:14px; margin:18px 0 8px; }
 .summary { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
 .card { background:var(--card); border:1px solid var(--line); border-radius:17px; padding:16px; margin:12px 0; }
 .big { font-size:27px; font-weight:750; margin:7px 0; }
-.product { display:flex; align-items:center; justify-content:space-between; gap:10px; padding:13px 0; border-top:1px solid var(--line); font-size:14px; }
+.product {
+  display:flex; align-items:center; justify-content:space-between;
+  gap:10px; padding:13px 0; border-top:1px solid var(--line); font-size:14px;
+}
 .status { font-size:12px; color:var(--muted); background:#292e3a; padding:6px 9px; border-radius:20px; white-space:nowrap; }
-.status.available { color:#54dfa0; background:#123528; }
+.status.available { color:var(--green); background:#123528; }
 .status.unavailable { color:#ff9292; background:#3b2025; }
 .status.unknown { color:#ffd58a; background:#393020; }
-button { border:0; border-radius:12px; padding:14px; width:100%; margin-top:10px; font-size:14px; font-weight:700; background:#f3f4f6; color:#111318; cursor:pointer; }
+button {
+  border:0; border-radius:12px; padding:14px; width:100%;
+  margin-top:10px; font-size:14px; font-weight:700;
+  background:#f3f4f6; color:#111318; cursor:pointer;
+}
 .secondary { background:#292e3a; color:white; }
 button:disabled { opacity:.55; cursor:wait; }
-.price-group { border-top:1px solid var(--line); padding:14px 0; }
-.price-title { display:flex; justify-content:space-between; gap:12px; align-items:flex-start; }
-.price-title strong { font-size:14px; }
-.price-value { font-size:18px; font-weight:750; margin-top:5px; }
+.price-item { border-top:1px solid var(--line); padding:14px 0; }
+.price-heading { display:flex; justify-content:space-between; gap:12px; align-items:flex-start; }
+.price-name { font-size:14px; font-weight:700; }
+.price-number { font-size:19px; font-weight:750; margin-top:5px; }
 .price-meta { color:var(--muted); font-size:12px; line-height:1.6; margin-top:5px; overflow-wrap:anywhere; }
-.pill { display:inline-block; font-size:11px; padding:4px 8px; border-radius:20px; background:#292e3a; color:#d6d9e2; }
-.pill.real { background:#123528; color:var(--green); }
-.pill.reference { background:#393020; color:#ffd58a; }
-.profit-box { border:1px solid var(--line); border-radius:13px; padding:13px; margin-top:12px; }
-.profit-line { display:flex; justify-content:space-between; gap:12px; padding:8px 0; font-size:13px; border-bottom:1px solid var(--line); }
-.profit-line:last-child { border-bottom:0; }
-.notice { font-size:12px; color:var(--muted); line-height:1.6; margin-top:12px; }
+.tag { display:inline-block; font-size:11px; padding:4px 8px; border-radius:20px; background:#292e3a; color:#d6d9e2; }
+.tag.actual { background:#123528; color:var(--green); }
+.tag.reference { background:#393020; color:#ffd58a; }
 .empty { color:var(--muted); font-size:13px; padding:12px 0; line-height:1.6; }
+.notice { color:var(--muted); font-size:12px; line-height:1.6; margin-top:12px; }
 footer { color:var(--muted); font-size:12px; line-height:1.6; margin-top:20px; }
-@media (max-width:420px) {
+@media(max-width:420px) {
   main { padding:16px 12px 32px; }
   .card { padding:13px; }
-  .price-title { flex-direction:column; gap:5px; }
+  .price-heading { flex-direction:column; gap:5px; }
 }
 </style>
 </head>
@@ -62,7 +71,7 @@ footer { color:var(--muted); font-size:12px; line-height:1.6; margin-top:20px; }
   <div class="logo">📱</div>
   <div>
     <h1>Zaiko Hunter</h1>
-    <div class="sub">APPLE JAPAN · STOCK DASHBOARD</div>
+    <div class="sub">APPLE JAPAN · STOCK & PRICE DASHBOARD</div>
   </div>
 </header>
 
@@ -95,28 +104,24 @@ footer { color:var(--muted); font-size:12px; line-height:1.6; margin-top:20px; }
   <div id="stores-updated" class="sub" style="margin-top:12px"></div>
 </section>
 
-<section class="card" id="prices">
-  <h2>💴 Giá thu mua & lợi nhuận</h2>
-  <div class="muted">KaitoriX · Mobile Ichiban · Dữ liệu từ GitHub</div>
+<section class="card">
+  <h2>💴 Giá thu mua</h2>
+  <div class="muted">Giá tham khảo thị trường và giá thu mua đã xác minh</div>
   <div id="prices-status" class="sub" style="margin-top:12px">Đang tải dữ liệu giá...</div>
   <div id="prices-updated" class="sub" style="margin-top:8px"></div>
 
-  <h3>📈 iPhone 18 Pro Max · Burgundy</h3>
+  <h3>🍷 iPhone 18 Pro Max Burgundy</h3>
   <div id="promax-prices"></div>
 
   <h3>📱 iPhone Duo · Star White / Night Sky</h3>
   <div id="duo-prices"></div>
 
-  <h3>🧮 Tính lợi nhuận đơn hàng Burgundy 512GB</h3>
-  <div class="muted">2 máy đã đặt · Giá mua ¥274,800/máy · Điểm thẻ 1%</div>
-  <div id="profit-calculator" class="profit-box"></div>
-
   <div class="notice">
-    KaitoriX chỉ là giá tham khảo thị trường, không phải cam kết thu mua.
-    Chỉ giá Mobile Ichiban được xác minh đúng màu mới được dùng để tính lợi nhuận thực tế.
-    Giá và lợi nhuận chưa bao gồm phí phát sinh khác.
+    KaitoriX là giá tham khảo, không phải cam kết mua vào.
+    Giá Mobile Ichiban chỉ được đánh dấu xác minh khi dữ liệu khớp màu rõ ràng.
+    Giá có thể thay đổi theo tình trạng máy, thời điểm và điều kiện của cửa hàng.
   </div>
-  <button class="secondary" id="reload-prices" onclick="loadPrices()">↻ Tải lại dữ liệu giá</button>
+  <button class="secondary" id="reload-prices" onclick="loadPrices()">↻ Tải lại giá</button>
 </section>
 
 <button class="secondary" id="refresh-button" onclick="refreshAll()">↻ Cập nhật ngay — chạy hai bot tồn kho</button>
@@ -124,26 +129,22 @@ footer { color:var(--muted); font-size:12px; line-height:1.6; margin-top:20px; }
 <button class="secondary" onclick="window.open('https://github.com/hacker1998nd-cloud/zaiko-hunter-web','_blank')">Mở dữ liệu GitHub ↗</button>
 
 <footer>
-  Dashboard đọc dữ liệu công khai từ GitHub. Tải lại dashboard chỉ đọc dữ liệu đã có;
-  nút “Cập nhật ngay” mới yêu cầu chạy hai bot tồn kho.
-  Dữ liệu tồn kho thể hiện lần kiểm tra gần nhất, không đảm bảo máy vẫn còn khi đặt mua.
-  Nếu Apple trả HTTP 541, dữ liệu có thể chưa được cập nhật.
+  Dashboard đọc dữ liệu công khai từ GitHub.
+  Tải lại giá không chạy bot tồn kho.
+  Nút “Cập nhật ngay” mới yêu cầu chạy hai bot.
+  Tồn kho là kết quả kiểm tra gần nhất và không đảm bảo máy còn khi đặt mua.
+  Nếu Apple trả HTTP 541, dữ liệu tồn kho có thể chưa được cập nhật.
 </footer>
 </main>
 
 <script>
-const BASE =
-  "https://raw.githubusercontent.com/hacker1998nd-cloud/zaiko-hunter-web/main/";
+const BASE = "https://raw.githubusercontent.com/hacker1998nd-cloud/zaiko-hunter-web/main/";
 
 const CAPACITIES = [
   { id:"MJX74J/A", label:"256GB" },
   { id:"MJXC4J/A", label:"512GB" },
   { id:"MJXG4J/A", label:"1TB" }
 ];
-
-const BUY_PRICE_PER_UNIT = 274800;
-const CARD_POINTS_RATE = 0.01;
-const ORDER_QUANTITY = 2;
 
 function statusInfo(value) {
   const s = String(value || "UNKNOWN").toUpperCase();
@@ -178,15 +179,12 @@ function formatTime(value) {
 }
 
 function yen(value) {
-  const number = Number(value);
-  if (!Number.isFinite(number)) return "Chưa có dữ liệu";
-  return "¥" + Math.round(number).toLocaleString("ja-JP");
+  const n = Number(value);
+  return Number.isFinite(n) ? "¥" + Math.round(n).toLocaleString("ja-JP") : "Chưa có giá";
 }
 
 async function fetchJson(file) {
-  const response = await fetch(BASE + file + "?t=" + Date.now(), {
-    cache:"no-store"
-  });
+  const response = await fetch(BASE + file + "?t=" + Date.now(), { cache:"no-store" });
   if (!response.ok) throw new Error("HTTP " + response.status);
   return response.json();
 }
@@ -200,9 +198,7 @@ async function loadUmeda() {
     const data = await fetchJson("umeda-status.json");
     const list = Array.isArray(data.products)
       ? data.products
-      : Object.entries(data.products || {}).map(([part_number,item]) => ({
-          part_number, ...item
-        }));
+      : Object.entries(data.products || {}).map(([part_number,item]) => ({ part_number, ...item }));
 
     const byId = {};
     list.forEach(item => {
@@ -211,10 +207,7 @@ async function loadUmeda() {
 
     listEl.replaceChildren();
     CAPACITIES.forEach(cap => {
-      listEl.appendChild(makeRow(
-        cap.label,
-        byId[cap.id] ? byId[cap.id].status : "UNKNOWN"
-      ));
+      listEl.appendChild(makeRow(cap.label, byId[cap.id] ? byId[cap.id].status : "UNKNOWN"));
     });
 
     statusEl.textContent = "Đã tải dữ liệu bot Umeda riêng.";
@@ -233,29 +226,22 @@ async function loadStores() {
   try {
     const data = await fetchJson("stores-status.json");
     const stores = Array.isArray(data.stores) ? data.stores : [];
-
     listEl.replaceChildren();
 
-    const names = ["梅田", "心斎橋", "京都"];
-    names.forEach(name => {
+    ["梅田", "心斎橋", "京都"].forEach(name => {
       const store = stores.find(item => item.store === name);
       const card = document.createElement("div");
       card.style.marginTop = "16px";
 
       const heading = document.createElement("h2");
-      heading.textContent = name + (
-        store && store.store_en ? " · " + store.store_en : ""
-      );
+      heading.textContent = name + (store && store.store_en ? " · " + store.store_en : "");
       card.appendChild(heading);
 
       CAPACITIES.forEach(cap => {
         const product = store && Array.isArray(store.products)
           ? store.products.find(item => item.part_number === cap.id)
           : null;
-        card.appendChild(makeRow(
-          cap.label,
-          product ? product.status : "UNKNOWN"
-        ));
+        card.appendChild(makeRow(cap.label, product ? product.status : "UNKNOWN"));
       });
 
       listEl.appendChild(card);
@@ -276,219 +262,176 @@ function sourceKind(row) {
   return "other";
 }
 
-function displayColor(color) {
-  const names = {
-    "Burgundy":"Burgundy 🍷",
-    "Star White":"Star White ⚪",
-    "Night Sky":"Night Sky 🌌"
-  };
-  return names[color] || color || "Chưa xác định màu";
-}
-
-function priceTypeLabel(row) {
-  if (row.price_low_yen != null && Number.isFinite(Number(row.price_low_yen))) {
-    return "Khoảng giá tham khảo";
-  }
-  if (row.price_type === "market_listed_price") return "Giá trong bảng xếp hạng";
-  if (row.price_type === "market_summary") return "Giá tổng hợp";
-  if (row.price_type === "market_range_high") return "Mức cao trong khoảng giá";
-  return row.price_type || "Giá ghi nhận";
-}
-
 function isVerifiedActual(row) {
   return sourceKind(row) === "actual"
     && row.verification === "color_explicit"
     && Number(row.price_yen) > 0;
 }
 
-function rowPriceText(row) {
-  if (row.price_low_yen != null && Number.isFinite(Number(row.price_low_yen))) {
-    return yen(row.price_low_yen) + " – " + yen(row.price_yen);
-  }
-  return yen(row.price_yen);
+function priority(row) {
+  const type = String(row.price_type || "").toLowerCase();
+  if (type === "market_summary" || type === "market_range_high") return 1;
+  if (type === "market_listed_price") return 2;
+  return 3;
 }
 
-function makePriceEntry(row) {
-  const wrapper = document.createElement("div");
-  wrapper.className = "price-group";
+function cleanText(value) {
+  return String(value || "").trim();
+}
 
-  const top = document.createElement("div");
-  top.className = "price-title";
+function colorLabel(color) {
+  if (color === "Burgundy") return "Burgundy 🍷";
+  if (color === "Star White") return "Star White ⚪";
+  if (color === "Night Sky") return "Night Sky 🌌";
+  return color || "Chưa rõ màu";
+}
+
+function priceText(row) {
+  const high = Number(row.price_yen);
+  const low = Number(row.price_low_yen);
+  if (Number.isFinite(low) && low > 0 && Number.isFinite(high) && high > low) {
+    return yen(low) + " – " + yen(high);
+  }
+  return yen(high);
+}
+
+function typeLabel(row) {
+  const type = String(row.price_type || "").toLowerCase();
+  if (type === "market_summary") return "Giá tổng hợp";
+  if (type === "market_range_high") return "Khoảng giá thị trường";
+  if (type === "market_listed_price") return "Giá bảng xếp hạng";
+  return "Giá ghi nhận";
+}
+
+function chooseBestRows(rows) {
+  const actualRows = rows.filter(isVerifiedActual);
+  const referenceRows = rows.filter(row => sourceKind(row) === "reference");
+
+  // Mỗi màu/dung lượng chỉ giữ một giá tham khảo chính.
+  const groups = new Map();
+
+  referenceRows.forEach(row => {
+    const key = [row.model, row.capacity, row.color].join("|");
+    const old = groups.get(key);
+    if (!old || priority(row) < priority(old)) groups.set(key, row);
+  });
+
+  // Giữ giá thu mua đã xác minh riêng, không trộn với giá tham khảo.
+  const actualGroups = new Map();
+  actualRows.forEach(row => {
+    const key = [row.model, row.capacity, row.color].join("|");
+    const old = actualGroups.get(key);
+    if (!old || Number(row.price_yen) > Number(old.price_yen)) actualGroups.set(key, row);
+  });
+
+  return [
+    ...Array.from(actualGroups.values()),
+    ...Array.from(groups.values())
+  ].sort((a,b) => {
+    const capOrder = { "256GB":0, "512GB":1, "1TB":2, "2TB":3 };
+    const colorOrder = { "Burgundy":0, "Star White":1, "Night Sky":2 };
+    return (capOrder[a.capacity] ?? 9) - (capOrder[b.capacity] ?? 9)
+      || (colorOrder[a.color] ?? 9) - (colorOrder[b.color] ?? 9)
+      || (sourceKind(a) === "actual" ? -1 : 1);
+  });
+}
+
+function makePriceItem(row) {
+  const item = document.createElement("div");
+  item.className = "price-item";
+
+  const heading = document.createElement("div");
+  heading.className = "price-heading";
 
   const left = document.createElement("div");
-  const title = document.createElement("strong");
-  title.textContent = `${row.capacity || ""} · ${displayColor(row.color)}`;
+  const name = document.createElement("div");
+  name.className = "price-name";
+  name.textContent = `${row.capacity || ""} · ${colorLabel(row.color)}`;
 
-  const meta = document.createElement("div");
-  meta.className = "price-meta";
-  meta.textContent = `${row.source || "Nguồn không rõ"} · ${priceTypeLabel(row)}`;
-
-  left.append(title, meta);
+  const source = document.createElement("div");
+  source.className = "price-meta";
+  source.textContent = `${row.source || "Nguồn không rõ"} · ${typeLabel(row)}`;
+  left.append(name, source);
 
   const right = document.createElement("div");
-  right.style.textAlign = "right";
+  const price = document.createElement("div");
+  price.className = "price-number";
+  price.textContent = priceText(row);
 
-  const value = document.createElement("div");
-  value.className = "price-value";
-  value.textContent = rowPriceText(row);
-
-  const pill = document.createElement("span");
+  const tag = document.createElement("span");
   const actual = isVerifiedActual(row);
-  pill.className = "pill " + (actual ? "real" : "reference");
-  pill.textContent = actual ? "Giá thu mua đã xác minh" :
-    sourceKind(row) === "reference" ? "Giá tham khảo" : "Chưa xác minh";
+  tag.className = "tag " + (actual ? "actual" : "reference");
+  tag.textContent = actual ? "Đã xác minh đúng màu" : "Giá tham khảo";
+  right.append(price, tag);
 
-  right.append(value, pill);
-  top.append(left, right);
-  wrapper.appendChild(top);
+  heading.append(left, right);
+  item.appendChild(heading);
 
   if (row.retail_yen) {
     const retail = document.createElement("div");
     retail.className = "price-meta";
     retail.textContent = "Giá niêm yết: " + yen(row.retail_yen);
-    wrapper.appendChild(retail);
+    item.appendChild(retail);
   }
 
-  if (row.matched_text) {
-    const detail = document.createElement("div");
-    detail.className = "price-meta";
-    detail.textContent = "Dữ liệu nguồn: " + row.matched_text;
-    wrapper.appendChild(detail);
+  // Chỉ thêm chú thích ngắn khi nguồn có thông tin màu cùng giá.
+  const matched = cleanText(row.matched_text);
+  if (matched.includes("他 1 カラー同額")) {
+    const note = document.createElement("div");
+    note.className = "price-meta";
+    note.textContent = "Nguồn ghi: một màu khác cùng mức giá; đây không phải xác minh thu mua độc lập.";
+    item.appendChild(note);
   }
 
-  if (row.observed_at) {
-    const observed = document.createElement("div");
-    observed.className = "price-meta";
-    observed.textContent = formatTime(row.observed_at);
-    wrapper.appendChild(observed);
-  }
-
-  return wrapper;
+  return item;
 }
 
-function sortRows(rows) {
-  const capOrder = {"256GB":0,"512GB":1,"1TB":2,"2TB":3};
-  const colorOrder = {"Burgundy":0,"Star White":1,"Night Sky":2};
-  return [...rows].sort((a,b) =>
-    (capOrder[a.capacity] ?? 9) - (capOrder[b.capacity] ?? 9)
-    || (colorOrder[a.color] ?? 9) - (colorOrder[b.color] ?? 9)
-    || String(a.source || "").localeCompare(String(b.source || ""))
-  );
-}
-
-function renderPriceSection(targetId, rows) {
+function renderPrices(targetId, rows) {
   const target = document.getElementById(targetId);
   target.replaceChildren();
 
   if (!rows.length) {
     const empty = document.createElement("div");
     empty.className = "empty";
-    empty.textContent = "Chưa có dữ liệu giá cho nhóm sản phẩm này.";
+    empty.textContent = "Chưa có giá phù hợp trong dữ liệu hiện tại.";
     target.appendChild(empty);
     return;
   }
 
-  sortRows(rows).forEach(row => target.appendChild(makePriceEntry(row)));
-}
-
-function renderProfit(rows) {
-  const target = document.getElementById("profit-calculator");
-  target.replaceChildren();
-
-  const totalCost = BUY_PRICE_PER_UNIT * ORDER_QUANTITY;
-  const pointsPerUnit = Math.round(BUY_PRICE_PER_UNIT * CARD_POINTS_RATE);
-  const totalPoints = pointsPerUnit * ORDER_QUANTITY;
-
-  const costLine = document.createElement("div");
-  costLine.className = "profit-line";
-  costLine.innerHTML = "<span>Tiền mua 2 máy</span>";
-  const costValue = document.createElement("strong");
-  costValue.textContent = yen(totalCost);
-  costLine.appendChild(costValue);
-
-  const pointsLine = document.createElement("div");
-  pointsLine.className = "profit-line";
-  pointsLine.innerHTML = "<span>Điểm thẻ 1% (ước tính)</span>";
-  const pointsValue = document.createElement("strong");
-  pointsValue.textContent = "+" + yen(totalPoints);
-  pointsLine.appendChild(pointsValue);
-
-  target.append(costLine, pointsLine);
-
-  const actualRows = rows.filter(row =>
-    row.model === "iPhone 18 Pro Max"
-    && row.capacity === "512GB"
-    && row.color === "Burgundy"
-    && isVerifiedActual(row)
-  );
-
-  if (!actualRows.length) {
-    const pending = document.createElement("div");
-    pending.className = "empty";
-    pending.textContent =
-      "Chưa có giá thu mua Burgundy 512GB được Mobile Ichiban xác minh. " +
-      "Chưa thể tính lợi nhuận thực tế. Giá KaitoriX không được dùng thay thế.";
-    target.appendChild(pending);
-    return;
-  }
-
-  const price = Number(actualRows[0].price_yen);
-  const profitPerUnit = price - BUY_PRICE_PER_UNIT + pointsPerUnit;
-  const totalProfit = profitPerUnit * ORDER_QUANTITY;
-
-  const sellLine = document.createElement("div");
-  sellLine.className = "profit-line";
-  sellLine.innerHTML = "<span>Giá thu mua xác minh / máy</span>";
-  const sellValue = document.createElement("strong");
-  sellValue.textContent = yen(price);
-  sellLine.appendChild(sellValue);
-
-  const perUnitLine = document.createElement("div");
-  perUnitLine.className = "profit-line";
-  perUnitLine.innerHTML = "<span>Lãi ước tính / máy, gồm điểm thẻ</span>";
-  const perUnitValue = document.createElement("strong");
-  perUnitValue.textContent = (profitPerUnit >= 0 ? "+" : "−") + yen(Math.abs(profitPerUnit));
-  perUnitLine.appendChild(perUnitValue);
-
-  const totalLine = document.createElement("div");
-  totalLine.className = "profit-line";
-  totalLine.innerHTML = "<span>Lãi ước tính 2 máy</span>";
-  const totalValue = document.createElement("strong");
-  totalValue.textContent = (totalProfit >= 0 ? "+" : "−") + yen(Math.abs(totalProfit));
-  totalLine.appendChild(totalValue);
-
-  target.append(sellLine, perUnitLine, totalLine);
+  rows.forEach(row => target.appendChild(makePriceItem(row)));
 }
 
 async function loadPrices() {
   const statusEl = document.getElementById("prices-status");
   const updatedEl = document.getElementById("prices-updated");
-  const reloadButton = document.getElementById("reload-prices");
+  const button = document.getElementById("reload-prices");
 
-  reloadButton.disabled = true;
-  statusEl.textContent = "Đang tải price-data.json...";
+  button.disabled = true;
+  statusEl.textContent = "Đang tải dữ liệu giá...";
 
   try {
     const data = await fetchJson("price-data.json");
     const rows = Array.isArray(data.rows) ? data.rows : [];
 
-    const proMax = rows.filter(row => row.model === "iPhone 18 Pro Max");
-    const duo = rows.filter(row => row.model === "iPhone Duo");
+    const proMaxRows = chooseBestRows(
+      rows.filter(row => row.model === "iPhone 18 Pro Max")
+    );
+    const duoRows = chooseBestRows(
+      rows.filter(row => row.model === "iPhone Duo")
+    );
 
-    renderPriceSection("promax-prices", proMax);
-    renderPriceSection("duo-prices", duo);
-    renderProfit(rows);
+    renderPrices("promax-prices", proMaxRows);
+    renderPrices("duo-prices", duoRows);
 
-    statusEl.textContent = `Đã tải ${rows.length} dòng dữ liệu giá.`;
+    statusEl.textContent = `Đã tải dữ liệu giá: ${proMaxRows.length + duoRows.length} mục sau khi gộp trùng.`;
     updatedEl.textContent = formatTime(data.updated_at);
   } catch (error) {
     statusEl.textContent = "Không đọc được price-data.json: " + error.message;
-    updatedEl.textContent = "Kiểm tra file price-data.json trong repo zaiko-hunter-web.";
-    renderPriceSection("promax-prices", []);
-    renderPriceSection("duo-prices", []);
-    renderProfit([]);
+    updatedEl.textContent = "Kiểm tra file price-data.json trên GitHub.";
+    renderPrices("promax-prices", []);
+    renderPrices("duo-prices", []);
   } finally {
-    reloadButton.disabled = false;
+    button.disabled = false;
   }
 }
 
@@ -508,10 +451,8 @@ async function refreshAll() {
       return;
     }
 
-    alert("Đã yêu cầu chạy hai bot tồn kho. Chờ 30–60 giây rồi tải lại dữ liệu.");
-    setTimeout(() => {
-      Promise.all([loadUmeda(), loadStores()]);
-    }, 30000);
+    alert("Đã yêu cầu chạy hai bot tồn kho. Chờ khoảng 30–60 giây rồi dữ liệu sẽ được tải lại.");
+    setTimeout(() => Promise.all([loadUmeda(), loadStores()]), 30000);
   } catch (error) {
     alert("Lỗi kết nối Worker: " + error.message);
   } finally {
@@ -520,10 +461,10 @@ async function refreshAll() {
   }
 }
 
-// Mở trang chỉ đọc dữ liệu hiện có, không tự gọi chạy bot tồn kho.
+// Mở trang chỉ đọc dữ liệu, không tự chạy workflow bot.
 Promise.all([loadUmeda(), loadStores(), loadPrices()]);
 
-// Tự tải lại dữ liệu công khai mỗi phút, không kích hoạt workflow bot.
+// Mỗi phút chỉ tải lại JSON, không kích hoạt bot tồn kho.
 setInterval(() => {
   Promise.all([loadUmeda(), loadStores(), loadPrices()]);
 }, 60000);
