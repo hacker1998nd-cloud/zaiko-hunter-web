@@ -1,0 +1,184 @@
+{
+  "updated_at": "2026-10-22T14:45:05.224448+00:00",
+  "schedule_minutes": 30,
+  "scope": {
+    "iphone_18_pro_max": [
+      "Burgundy"
+    ],
+    "iphone_duo": [
+      "Star White",
+      "Night Sky"
+    ]
+  },
+  "rows": [
+    {
+      "model": "iPhone 18 Pro Max",
+      "capacity": "256GB",
+      "color": "Burgundy",
+      "retail_yen": 239800,
+      "source": "KaitoriX",
+      "source_url": "https://kaitorix.app/series/iphone-18",
+      "price_yen": 242000,
+      "currency": "JPY",
+      "condition": "unopened_new",
+      "observed_at": "2026-10-22T14:45:04.421702+00:00"
+    },
+    {
+      "model": "iPhone 18 Pro Max",
+      "capacity": "512GB",
+      "color": "Burgundy",
+      "retail_yen": 274800,
+      "source": "KaitoriX",
+      "source_url": "https://kaitorix.app/series/iphone-18",
+      "price_yen": 284000,
+      "currency": "JPY",
+      "condition": "unopened_new",
+      "observed_at": "2026-10-22T14:45:04.421737+00:00"
+    },
+    {
+      "model": "iPhone 18 Pro Max",
+      "capacity": "1TB",
+      "color": "Burgundy",
+      "retail_yen": 344800,
+      "source": "KaitoriX",
+      "source_url": "https://kaitorix.app/series/iphone-18",
+      "price_yen": 354000,
+      "currency": "JPY",
+      "condition": "unopened_new",
+      "observed_at": "2026-10-22T14:45:04.421748+00:00"
+    },
+    {
+      "model": "iPhone 18 Pro Max",
+      "capacity": "2TB",
+      "color": "Burgundy",
+      "retail_yen": 449800,
+      "source": "KaitoriX",
+      "source_url": "https://kaitorix.app/series/iphone-18",
+      "price_yen": 449800,
+      "currency": "JPY",
+      "condition": "unopened_new",
+      "observed_at": "2026-10-22T14:45:04.421757+00:00"
+    },
+    {
+      "model": "iPhone Duo",
+      "capacity": "256GB",
+      "color": "Star White",
+      "retail_yen": 364800,
+      "source": "KaitoriX",
+      "source_url": "https://kaitorix.app/series/iphone-18",
+      "price_yen": 400000,
+      "currency": "JPY",
+      "condition": "unopened_new",
+      "observed_at": "2026-10-22T14:45:04.421777+00:00"
+    },
+    {
+      "model": "iPhone Duo",
+      "capacity": "512GB",
+      "color": "Star White",
+      "retail_yen": 399800,
+      "source": "KaitoriX",
+      "source_url": "https://kaitorix.app/series/iphone-18",
+      "price_yen": 435000,
+      "currency": "JPY",
+      "condition": "unopened_new",
+      "observed_at": "2026-10-22T14:45:04.421785+00:00"
+    },
+    {
+      "model": "iPhone Duo",
+      "capacity": "1TB",
+      "color": "Star White",
+      "retail_yen": 469800,
+      "source": "KaitoriX",
+      "source_url": "https://kaitorix.app/series/iphone-18",
+      "price_yen": 491000,
+      "currency": "JPY",
+      "condition": "unopened_new",
+      "observed_at": "2026-10-22T14:45:04.421791+00:00"
+    },
+    {
+      "model": "iPhone Duo",
+      "capacity": "2TB",
+      "color": "Star White",
+      "retail_yen": 574800,
+      "source": "KaitoriX",
+      "source_url": "https://kaitorix.app/series/iphone-18",
+      "price_yen": 590000,
+      "currency": "JPY",
+      "condition": "unopened_new",
+      "observed_at": "2026-10-22T14:45:04.421803+00:00"
+    },
+    {
+      "model": "iPhone Duo",
+      "capacity": "2TB",
+      "color": "Night Sky",
+      "retail_yen": 574800,
+      "source": "KaitoriX",
+      "source_url": "https://kaitorix.app/series/iphone-18",
+      "price_yen": 590000,
+      "currency": "JPY",
+      "condition": "unopened_new",
+      "observed_at": "2026-10-22T14:45:04.422041+00:00"
+    },
+    {
+      "model": "iPhone Duo",
+      "capacity": "1TB",
+      "color": "Star White",
+      "retail_yen": 469800,
+      "source": "KaitoriX",
+      "source_url": "https://kaitorix.app/series/iphone-18",
+      "price_yen": 491000,
+      "currency": "JPY",
+      "condition": "unopened_new",
+      "observed_at": "2026-10-22T14:45:04.422048+00:00"
+    },
+    {
+      "model": "iPhone Duo",
+      "capacity": "512GB",
+      "color": "Night Sky",
+      "retail_yen": 399800,
+      "source": "KaitoriX",
+      "source_url": "https://kaitorix.app/series/iphone-18",
+      "price_yen": 435000,
+      "currency": "JPY",
+      "condition": "unopened_new",
+      "observed_at": "2026-10-22T14:45:04.422054+00:00"
+    },
+    {
+      "model": "iPhone 18 Pro Max",
+      "capacity": "2TB",
+      "color": "Burgundy",
+      "retail_yen": 449800,
+      "source": "KaitoriX",
+      "source_url": "https://kaitorix.app/series/iphone-18",
+      "price_yen": 404000,
+      "currency": "JPY",
+      "condition": "unopened_new",
+      "observed_at": "2026-10-22T14:45:04.422061+00:00"
+    },
+    {
+      "model": "iPhone Duo",
+      "capacity": "256GB",
+      "color": "Night Sky",
+      "retail_yen": 364800,
+      "source": "KaitoriX",
+      "source_url": "https://kaitorix.app/series/iphone-18",
+      "price_yen": 400000,
+      "currency": "JPY",
+      "condition": "unopened_new",
+      "observed_at": "2026-10-22T14:45:04.422067+00:00"
+    },
+    {
+      "model": "iPhone 18 Pro Max",
+      "capacity": "1TB",
+      "color": "Burgundy",
+      "retail_yen": 344800,
+      "source": "KaitoriX",
+      "source_url": "https://kaitorix.app/series/iphone-18",
+      "price_yen": 354000,
+      "currency": "JPY",
+      "condition": "unopened_new",
+      "observed_at": "2026-10-22T14:45:04.422082+00:00"
+    }
+  ],
+  "source_errors": []
+}
