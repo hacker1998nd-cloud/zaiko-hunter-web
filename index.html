@@ -17,11 +17,12 @@ body {
   margin:0; background:var(--bg); color:#f5f6fa;
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
 }
-main { max-width:700px; margin:auto; padding:22px 16px 40px; }
+main { max-width:760px; margin:auto; padding:22px 16px 40px; }
 header { display:flex; align-items:center; gap:12px; margin-bottom:22px; }
 .logo { font-size:28px; background:var(--card); padding:12px; border-radius:15px; }
 h1 { font-size:23px; margin:0 0 4px; }
 h2 { font-size:17px; margin:0 0 8px; }
+h3 { font-size:14px; margin:18px 0 8px; }
 .sub,.muted { color:var(--muted); font-size:13px; }
 .summary { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
 .card { background:var(--card); border:1px solid var(--line); border-radius:17px; padding:16px; margin:12px 0; }
@@ -33,7 +34,26 @@ h2 { font-size:17px; margin:0 0 8px; }
 .status.unknown { color:#ffd58a; background:#393020; }
 button { border:0; border-radius:12px; padding:14px; width:100%; margin-top:10px; font-size:14px; font-weight:700; background:#f3f4f6; color:#111318; cursor:pointer; }
 .secondary { background:#292e3a; color:white; }
+button:disabled { opacity:.55; cursor:wait; }
+.price-group { border-top:1px solid var(--line); padding:14px 0; }
+.price-title { display:flex; justify-content:space-between; gap:12px; align-items:flex-start; }
+.price-title strong { font-size:14px; }
+.price-value { font-size:18px; font-weight:750; margin-top:5px; }
+.price-meta { color:var(--muted); font-size:12px; line-height:1.6; margin-top:5px; overflow-wrap:anywhere; }
+.pill { display:inline-block; font-size:11px; padding:4px 8px; border-radius:20px; background:#292e3a; color:#d6d9e2; }
+.pill.real { background:#123528; color:var(--green); }
+.pill.reference { background:#393020; color:#ffd58a; }
+.profit-box { border:1px solid var(--line); border-radius:13px; padding:13px; margin-top:12px; }
+.profit-line { display:flex; justify-content:space-between; gap:12px; padding:8px 0; font-size:13px; border-bottom:1px solid var(--line); }
+.profit-line:last-child { border-bottom:0; }
+.notice { font-size:12px; color:var(--muted); line-height:1.6; margin-top:12px; }
+.empty { color:var(--muted); font-size:13px; padding:12px 0; line-height:1.6; }
 footer { color:var(--muted); font-size:12px; line-height:1.6; margin-top:20px; }
+@media (max-width:420px) {
+  main { padding:16px 12px 32px; }
+  .card { padding:13px; }
+  .price-title { flex-direction:column; gap:5px; }
+}
 </style>
 </head>
 <body>
@@ -75,12 +95,39 @@ footer { color:var(--muted); font-size:12px; line-height:1.6; margin-top:20px; }
   <div id="stores-updated" class="sub" style="margin-top:12px"></div>
 </section>
 
-<button class="secondary" onclick="refreshAll()">↻ Cập nhật ngay</button>
+<section class="card" id="prices">
+  <h2>💴 Giá thu mua & lợi nhuận</h2>
+  <div class="muted">KaitoriX · Mobile Ichiban · Dữ liệu từ GitHub</div>
+  <div id="prices-status" class="sub" style="margin-top:12px">Đang tải dữ liệu giá...</div>
+  <div id="prices-updated" class="sub" style="margin-top:8px"></div>
+
+  <h3>📈 iPhone 18 Pro Max · Burgundy</h3>
+  <div id="promax-prices"></div>
+
+  <h3>📱 iPhone Duo · Star White / Night Sky</h3>
+  <div id="duo-prices"></div>
+
+  <h3>🧮 Tính lợi nhuận đơn hàng Burgundy 512GB</h3>
+  <div class="muted">2 máy đã đặt · Giá mua ¥274,800/máy · Điểm thẻ 1%</div>
+  <div id="profit-calculator" class="profit-box"></div>
+
+  <div class="notice">
+    KaitoriX chỉ là giá tham khảo thị trường, không phải cam kết thu mua.
+    Chỉ giá Mobile Ichiban được xác minh đúng màu mới được dùng để tính lợi nhuận thực tế.
+    Giá và lợi nhuận chưa bao gồm phí phát sinh khác.
+  </div>
+  <button class="secondary" id="reload-prices" onclick="loadPrices()">↻ Tải lại dữ liệu giá</button>
+</section>
+
+<button class="secondary" id="refresh-button" onclick="refreshAll()">↻ Cập nhật ngay — chạy hai bot tồn kho</button>
 <button onclick="window.open('https://www.apple.com/jp/shop/buy-iphone/iphone-18-pro','_blank')">Mở trang Apple Nhật ↗</button>
 <button class="secondary" onclick="window.open('https://github.com/hacker1998nd-cloud/zaiko-hunter-web','_blank')">Mở dữ liệu GitHub ↗</button>
 
 <footer>
-  Dashboard đọc dữ liệu công khai từ GitHub. Dữ liệu thể hiện lần kiểm tra gần nhất được bot ghi nhận, không đảm bảo máy vẫn còn khi đặt mua. Nếu Apple trả HTTP 541, dữ liệu có thể chưa được cập nhật.
+  Dashboard đọc dữ liệu công khai từ GitHub. Tải lại dashboard chỉ đọc dữ liệu đã có;
+  nút “Cập nhật ngay” mới yêu cầu chạy hai bot tồn kho.
+  Dữ liệu tồn kho thể hiện lần kiểm tra gần nhất, không đảm bảo máy vẫn còn khi đặt mua.
+  Nếu Apple trả HTTP 541, dữ liệu có thể chưa được cập nhật.
 </footer>
 </main>
 
@@ -93,6 +140,10 @@ const CAPACITIES = [
   { id:"MJXC4J/A", label:"512GB" },
   { id:"MJXG4J/A", label:"1TB" }
 ];
+
+const BUY_PRICE_PER_UNIT = 274800;
+const CARD_POINTS_RATE = 0.01;
+const ORDER_QUANTITY = 2;
 
 function statusInfo(value) {
   const s = String(value || "UNKNOWN").toUpperCase();
@@ -124,6 +175,12 @@ function formatTime(value) {
   return "Cập nhật: " + date.toLocaleString("ja-JP", {
     timeZone:"Asia/Tokyo"
   }) + " (giờ Nhật)";
+}
+
+function yen(value) {
+  const number = Number(value);
+  if (!Number.isFinite(number)) return "Chưa có dữ liệu";
+  return "¥" + Math.round(number).toLocaleString("ja-JP");
 }
 
 async function fetchJson(file) {
@@ -212,13 +269,238 @@ async function loadStores() {
   }
 }
 
+function sourceKind(row) {
+  const source = String(row.source || "").toLowerCase();
+  if (source.includes("mobile") || source.includes("ichiban")) return "actual";
+  if (source.includes("kaitorix")) return "reference";
+  return "other";
+}
 
+function displayColor(color) {
+  const names = {
+    "Burgundy":"Burgundy 🍷",
+    "Star White":"Star White ⚪",
+    "Night Sky":"Night Sky 🌌"
+  };
+  return names[color] || color || "Chưa xác định màu";
+}
+
+function priceTypeLabel(row) {
+  if (row.price_low_yen != null && Number.isFinite(Number(row.price_low_yen))) {
+    return "Khoảng giá tham khảo";
+  }
+  if (row.price_type === "market_listed_price") return "Giá trong bảng xếp hạng";
+  if (row.price_type === "market_summary") return "Giá tổng hợp";
+  if (row.price_type === "market_range_high") return "Mức cao trong khoảng giá";
+  return row.price_type || "Giá ghi nhận";
+}
+
+function isVerifiedActual(row) {
+  return sourceKind(row) === "actual"
+    && row.verification === "color_explicit"
+    && Number(row.price_yen) > 0;
+}
+
+function rowPriceText(row) {
+  if (row.price_low_yen != null && Number.isFinite(Number(row.price_low_yen))) {
+    return yen(row.price_low_yen) + " – " + yen(row.price_yen);
+  }
+  return yen(row.price_yen);
+}
+
+function makePriceEntry(row) {
+  const wrapper = document.createElement("div");
+  wrapper.className = "price-group";
+
+  const top = document.createElement("div");
+  top.className = "price-title";
+
+  const left = document.createElement("div");
+  const title = document.createElement("strong");
+  title.textContent = `${row.capacity || ""} · ${displayColor(row.color)}`;
+
+  const meta = document.createElement("div");
+  meta.className = "price-meta";
+  meta.textContent = `${row.source || "Nguồn không rõ"} · ${priceTypeLabel(row)}`;
+
+  left.append(title, meta);
+
+  const right = document.createElement("div");
+  right.style.textAlign = "right";
+
+  const value = document.createElement("div");
+  value.className = "price-value";
+  value.textContent = rowPriceText(row);
+
+  const pill = document.createElement("span");
+  const actual = isVerifiedActual(row);
+  pill.className = "pill " + (actual ? "real" : "reference");
+  pill.textContent = actual ? "Giá thu mua đã xác minh" :
+    sourceKind(row) === "reference" ? "Giá tham khảo" : "Chưa xác minh";
+
+  right.append(value, pill);
+  top.append(left, right);
+  wrapper.appendChild(top);
+
+  if (row.retail_yen) {
+    const retail = document.createElement("div");
+    retail.className = "price-meta";
+    retail.textContent = "Giá niêm yết: " + yen(row.retail_yen);
+    wrapper.appendChild(retail);
+  }
+
+  if (row.matched_text) {
+    const detail = document.createElement("div");
+    detail.className = "price-meta";
+    detail.textContent = "Dữ liệu nguồn: " + row.matched_text;
+    wrapper.appendChild(detail);
+  }
+
+  if (row.observed_at) {
+    const observed = document.createElement("div");
+    observed.className = "price-meta";
+    observed.textContent = formatTime(row.observed_at);
+    wrapper.appendChild(observed);
+  }
+
+  return wrapper;
+}
+
+function sortRows(rows) {
+  const capOrder = {"256GB":0,"512GB":1,"1TB":2,"2TB":3};
+  const colorOrder = {"Burgundy":0,"Star White":1,"Night Sky":2};
+  return [...rows].sort((a,b) =>
+    (capOrder[a.capacity] ?? 9) - (capOrder[b.capacity] ?? 9)
+    || (colorOrder[a.color] ?? 9) - (colorOrder[b.color] ?? 9)
+    || String(a.source || "").localeCompare(String(b.source || ""))
+  );
+}
+
+function renderPriceSection(targetId, rows) {
+  const target = document.getElementById(targetId);
+  target.replaceChildren();
+
+  if (!rows.length) {
+    const empty = document.createElement("div");
+    empty.className = "empty";
+    empty.textContent = "Chưa có dữ liệu giá cho nhóm sản phẩm này.";
+    target.appendChild(empty);
+    return;
+  }
+
+  sortRows(rows).forEach(row => target.appendChild(makePriceEntry(row)));
+}
+
+function renderProfit(rows) {
+  const target = document.getElementById("profit-calculator");
+  target.replaceChildren();
+
+  const totalCost = BUY_PRICE_PER_UNIT * ORDER_QUANTITY;
+  const pointsPerUnit = Math.round(BUY_PRICE_PER_UNIT * CARD_POINTS_RATE);
+  const totalPoints = pointsPerUnit * ORDER_QUANTITY;
+
+  const costLine = document.createElement("div");
+  costLine.className = "profit-line";
+  costLine.innerHTML = "<span>Tiền mua 2 máy</span>";
+  const costValue = document.createElement("strong");
+  costValue.textContent = yen(totalCost);
+  costLine.appendChild(costValue);
+
+  const pointsLine = document.createElement("div");
+  pointsLine.className = "profit-line";
+  pointsLine.innerHTML = "<span>Điểm thẻ 1% (ước tính)</span>";
+  const pointsValue = document.createElement("strong");
+  pointsValue.textContent = "+" + yen(totalPoints);
+  pointsLine.appendChild(pointsValue);
+
+  target.append(costLine, pointsLine);
+
+  const actualRows = rows.filter(row =>
+    row.model === "iPhone 18 Pro Max"
+    && row.capacity === "512GB"
+    && row.color === "Burgundy"
+    && isVerifiedActual(row)
+  );
+
+  if (!actualRows.length) {
+    const pending = document.createElement("div");
+    pending.className = "empty";
+    pending.textContent =
+      "Chưa có giá thu mua Burgundy 512GB được Mobile Ichiban xác minh. " +
+      "Chưa thể tính lợi nhuận thực tế. Giá KaitoriX không được dùng thay thế.";
+    target.appendChild(pending);
+    return;
+  }
+
+  const price = Number(actualRows[0].price_yen);
+  const profitPerUnit = price - BUY_PRICE_PER_UNIT + pointsPerUnit;
+  const totalProfit = profitPerUnit * ORDER_QUANTITY;
+
+  const sellLine = document.createElement("div");
+  sellLine.className = "profit-line";
+  sellLine.innerHTML = "<span>Giá thu mua xác minh / máy</span>";
+  const sellValue = document.createElement("strong");
+  sellValue.textContent = yen(price);
+  sellLine.appendChild(sellValue);
+
+  const perUnitLine = document.createElement("div");
+  perUnitLine.className = "profit-line";
+  perUnitLine.innerHTML = "<span>Lãi ước tính / máy, gồm điểm thẻ</span>";
+  const perUnitValue = document.createElement("strong");
+  perUnitValue.textContent = (profitPerUnit >= 0 ? "+" : "−") + yen(Math.abs(profitPerUnit));
+  perUnitLine.appendChild(perUnitValue);
+
+  const totalLine = document.createElement("div");
+  totalLine.className = "profit-line";
+  totalLine.innerHTML = "<span>Lãi ước tính 2 máy</span>";
+  const totalValue = document.createElement("strong");
+  totalValue.textContent = (totalProfit >= 0 ? "+" : "−") + yen(Math.abs(totalProfit));
+  totalLine.appendChild(totalValue);
+
+  target.append(sellLine, perUnitLine, totalLine);
+}
+
+async function loadPrices() {
+  const statusEl = document.getElementById("prices-status");
+  const updatedEl = document.getElementById("prices-updated");
+  const reloadButton = document.getElementById("reload-prices");
+
+  reloadButton.disabled = true;
+  statusEl.textContent = "Đang tải price-data.json...";
+
+  try {
+    const data = await fetchJson("price-data.json");
+    const rows = Array.isArray(data.rows) ? data.rows : [];
+
+    const proMax = rows.filter(row => row.model === "iPhone 18 Pro Max");
+    const duo = rows.filter(row => row.model === "iPhone Duo");
+
+    renderPriceSection("promax-prices", proMax);
+    renderPriceSection("duo-prices", duo);
+    renderProfit(rows);
+
+    statusEl.textContent = `Đã tải ${rows.length} dòng dữ liệu giá.`;
+    updatedEl.textContent = formatTime(data.updated_at);
+  } catch (error) {
+    statusEl.textContent = "Không đọc được price-data.json: " + error.message;
+    updatedEl.textContent = "Kiểm tra file price-data.json trong repo zaiko-hunter-web.";
+    renderPriceSection("promax-prices", []);
+    renderPriceSection("duo-prices", []);
+    renderProfit([]);
+  } finally {
+    reloadButton.disabled = false;
+  }
+}
 
 async function refreshAll() {
+  const button = document.getElementById("refresh-button");
+  button.disabled = true;
+  button.textContent = "Đang yêu cầu chạy bot...";
+
   try {
     const response = await fetch(
       "https://zaiko-refresh.tuan0343412390.workers.dev/",
-      { method: "POST" }
+      { method:"POST" }
     );
 
     if (!response.ok) {
@@ -226,17 +508,25 @@ async function refreshAll() {
       return;
     }
 
-    alert("Đã yêu cầu chạy cả hai bot! Chờ 30–60 giây rồi cập nhật lại.");
-
-    await Promise.all([loadUmeda(), loadStores()]);
+    alert("Đã yêu cầu chạy hai bot tồn kho. Chờ 30–60 giây rồi tải lại dữ liệu.");
+    setTimeout(() => {
+      Promise.all([loadUmeda(), loadStores()]);
+    }, 30000);
   } catch (error) {
     alert("Lỗi kết nối Worker: " + error.message);
+  } finally {
+    button.disabled = false;
+    button.textContent = "↻ Cập nhật ngay — chạy hai bot tồn kho";
   }
 }
 
+// Mở trang chỉ đọc dữ liệu hiện có, không tự gọi chạy bot tồn kho.
+Promise.all([loadUmeda(), loadStores(), loadPrices()]);
 
-refreshAll();
-setInterval(refreshAll, 60000);
+// Tự tải lại dữ liệu công khai mỗi phút, không kích hoạt workflow bot.
+setInterval(() => {
+  Promise.all([loadUmeda(), loadStores(), loadPrices()]);
+}, 60000);
 </script>
 </body>
 </html>
