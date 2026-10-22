@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T00:08:05.453674+00:00",
+  "updated_at": "2026-10-22T00:58:57.086698+00:00",
   "stores": [
     {
       "store": "梅田",
@@ -60,7 +60,7 @@
         {
           "part_number": "MJXG4J/A",
           "name": "1TB Burgundy",
-          "status": "UNAVAILABLE"
+          "status": "AVAILABLE"
         }
       ]
     }
