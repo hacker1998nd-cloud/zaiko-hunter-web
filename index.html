@@ -8,60 +8,62 @@
 <title>Zaiko Hunter</title>
 <style>
 :root {
-  color-scheme:dark;
-  --bg:#0d0f14;
-  --card:#181b23;
-  --line:#292e3a;
-  --muted:#9ca3b4;
-  --green:#54dfa0;
+  color-scheme: dark;
+  --bg: #0d0f14;
+  --card: #181b23;
+  --line: #292e3a;
+  --muted: #9ca3b4;
+  --green: #54dfa0;
 }
-* { box-sizing:border-box; }
+* { box-sizing: border-box; }
 body {
-  margin:0;
-  background:var(--bg);
-  color:#f5f6fa;
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  margin: 0;
+  background: var(--bg);
+  color: #f5f6fa;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
-main { max-width:760px; margin:auto; padding:22px 16px 40px; }
-header { display:flex; align-items:center; gap:12px; margin-bottom:22px; }
-.logo { font-size:28px; background:var(--card); padding:12px; border-radius:15px; }
-h1 { font-size:23px; margin:0 0 4px; }
-h2 { font-size:17px; margin:0 0 8px; }
-h3 { font-size:14px; margin:18px 0 8px; }
-.sub,.muted { color:var(--muted); font-size:13px; }
-.summary { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
-.card { background:var(--card); border:1px solid var(--line); border-radius:17px; padding:16px; margin:12px 0; }
-.big { font-size:27px; font-weight:750; margin:7px 0; }
+main { max-width: 760px; margin: auto; padding: 22px 16px 40px; }
+header { display: flex; align-items: center; gap: 12px; margin-bottom: 22px; }
+.logo { font-size: 28px; background: var(--card); padding: 12px; border-radius: 15px; }
+h1 { font-size: 23px; margin: 0 0 4px; }
+h2 { font-size: 17px; margin: 0 0 8px; }
+h3 { font-size: 14px; margin: 20px 0 8px; }
+.sub, .muted { color: var(--muted); font-size: 13px; }
+.summary { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 17px; padding: 16px; margin: 12px 0; }
+.big { font-size: 27px; font-weight: 750; margin: 7px 0; }
 .product {
-  display:flex; align-items:center; justify-content:space-between;
-  gap:10px; padding:13px 0; border-top:1px solid var(--line); font-size:14px;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 10px; padding: 13px 0; border-top: 1px solid var(--line); font-size: 14px;
 }
-.status { font-size:12px; color:var(--muted); background:#292e3a; padding:6px 9px; border-radius:20px; white-space:nowrap; }
-.status.available { color:var(--green); background:#123528; }
-.status.unavailable { color:#ff9292; background:#3b2025; }
-.status.unknown { color:#ffd58a; background:#393020; }
+.status { font-size: 12px; color: var(--muted); background: #292e3a; padding: 6px 9px; border-radius: 20px; white-space: nowrap; }
+.status.available { color: var(--green); background: #123528; }
+.status.unavailable { color: #ff9292; background: #3b2025; }
+.status.unknown { color: #ffd58a; background: #393020; }
 button {
-  border:0; border-radius:12px; padding:14px; width:100%;
-  margin-top:10px; font-size:14px; font-weight:700;
-  background:#f3f4f6; color:#111318; cursor:pointer;
+  border: 0; border-radius: 12px; padding: 14px; width: 100%;
+  margin-top: 10px; font-size: 14px; font-weight: 700;
+  background: #f3f4f6; color: #111318; cursor: pointer;
 }
-.secondary { background:#292e3a; color:white; }
-button:disabled { opacity:.55; cursor:wait; }
-.price-item { border-top:1px solid var(--line); padding:14px 0; }
-.price-heading { display:flex; justify-content:space-between; gap:12px; align-items:flex-start; }
-.price-name { font-size:14px; font-weight:700; }
-.price-number { font-size:19px; font-weight:750; margin-top:5px; }
-.price-meta { color:var(--muted); font-size:12px; line-height:1.6; margin-top:5px; overflow-wrap:anywhere; }
-.tag { display:inline-block; font-size:11px; padding:4px 8px; border-radius:20px; background:#292e3a; color:#d6d9e2; }
-.tag.actual { background:#123528; color:var(--green); }
-.tag.reference { background:#393020; color:#ffd58a; }
-.empty { color:var(--muted); font-size:13px; padding:12px 0; line-height:1.6; }
-.notice { color:var(--muted); font-size:12px; line-height:1.6; margin-top:12px; }
-footer { color:var(--muted); font-size:12px; line-height:1.6; margin-top:20px; }
-@media(max-width:420px) {
-  main { padding:16px 12px 32px; }
-  .card { padding:13px; }
-  .price-heading { flex-direction:column; gap:5px; }
+.secondary { background: #292e3a; color: white; }
+button:disabled { opacity: .55; cursor: wait; }
+.price-item { border-top: 1px solid var(--line); padding: 14px 0; }
+.price-heading { display: flex; justify-content: space-between; gap: 12px; align-items: flex-start; }
+.price-name { font-size: 14px; font-weight: 700; }
+.price-number { font-size: 19px; font-weight: 750; margin-top: 5px; }
+.price-meta { color: var(--muted); font-size: 12px; line-height: 1.6; margin-top: 5px; overflow-wrap: anywhere; }
+.price-meta a, a.price-meta { color: #a8c7ff; text-decoration: none; }
+.tag { display: inline-block; font-size: 11px; padding: 4px 8px; border-radius: 20px; background: #292e3a; color: #d6d9e2; margin-top: 4px; }
+.tag.actual { background: #123528; color: var(--green); }
+.tag.reference { background: #393020; color: #ffd58a; }
+.tag.unverified { background: #3b2d43; color: #e3b5ff; }
+.empty { color: var(--muted); font-size: 13px; padding: 12px 0; line-height: 1.6; }
+.notice { color: var(--muted); font-size: 12px; line-height: 1.6; margin-top: 12px; }
+footer { color: var(--muted); font-size: 12px; line-height: 1.6; margin-top: 20px; }
+@media(max-width: 420px) {
+  main { padding: 16px 12px 32px; }
+  .card { padding: 13px; }
+  .price-heading { flex-direction: column; gap: 5px; }
 }
 </style>
 </head>
@@ -71,7 +73,7 @@ footer { color:var(--muted); font-size:12px; line-height:1.6; margin-top:20px; }
   <div class="logo">📱</div>
   <div>
     <h1>Zaiko Hunter</h1>
-    <div class="sub">APPLE JAPAN · STOCK & PRICE DASHBOARD</div>
+    <div class="sub">APPLE JAPAN · STOCK &amp; PRICE DASHBOARD</div>
   </div>
 </header>
 
@@ -105,10 +107,14 @@ footer { color:var(--muted); font-size:12px; line-height:1.6; margin-top:20px; }
 </section>
 
 <section class="card">
-  <h2>💴 Giá thu mua</h2>
-  <div class="muted">Giá tham khảo thị trường và giá thu mua đã xác minh</div>
+  <h2>💴 Giá thu mua &amp; giá tham khảo</h2>
+  <div class="muted">Tách biệt giá cửa hàng đã xác minh, giá tham khảo và giá chưa xác minh màu.</div>
   <div id="prices-status" class="sub" style="margin-top:12px">Đang tải dữ liệu giá...</div>
   <div id="prices-updated" class="sub" style="margin-top:8px"></div>
+
+  <h3>🏬 Giá thu mua trực tiếp tại Osaka</h3>
+  <div class="muted">Chỉ hiện giá được xác minh từ dữ liệu cửa hàng.</div>
+  <div id="osaka-prices"></div>
 
   <h3>🍷 iPhone 18 Pro Max Burgundy</h3>
   <div id="promax-prices"></div>
@@ -116,17 +122,22 @@ footer { color:var(--muted); font-size:12px; line-height:1.6; margin-top:20px; }
   <h3>📱 iPhone Duo · Star White / Night Sky</h3>
   <div id="duo-prices"></div>
 
+  <h3>🔎 Giá cơ bản chưa xác minh màu</h3>
+  <div class="muted">Không mặc định đây là giá Burgundy.</div>
+  <div id="unverified-prices"></div>
+
   <div class="notice">
     KaitoriX là giá tham khảo, không phải cam kết mua vào.
-    Giá Mobile Ichiban chỉ được đánh dấu xác minh khi dữ liệu khớp màu rõ ràng.
+    Giá Mobile Ichiban trong mục chưa xác minh màu không được coi là giá Burgundy.
+    Giá Osaka chỉ xuất hiện khi dữ liệu đáp ứng điều kiện xác minh.
     Giá có thể thay đổi theo tình trạng máy, thời điểm và điều kiện của cửa hàng.
   </div>
-  <button class="secondary" id="reload-prices" onclick="loadPrices()">↻ Tải lại giá</button>
+  <button class="secondary" id="reload-prices" type="button">↻ Tải lại giá</button>
 </section>
 
-<button class="secondary" id="refresh-button" onclick="refreshAll()">↻ Cập nhật ngay — chạy hai bot tồn kho</button>
-<button onclick="window.open('https://www.apple.com/jp/shop/buy-iphone/iphone-18-pro','_blank')">Mở trang Apple Nhật ↗</button>
-<button class="secondary" onclick="window.open('https://github.com/hacker1998nd-cloud/zaiko-hunter-web','_blank')">Mở dữ liệu GitHub ↗</button>
+<button class="secondary" id="refresh-button" type="button">↻ Cập nhật ngay — chạy hai bot tồn kho</button>
+<button id="apple-button" type="button">Mở trang Apple Nhật ↗</button>
+<button class="secondary" id="github-button" type="button">Mở dữ liệu GitHub ↗</button>
 
 <footer>
   Dashboard đọc dữ liệu công khai từ GitHub.
@@ -138,19 +149,24 @@ footer { color:var(--muted); font-size:12px; line-height:1.6; margin-top:20px; }
 </main>
 
 <script>
+"use strict";
+
 const BASE = "https://raw.githubusercontent.com/hacker1998nd-cloud/zaiko-hunter-web/main/";
+const WORKER_URL = "https://zaiko-refresh.tuan0343412390.workers.dev/";
 
 const CAPACITIES = [
-  { id:"MJX74J/A", label:"256GB" },
-  { id:"MJXC4J/A", label:"512GB" },
-  { id:"MJXG4J/A", label:"1TB" }
+  { id: "MJX74J/A", label: "256GB" },
+  { id: "MJXC4J/A", label: "512GB" },
+  { id: "MJXG4J/A", label: "1TB" }
 ];
+
+const $ = id => document.getElementById(id);
 
 function statusInfo(value) {
   const s = String(value || "UNKNOWN").toUpperCase();
-  if (s === "AVAILABLE") return { text:"🟢 CÓ HÀNG", cls:"available" };
-  if (s === "UNAVAILABLE") return { text:"🔴 HẾT HÀNG", cls:"unavailable" };
-  return { text:"🟡 CHƯA XÁC ĐỊNH", cls:"unknown" };
+  if (s === "AVAILABLE") return { text: "🟢 CÓ HÀNG", cls: "available" };
+  if (s === "UNAVAILABLE") return { text: "🔴 HẾT HÀNG", cls: "unavailable" };
+  return { text: "🟡 CHƯA XÁC ĐỊNH", cls: "unknown" };
 }
 
 function makeRow(label, value) {
@@ -174,31 +190,38 @@ function formatTime(value) {
   const date = new Date(value);
   if (Number.isNaN(date.getTime())) return "Thời gian cập nhật không hợp lệ.";
   return "Cập nhật: " + date.toLocaleString("ja-JP", {
-    timeZone:"Asia/Tokyo"
+    timeZone: "Asia/Tokyo"
   }) + " (giờ Nhật)";
 }
 
 function yen(value) {
   const n = Number(value);
-  return Number.isFinite(n) ? "¥" + Math.round(n).toLocaleString("ja-JP") : "Chưa có giá";
+  return Number.isFinite(n) && n > 0
+    ? "¥" + Math.round(n).toLocaleString("ja-JP")
+    : "Chưa có giá";
 }
 
 async function fetchJson(file) {
-  const response = await fetch(BASE + file + "?t=" + Date.now(), { cache:"no-store" });
+  const response = await fetch(BASE + file + "?t=" + Date.now(), {
+    cache: "no-store"
+  });
   if (!response.ok) throw new Error("HTTP " + response.status);
   return response.json();
 }
 
 async function loadUmeda() {
-  const statusEl = document.getElementById("umeda-status");
-  const listEl = document.getElementById("umeda-products");
-  const timeEl = document.getElementById("umeda-updated");
+  const statusEl = $("umeda-status");
+  const listEl = $("umeda-products");
+  const timeEl = $("umeda-updated");
 
   try {
     const data = await fetchJson("umeda-status.json");
     const list = Array.isArray(data.products)
       ? data.products
-      : Object.entries(data.products || {}).map(([part_number,item]) => ({ part_number, ...item }));
+      : Object.entries(data.products || {}).map(([part_number, item]) => ({
+          part_number,
+          ...item
+        }));
 
     const byId = {};
     list.forEach(item => {
@@ -207,7 +230,9 @@ async function loadUmeda() {
 
     listEl.replaceChildren();
     CAPACITIES.forEach(cap => {
-      listEl.appendChild(makeRow(cap.label, byId[cap.id] ? byId[cap.id].status : "UNKNOWN"));
+      listEl.appendChild(
+        makeRow(cap.label, byId[cap.id] ? byId[cap.id].status : "UNKNOWN")
+      );
     });
 
     statusEl.textContent = "Đã tải dữ liệu bot Umeda riêng.";
@@ -219,9 +244,9 @@ async function loadUmeda() {
 }
 
 async function loadStores() {
-  const statusEl = document.getElementById("stores-status");
-  const listEl = document.getElementById("stores-list");
-  const timeEl = document.getElementById("stores-updated");
+  const statusEl = $("stores-status");
+  const listEl = $("stores-list");
+  const timeEl = $("stores-updated");
 
   try {
     const data = await fetchJson("stores-status.json");
@@ -234,14 +259,17 @@ async function loadStores() {
       card.style.marginTop = "16px";
 
       const heading = document.createElement("h2");
-      heading.textContent = name + (store && store.store_en ? " · " + store.store_en : "");
+      heading.textContent = name +
+        (store && store.store_en ? " · " + store.store_en : "");
       card.appendChild(heading);
 
       CAPACITIES.forEach(cap => {
         const product = store && Array.isArray(store.products)
           ? store.products.find(item => item.part_number === cap.id)
           : null;
-        card.appendChild(makeRow(cap.label, product ? product.status : "UNKNOWN"));
+        card.appendChild(
+          makeRow(cap.label, product ? product.status : "UNKNOWN")
+        );
       });
 
       listEl.appendChild(card);
@@ -257,14 +285,21 @@ async function loadStores() {
 
 function sourceKind(row) {
   const source = String(row.source || "").toLowerCase();
-  if (source.includes("mobile") || source.includes("ichiban")) return "actual";
+  if (source.includes("mobile") || source.includes("ichiban")) return "mobile";
   if (source.includes("kaitorix")) return "reference";
+  if (row.price_type === "osaka_in_store") return "osaka";
   return "other";
 }
 
 function isVerifiedActual(row) {
-  return sourceKind(row) === "actual"
-    && row.verification === "color_explicit"
+  return row.verification === "official_base_price_other_colours_deducted"
+    && row.color === "Burgundy"
+    && Number(row.price_yen) > 0;
+}
+
+function isUnverifiedBasePrice(row) {
+  return sourceKind(row) === "mobile"
+    && row.verification === "color_unverified"
     && Number(row.price_yen) > 0;
 }
 
@@ -275,20 +310,17 @@ function priority(row) {
   return 3;
 }
 
-function cleanText(value) {
-  return String(value || "").trim();
-}
-
 function colorLabel(color) {
   if (color === "Burgundy") return "Burgundy 🍷";
   if (color === "Star White") return "Star White ⚪";
   if (color === "Night Sky") return "Night Sky 🌌";
-  return color || "Chưa rõ màu";
+  return color || "Chưa xác minh màu";
 }
 
 function priceText(row) {
   const high = Number(row.price_yen);
   const low = Number(row.price_low_yen);
+
   if (Number.isFinite(low) && low > 0 && Number.isFinite(high) && high > low) {
     return yen(low) + " – " + yen(high);
   }
@@ -297,46 +329,36 @@ function priceText(row) {
 
 function typeLabel(row) {
   const type = String(row.price_type || "").toLowerCase();
-  if (type === "market_summary") return "Giá tổng hợp";
+  if (type === "market_summary") return "Giá tổng hợp thị trường";
   if (type === "market_range_high") return "Khoảng giá thị trường";
   if (type === "market_listed_price") return "Giá bảng xếp hạng";
+  if (type === "osaka_in_store") return "Giá thu mua tại cửa hàng";
+  if (type === "base_price_color_unverified") return "Giá cơ bản, chưa xác minh màu";
   return "Giá ghi nhận";
 }
 
-function chooseBestRows(rows) {
-  const actualRows = rows.filter(isVerifiedActual);
-  const referenceRows = rows.filter(row => sourceKind(row) === "reference");
+function appendSourceLink(parent, url) {
+  if (!url) return;
 
-  // Mỗi màu/dung lượng chỉ giữ một giá tham khảo chính.
-  const groups = new Map();
+  try {
+    const parsed = new URL(url);
+    if (parsed.protocol !== "https:") return;
 
-  referenceRows.forEach(row => {
-    const key = [row.model, row.capacity, row.color].join("|");
-    const old = groups.get(key);
-    if (!old || priority(row) < priority(old)) groups.set(key, row);
-  });
-
-  // Giữ giá thu mua đã xác minh riêng, không trộn với giá tham khảo.
-  const actualGroups = new Map();
-  actualRows.forEach(row => {
-    const key = [row.model, row.capacity, row.color].join("|");
-    const old = actualGroups.get(key);
-    if (!old || Number(row.price_yen) > Number(old.price_yen)) actualGroups.set(key, row);
-  });
-
-  return [
-    ...Array.from(actualGroups.values()),
-    ...Array.from(groups.values())
-  ].sort((a,b) => {
-    const capOrder = { "256GB":0, "512GB":1, "1TB":2, "2TB":3 };
-    const colorOrder = { "Burgundy":0, "Star White":1, "Night Sky":2 };
-    return (capOrder[a.capacity] ?? 9) - (capOrder[b.capacity] ?? 9)
-      || (colorOrder[a.color] ?? 9) - (colorOrder[b.color] ?? 9)
-      || (sourceKind(a) === "actual" ? -1 : 1);
-  });
+    const link = document.createElement("a");
+    link.href = parsed.href;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.className = "price-meta";
+    link.textContent = "Mở nguồn giá ↗";
+    link.style.display = "inline-block";
+    link.style.marginTop = "6px";
+    parent.appendChild(link);
+  } catch (_) {
+    // Bỏ qua URL không hợp lệ.
+  }
 }
 
-function makePriceItem(row) {
+function makePriceItem(row, mode = "reference") {
   const item = document.createElement("div");
   item.className = "price-item";
 
@@ -344,6 +366,7 @@ function makePriceItem(row) {
   heading.className = "price-heading";
 
   const left = document.createElement("div");
+
   const name = document.createElement("div");
   name.className = "price-name";
   name.textContent = `${row.capacity || ""} · ${colorLabel(row.color)}`;
@@ -354,16 +377,24 @@ function makePriceItem(row) {
   left.append(name, source);
 
   const right = document.createElement("div");
+
   const price = document.createElement("div");
   price.className = "price-number";
   price.textContent = priceText(row);
 
   const tag = document.createElement("span");
-  const actual = isVerifiedActual(row);
-  tag.className = "tag " + (actual ? "actual" : "reference");
-  tag.textContent = actual ? "Đã xác minh đúng màu" : "Giá tham khảo";
-  right.append(price, tag);
+  if (mode === "actual") {
+    tag.className = "tag actual";
+    tag.textContent = "Đã xác minh theo dữ liệu nguồn";
+  } else if (mode === "unverified") {
+    tag.className = "tag unverified";
+    tag.textContent = "Chưa xác minh màu";
+  } else {
+    tag.className = "tag reference";
+    tag.textContent = "Giá tham khảo";
+  }
 
+  right.append(price, tag);
   heading.append(left, right);
   item.appendChild(heading);
 
@@ -374,37 +405,78 @@ function makePriceItem(row) {
     item.appendChild(retail);
   }
 
-  // Chỉ thêm chú thích ngắn khi nguồn có thông tin màu cùng giá.
-  const matched = cleanText(row.matched_text);
-  if (matched.includes("他 1 カラー同額")) {
+  if (row.area) {
+    const area = document.createElement("div");
+    area.className = "price-meta";
+    area.textContent = "Khu vực: " + row.area;
+    item.appendChild(area);
+  }
+
+  if (row.source_price_updated_at) {
+    const sourceDate = document.createElement("div");
+    sourceDate.className = "price-meta";
+    sourceDate.textContent = "Ngày cập nhật giá nguồn: " + row.source_price_updated_at;
+    item.appendChild(sourceDate);
+  }
+
+  if (String(row.matched_text || "").includes("他 1 カラー同額")) {
     const note = document.createElement("div");
     note.className = "price-meta";
-    note.textContent = "Nguồn ghi: một màu khác cùng mức giá; đây không phải xác minh thu mua độc lập.";
+    note.textContent =
+      "Nguồn ghi một màu khác cùng mức giá; chưa xác minh thu mua độc lập.";
     item.appendChild(note);
   }
 
+  appendSourceLink(item, row.source_url);
   return item;
 }
 
-function renderPrices(targetId, rows) {
-  const target = document.getElementById(targetId);
+function renderPrices(targetId, rows, mode = "reference") {
+  const target = $(targetId);
   target.replaceChildren();
 
   if (!rows.length) {
     const empty = document.createElement("div");
     empty.className = "empty";
-    empty.textContent = "Chưa có giá phù hợp trong dữ liệu hiện tại.";
+
+    if (mode === "actual") {
+      empty.textContent =
+        "Chưa có giá cửa hàng Osaka được xác minh. Nguồn hiện có thể đang chặn truy cập.";
+    } else if (mode === "unverified") {
+      empty.textContent = "Chưa có giá cơ bản chưa xác minh màu.";
+    } else {
+      empty.textContent = "Chưa có giá phù hợp trong dữ liệu hiện tại.";
+    }
+
     target.appendChild(empty);
     return;
   }
 
-  rows.forEach(row => target.appendChild(makePriceItem(row)));
+  rows.forEach(row => target.appendChild(makePriceItem(row, mode)));
+}
+
+function chooseBestReferenceRows(rows) {
+  const groups = new Map();
+
+  rows.filter(row => sourceKind(row) === "reference").forEach(row => {
+    const key = [row.model, row.capacity, row.color].join("|");
+    const old = groups.get(key);
+    if (!old || priority(row) < priority(old)) groups.set(key, row);
+  });
+
+  const capOrder = { "256GB": 0, "512GB": 1, "1TB": 2, "2TB": 3 };
+  const colorOrder = { "Burgundy": 0, "Star White": 1, "Night Sky": 2 };
+
+  return Array.from(groups.values()).sort((a, b) =>
+    (capOrder[a.capacity] ?? 9) - (capOrder[b.capacity] ?? 9) ||
+    (colorOrder[a.color] ?? 9) - (colorOrder[b.color] ?? 9)
+  );
 }
 
 async function loadPrices() {
-  const statusEl = document.getElementById("prices-status");
-  const updatedEl = document.getElementById("prices-updated");
-  const button = document.getElementById("reload-prices");
+  const statusEl = $("prices-status");
+  const updatedEl = $("prices-updated");
+  const button = $("reload-prices");
 
   button.disabled = true;
   statusEl.textContent = "Đang tải dữ liệu giá...";
@@ -412,47 +484,70 @@ async function loadPrices() {
   try {
     const data = await fetchJson("price-data.json");
     const rows = Array.isArray(data.rows) ? data.rows : [];
+    const osakaRows = Array.isArray(data.osaka_rows) ? data.osaka_rows : [];
 
-    const proMaxRows = chooseBestRows(
-      rows.filter(row => row.model === "iPhone 18 Pro Max")
+    // Giá cửa hàng Osaka: chỉ nhận dòng có dấu hiệu xác minh rõ ràng.
+    const actualRows = osakaRows.filter(isVerifiedActual);
+
+    // Mobile Ichiban: luôn tách riêng, không gán sang Burgundy.
+    const unverifiedRows = rows.filter(isUnverifiedBasePrice);
+
+    const proMaxRows = chooseBestReferenceRows(
+      rows.filter(row =>
+        row.model === "iPhone 18 Pro Max" &&
+        row.color === "Burgundy"
+      )
     );
-    const duoRows = chooseBestRows(
+
+    const duoRows = chooseBestReferenceRows(
       rows.filter(row => row.model === "iPhone Duo")
     );
 
-    renderPrices("promax-prices", proMaxRows);
-    renderPrices("duo-prices", duoRows);
+    const sortByPrice = list => [...list].sort(
+      (a, b) => Number(b.price_yen || 0) - Number(a.price_yen || 0)
+    );
 
-    statusEl.textContent = `Đã tải dữ liệu giá: ${proMaxRows.length + duoRows.length} mục sau khi gộp trùng.`;
+    renderPrices("osaka-prices", sortByPrice(actualRows), "actual");
+    renderPrices("promax-prices", proMaxRows, "reference");
+    renderPrices("duo-prices", duoRows, "reference");
+    renderPrices("unverified-prices", sortByPrice(unverifiedRows), "unverified");
+
+    statusEl.textContent =
+      `Đã tải dữ liệu giá: ${proMaxRows.length + duoRows.length + actualRows.length + unverifiedRows.length} mục. ` +
+      `Osaka đã xác minh: ${actualRows.length}; chưa xác minh màu: ${unverifiedRows.length}.`;
+
     updatedEl.textContent = formatTime(data.updated_at);
+
   } catch (error) {
     statusEl.textContent = "Không đọc được price-data.json: " + error.message;
     updatedEl.textContent = "Kiểm tra file price-data.json trên GitHub.";
+
+    renderPrices("osaka-prices", [], "actual");
     renderPrices("promax-prices", []);
     renderPrices("duo-prices", []);
+    renderPrices("unverified-prices", [], "unverified");
   } finally {
     button.disabled = false;
   }
 }
 
 async function refreshAll() {
-  const button = document.getElementById("refresh-button");
+  const button = $("refresh-button");
   button.disabled = true;
   button.textContent = "Đang yêu cầu chạy bot...";
 
   try {
-    const response = await fetch(
-      "https://zaiko-refresh.tuan0343412390.workers.dev/",
-      { method:"POST" }
-    );
+    const response = await fetch(WORKER_URL, { method: "POST" });
 
     if (!response.ok) {
       alert("Không gọi được bot. HTTP " + response.status);
       return;
     }
 
-    alert("Đã yêu cầu chạy hai bot tồn kho. Chờ khoảng 30–60 giây rồi dữ liệu sẽ được tải lại.");
-    setTimeout(() => Promise.all([loadUmeda(), loadStores()]), 30000);
+    alert(
+      "Đã gửi yêu cầu chạy hai bot tồn kho. " +
+      "Chờ workflow hoàn tất rồi tải lại dữ liệu."
+    );
   } catch (error) {
     alert("Lỗi kết nối Worker: " + error.message);
   } finally {
@@ -461,13 +556,27 @@ async function refreshAll() {
   }
 }
 
-// Mở trang chỉ đọc dữ liệu, không tự chạy workflow bot.
-Promise.all([loadUmeda(), loadStores(), loadPrices()]);
+$("reload-prices").addEventListener("click", loadPrices);
+$("refresh-button").addEventListener("click", refreshAll);
 
-// Mỗi phút chỉ tải lại JSON, không kích hoạt bot tồn kho.
-setInterval(() => {
-  Promise.all([loadUmeda(), loadStores(), loadPrices()]);
-}, 60000);
+$("apple-button").addEventListener("click", () => {
+  window.open(
+    "https://www.apple.com/jp/shop/buy-iphone/iphone-18-pro",
+    "_blank",
+    "noopener,noreferrer"
+  );
+});
+
+$("github-button").addEventListener("click", () => {
+  window.open(
+    "https://github.com/hacker1998nd-cloud/zaiko-hunter-web",
+    "_blank",
+    "noopener,noreferrer"
+  );
+});
+
+// Khi mở dashboard, chỉ đọc JSON; không tự chạy bot.
+Promise.all([loadUmeda(), loadStores(), loadPrices()]);
 </script>
 </body>
 </html>
