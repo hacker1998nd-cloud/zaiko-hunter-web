@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T03:28:07.006542+00:00",
+  "updated_at": "2026-10-22T04:08:46.334272+00:00",
   "stores": [
     {
       "store": "梅田",
@@ -55,7 +55,7 @@
         {
           "part_number": "MJXC4J/A",
           "name": "512GB Burgundy",
-          "status": "AVAILABLE"
+          "status": "UNAVAILABLE"
         },
         {
           "part_number": "MJXG4J/A",
