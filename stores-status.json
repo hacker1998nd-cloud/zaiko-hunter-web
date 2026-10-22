@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T03:07:08.963019+00:00",
+  "updated_at": "2026-10-22T03:20:01.780295+00:00",
   "stores": [
     {
       "store": "梅田",
@@ -50,12 +50,12 @@
         {
           "part_number": "MJX74J/A",
           "name": "256GB Burgundy",
-          "status": "UNAVAILABLE"
+          "status": "AVAILABLE"
         },
         {
           "part_number": "MJXC4J/A",
           "name": "512GB Burgundy",
-          "status": "UNAVAILABLE"
+          "status": "AVAILABLE"
         },
         {
           "part_number": "MJXG4J/A",
