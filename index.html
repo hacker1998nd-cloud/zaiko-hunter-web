@@ -558,7 +558,70 @@ async function refreshAll() {
   }
 }
 
-$("reload-prices").addEventListener("click", loadPrices);
+
+$("reload-prices").addEventListener("click", async () => {
+  const button = $("reload-prices");
+  button.disabled = true;
+  button.textContent = "Đang yêu cầu cập nhật giá...";
+
+  try {
+    const response = await fetch(
+      "https://zaiko-refresh.tuan0343412390.workers.dev/prices",
+      { method: "POST" }
+    );
+
+    const result = await response.json();
+
+    if (!response.ok || !result.ok) {
+      throw new Error(result.error || `HTTP ${response.status}`);
+    }
+
+    $("prices-status").textContent =
+      "GitHub đã nhận yêu cầu chạy bot giá. Đang chờ dữ liệu mới...";
+
+    // Đợi workflow có thời gian thu thập và xuất bản dữ liệu.
+    // Chỉ báo hoàn tất khi updated_at thay đổi.
+    const before = await fetchJson("price-data.json")
+      .then(data => data.updated_at)
+      .catch(() => null);
+
+    const deadline = Date.now() + 180000;
+    let updated = false;
+
+    while (Date.now() < deadline) {
+      await new Promise(resolve => setTimeout(resolve, 10000));
+
+      try {
+        const data = await fetchJson("price-data.json");
+
+        if (data.updated_at && data.updated_at !== before) {
+          updated = true;
+          await loadPrices();
+          break;
+        }
+      } catch (_) {
+        // Thử đọc lại ở vòng tiếp theo.
+      }
+    }
+
+    if (updated) {
+      $("prices-status").textContent =
+        "Cập nhật giá mới thành công.";
+    } else {
+      $("prices-status").textContent =
+        "Đã gửi yêu cầu chạy bot nhưng chưa thấy dữ liệu mới sau 3 phút. " +
+        "Kiểm tra GitHub Actions để xem workflow có lỗi không.";
+    }
+
+  } catch (error) {
+    $("prices-status").textContent =
+      "Không kích hoạt được bot giá: " + error.message;
+  } finally {
+    button.disabled = false;
+    button.textContent = "↻ Cập nhật giá mới";
+  }
+});
+
 $("refresh-button").addEventListener("click", refreshAll);
 
 $("apple-button").addEventListener("click", () => {
