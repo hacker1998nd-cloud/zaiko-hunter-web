@@ -559,12 +559,19 @@ async function refreshAll() {
 }
 
 
+
 $("reload-prices").addEventListener("click", async () => {
   const button = $("reload-prices");
   button.disabled = true;
   button.textContent = "Đang yêu cầu cập nhật giá...";
 
   try {
+    // Đọc mốc cập nhật CŨ trước khi chạy bot.
+    const before = await fetchJson("price-data.json")
+      .then(data => data.updated_at || null)
+      .catch(() => null);
+
+    // Gửi yêu cầu chạy workflow cập nhật giá.
     const response = await fetch(
       "https://zaiko-refresh.tuan0343412390.workers.dev/prices",
       { method: "POST" }
@@ -579,12 +586,7 @@ $("reload-prices").addEventListener("click", async () => {
     $("prices-status").textContent =
       "GitHub đã nhận yêu cầu chạy bot giá. Đang chờ dữ liệu mới...";
 
-    // Đợi workflow có thời gian thu thập và xuất bản dữ liệu.
-    // Chỉ báo hoàn tất khi updated_at thay đổi.
-    const before = await fetchJson("price-data.json")
-      .then(data => data.updated_at)
-      .catch(() => null);
-
+    // Chờ tối đa 3 phút, kiểm tra mỗi 10 giây.
     const deadline = Date.now() + 180000;
     let updated = false;
 
@@ -594,13 +596,16 @@ $("reload-prices").addEventListener("click", async () => {
       try {
         const data = await fetchJson("price-data.json");
 
-        if (data.updated_at && data.updated_at !== before) {
+        if (
+          data.updated_at &&
+          data.updated_at !== before
+        ) {
           updated = true;
           await loadPrices();
           break;
         }
       } catch (_) {
-        // Thử đọc lại ở vòng tiếp theo.
+        // Nếu chưa đọc được dữ liệu, tiếp tục thử.
       }
     }
 
@@ -621,6 +626,7 @@ $("reload-prices").addEventListener("click", async () => {
     button.textContent = "↻ Cập nhật giá mới";
   }
 });
+
 
 $("refresh-button").addEventListener("click", refreshAll);
 
