@@ -1,7 +1,7 @@
 {
   "store": "梅田",
   "store_en": "Umeda",
-  "updated_at": "2026-10-24T14:26:19.112882+00:00",
+  "updated_at": "2026-10-24T14:53:52.979269+00:00",
   "products": {
     "MJX74J/A": {
       "name": "iPhone 18 Pro Max 256GB Burgundy",
@@ -17,9 +17,50 @@
       "name": "iPhone 18 Pro Max 1TB Burgundy",
       "status": "UNAVAILABLE",
       "last_known_status": "UNAVAILABLE"
+    },
+    "MK244J/A": {
+      "name": "iPhone Duo 256GB Star White",
+      "status": "UNAVAILABLE",
+      "last_known_status": "UNAVAILABLE"
+    },
+    "MK264J/A": {
+      "name": "iPhone Duo 512GB Star White",
+      "status": "UNAVAILABLE",
+      "last_known_status": "UNAVAILABLE"
+    },
+    "MK284J/A": {
+      "name": "iPhone Duo 1TB Star White",
+      "status": "UNAVAILABLE",
+      "last_known_status": "UNAVAILABLE"
+    },
+    "MK2A4J/A": {
+      "name": "iPhone Duo 2TB Star White",
+      "status": "UNAVAILABLE",
+      "last_known_status": "UNAVAILABLE"
+    },
+    "MK254J/A": {
+      "name": "iPhone Duo 256GB Night Sky",
+      "status": "UNAVAILABLE",
+      "last_known_status": "UNAVAILABLE"
+    },
+    "MK274J/A": {
+      "name": "iPhone Duo 512GB Night Sky",
+      "status": "UNAVAILABLE",
+      "last_known_status": "UNAVAILABLE"
+    },
+    "MK294J/A": {
+      "name": "iPhone Duo 1TB Night Sky",
+      "status": "UNAVAILABLE",
+      "last_known_status": "UNAVAILABLE"
+    },
+    "MK2C4J/A": {
+      "name": "iPhone Duo 2TB Night Sky",
+      "status": "UNAVAILABLE",
+      "last_known_status": "UNAVAILABLE"
     }
   },
-  "last_attempt_at": "2026-10-24T14:26:19.112869+00:00",
+  "last_attempt_at": "2026-10-24T14:53:52.979249+00:00",
   "last_error": null,
-  "checked_at": "2026-10-24T14:26:19.112880+00:00"
+  "checked_at": "2026-10-24T14:53:52.979266+00:00",
+  "rate_limit_until": null
 }
