@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-24T22:55:00+00:00",
+  "updated_at": "2026-10-24T23:20:06+00:00",
   "stores": [
     {
       "store": "心斎橋",
@@ -9,24 +9,24 @@
           "part_number": "MJXC4J/A",
           "name": "iPhone 18 Pro Max 512GB Burgundy",
           "capacity": "512GB",
-          "status": "UNAVAILABLE",
-          "last_known_status": "UNAVAILABLE",
-          "check_status": "UNAVAILABLE",
+          "status": "AVAILABLE",
+          "last_known_status": "AVAILABLE",
+          "check_status": "AVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-24T22:54:12+00:00",
-          "last_attempt_at": "2026-10-24T22:54:11+00:00",
+          "checked_at": "2026-10-24T23:19:18+00:00",
+          "last_attempt_at": "2026-10-24T23:19:18+00:00",
           "last_error": null
         },
         {
           "part_number": "MJXG4J/A",
           "name": "iPhone 18 Pro Max 1TB Burgundy",
           "capacity": "1TB",
-          "status": "UNAVAILABLE",
-          "last_known_status": "UNAVAILABLE",
-          "check_status": "UNAVAILABLE",
+          "status": "AVAILABLE",
+          "last_known_status": "AVAILABLE",
+          "check_status": "AVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-24T22:54:15+00:00",
-          "last_attempt_at": "2026-10-24T22:54:15+00:00",
+          "checked_at": "2026-10-24T23:19:21+00:00",
+          "last_attempt_at": "2026-10-24T23:19:21+00:00",
           "last_error": null
         },
         {
@@ -37,8 +37,8 @@
           "last_known_status": "UNAVAILABLE",
           "check_status": "UNAVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-24T22:54:18+00:00",
-          "last_attempt_at": "2026-10-24T22:54:18+00:00",
+          "checked_at": "2026-10-24T23:19:24+00:00",
+          "last_attempt_at": "2026-10-24T23:19:24+00:00",
           "last_error": null
         },
         {
@@ -49,8 +49,8 @@
           "last_known_status": "UNAVAILABLE",
           "check_status": "UNAVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-24T22:54:21+00:00",
-          "last_attempt_at": "2026-10-24T22:54:21+00:00",
+          "checked_at": "2026-10-24T23:19:28+00:00",
+          "last_attempt_at": "2026-10-24T23:19:27+00:00",
           "last_error": null
         },
         {
@@ -61,8 +61,8 @@
           "last_known_status": "UNAVAILABLE",
           "check_status": "UNAVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-24T22:54:25+00:00",
-          "last_attempt_at": "2026-10-24T22:54:24+00:00",
+          "checked_at": "2026-10-24T23:19:31+00:00",
+          "last_attempt_at": "2026-10-24T23:19:31+00:00",
           "last_error": null
         },
         {
@@ -73,8 +73,8 @@
           "last_known_status": "UNAVAILABLE",
           "check_status": "UNAVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-24T22:54:28+00:00",
-          "last_attempt_at": "2026-10-24T22:54:28+00:00",
+          "checked_at": "2026-10-24T23:19:34+00:00",
+          "last_attempt_at": "2026-10-24T23:19:34+00:00",
           "last_error": null
         },
         {
@@ -85,8 +85,8 @@
           "last_known_status": "UNAVAILABLE",
           "check_status": "UNAVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-24T22:54:31+00:00",
-          "last_attempt_at": "2026-10-24T22:54:31+00:00",
+          "checked_at": "2026-10-24T23:19:37+00:00",
+          "last_attempt_at": "2026-10-24T23:19:37+00:00",
           "last_error": null
         },
         {
@@ -97,8 +97,8 @@
           "last_known_status": "UNAVAILABLE",
           "check_status": "UNAVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-24T22:54:34+00:00",
-          "last_attempt_at": "2026-10-24T22:54:34+00:00",
+          "checked_at": "2026-10-24T23:19:40+00:00",
+          "last_attempt_at": "2026-10-24T23:19:40+00:00",
           "last_error": null
         }
       ]
@@ -111,24 +111,24 @@
           "part_number": "MJXC4J/A",
           "name": "iPhone 18 Pro Max 512GB Burgundy",
           "capacity": "512GB",
-          "status": "UNAVAILABLE",
-          "last_known_status": "UNAVAILABLE",
-          "check_status": "UNAVAILABLE",
+          "status": "AVAILABLE",
+          "last_known_status": "AVAILABLE",
+          "check_status": "AVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-24T22:54:38+00:00",
-          "last_attempt_at": "2026-10-24T22:54:37+00:00",
+          "checked_at": "2026-10-24T23:19:44+00:00",
+          "last_attempt_at": "2026-10-24T23:19:43+00:00",
           "last_error": null
         },
         {
           "part_number": "MJXG4J/A",
           "name": "iPhone 18 Pro Max 1TB Burgundy",
           "capacity": "1TB",
-          "status": "UNAVAILABLE",
-          "last_known_status": "UNAVAILABLE",
-          "check_status": "UNAVAILABLE",
+          "status": "AVAILABLE",
+          "last_known_status": "AVAILABLE",
+          "check_status": "AVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-24T22:54:41+00:00",
-          "last_attempt_at": "2026-10-24T22:54:41+00:00",
+          "checked_at": "2026-10-24T23:19:47+00:00",
+          "last_attempt_at": "2026-10-24T23:19:47+00:00",
           "last_error": null
         },
         {
@@ -139,8 +139,8 @@
           "last_known_status": "UNAVAILABLE",
           "check_status": "UNAVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-24T22:54:44+00:00",
-          "last_attempt_at": "2026-10-24T22:54:44+00:00",
+          "checked_at": "2026-10-24T23:19:50+00:00",
+          "last_attempt_at": "2026-10-24T23:19:50+00:00",
           "last_error": null
         },
         {
@@ -151,8 +151,8 @@
           "last_known_status": "UNAVAILABLE",
           "check_status": "UNAVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-24T22:54:47+00:00",
-          "last_attempt_at": "2026-10-24T22:54:47+00:00",
+          "checked_at": "2026-10-24T23:19:53+00:00",
+          "last_attempt_at": "2026-10-24T23:19:53+00:00",
           "last_error": null
         },
         {
@@ -163,8 +163,8 @@
           "last_known_status": "UNAVAILABLE",
           "check_status": "UNAVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-24T22:54:50+00:00",
-          "last_attempt_at": "2026-10-24T22:54:50+00:00",
+          "checked_at": "2026-10-24T23:19:56+00:00",
+          "last_attempt_at": "2026-10-24T23:19:56+00:00",
           "last_error": null
         },
         {
@@ -175,8 +175,8 @@
           "last_known_status": "UNAVAILABLE",
           "check_status": "UNAVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-24T22:54:53+00:00",
-          "last_attempt_at": "2026-10-24T22:54:53+00:00",
+          "checked_at": "2026-10-24T23:20:00+00:00",
+          "last_attempt_at": "2026-10-24T23:19:59+00:00",
           "last_error": null
         },
         {
@@ -187,8 +187,8 @@
           "last_known_status": "UNAVAILABLE",
           "check_status": "UNAVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-24T22:54:57+00:00",
-          "last_attempt_at": "2026-10-24T22:54:56+00:00",
+          "checked_at": "2026-10-24T23:20:03+00:00",
+          "last_attempt_at": "2026-10-24T23:20:03+00:00",
           "last_error": null
         },
         {
@@ -199,8 +199,8 @@
           "last_known_status": "UNAVAILABLE",
           "check_status": "UNAVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-24T22:55:00+00:00",
-          "last_attempt_at": "2026-10-24T22:55:00+00:00",
+          "checked_at": "2026-10-24T23:20:06+00:00",
+          "last_attempt_at": "2026-10-24T23:20:06+00:00",
           "last_error": null
         }
       ]
