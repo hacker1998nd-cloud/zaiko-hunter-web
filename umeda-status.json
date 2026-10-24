@@ -1,7 +1,7 @@
 {
   "store": "梅田",
   "store_en": "Umeda",
-  "updated_at": "2026-10-24T13:34:54.302941+00:00",
+  "updated_at": "2026-10-24T14:01:09.160569+00:00",
   "products": {
     "MJX74J/A": {
       "name": "iPhone 18 Pro Max 256GB Burgundy",
@@ -19,7 +19,7 @@
       "last_known_status": "UNAVAILABLE"
     }
   },
-  "last_attempt_at": "2026-10-24T13:34:54.302880+00:00",
+  "last_attempt_at": "2026-10-24T14:01:09.160551+00:00",
   "last_error": null,
-  "checked_at": "2026-10-24T13:34:54.302937+00:00"
+  "checked_at": "2026-10-24T14:01:09.160566+00:00"
 }
