@@ -59,7 +59,7 @@ button:disabled { opacity: .55; cursor: wait; }
 .tag.unverified { background: #3b2d43; color: #e3b5ff; }
 .empty { color: var(--muted); font-size: 13px; padding: 12px 0; line-height: 1.6; }
 .notice { color: var(--muted); font-size: 12px; line-height: 1.6; margin-top: 12px; }
-.stock-meta { white-space: pre-line; line-height: 1.7; }
+.stock-meta { color: var(--muted); font-size: 12px; line-height: 1.7; margin-top: 5px; overflow-wrap: anywhere; }
 .stock-warning { color: #ffd58a; }
 .stock-error { color: #ff9292; }
 footer { color: var(--muted); font-size: 12px; line-height: 1.6; margin-top: 20px; }
@@ -156,6 +156,7 @@ footer { color: var(--muted); font-size: 12px; line-height: 1.6; margin-top: 20p
 
 const BASE = "https://raw.githubusercontent.com/hacker1998nd-cloud/zaiko-hunter-web/main/";
 const WORKER_URL = "https://zaiko-refresh.tuan0343412390.workers.dev/";
+const PRICE_WORKER_URL = WORKER_URL + "prices";
 
 const CAPACITIES = [
   { id: "MJX74J/A", label: "256GB" },
@@ -188,19 +189,29 @@ function makeRow(label, value) {
   return row;
 }
 
-function formatDateTime(value) {
-  if (!value) return "Chưa có dữ liệu thời gian.";
+function formatTime(value) {
+  if (!value) return "Không có thời gian cập nhật.";
   const date = new Date(value);
-  if (Number.isNaN(date.getTime())) return "Thời gian không hợp lệ.";
-  return date.toLocaleString("ja-JP", {
+  if (Number.isNaN(date.getTime())) return "Thời gian cập nhật không hợp lệ.";
+  return "Cập nhật: " + date.toLocaleString("ja-JP", {
     timeZone: "Asia/Tokyo"
   }) + " (giờ Nhật)";
 }
 
-function formatTime(value) {
-  return value
-    ? "Cập nhật: " + formatDateTime(value)
-    : "Không có thời gian cập nhật.";
+function formatDateTime(value) {
+  if (!value) return "Chưa có dữ liệu";
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return "Thời gian không hợp lệ";
+  return date.toLocaleString("ja-JP", {
+    timeZone: "Asia/Tokyo",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: false
+  }) + " (giờ Nhật)";
 }
 
 function yen(value) {
@@ -210,10 +221,28 @@ function yen(value) {
     : "Chưa có giá";
 }
 
+async function fetchWithTimeout(url, options = {}, ms = 12000) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), ms);
+
+  try {
+    return await fetch(url, {
+      ...options,
+      signal: controller.signal,
+      cache: "no-store"
+    });
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
 async function fetchJson(file) {
-  const response = await fetch(BASE + file + "?t=" + Date.now(), {
-    cache: "no-store"
-  });
+  const response = await fetchWithTimeout(
+    BASE + file + "?t=" + Date.now(),
+    {},
+    12000
+  );
+
   if (!response.ok) throw new Error("HTTP " + response.status);
   return response.json();
 }
@@ -238,6 +267,7 @@ async function loadUmeda() {
     });
 
     listEl.replaceChildren();
+
     CAPACITIES.forEach(cap => {
       listEl.appendChild(
         makeRow(cap.label, byId[cap.id] ? byId[cap.id].status : "UNKNOWN")
@@ -246,38 +276,44 @@ async function loadUmeda() {
 
     statusEl.textContent = "Đã tải dữ liệu bot Umeda riêng.";
 
-    timeEl.className = "sub stock-meta";
-    timeEl.classList.remove("stock-warning", "stock-error");
+    timeEl.replaceChildren();
 
-    const timeLines = [
-      "Apple kiểm tra thành công: " + formatDateTime(data.checked_at),
-      "Bot chạy gần nhất: " + formatDateTime(data.last_attempt_at),
-      "Dashboard ghi dữ liệu: " + formatDateTime(data.updated_at)
-    ];
+    const checked = document.createElement("div");
+    checked.className = "stock-meta";
+    checked.textContent = "Apple kiểm tra thành công: " +
+      formatDateTime(data.checked_at || data.updated_at);
 
-    if (!data.checked_at) {
-      timeEl.classList.add("stock-warning");
-      timeLines.push("⚠️ File chưa có mốc checked_at.");
-    } else {
-      const checkedMs = new Date(data.checked_at).getTime();
-      const ageMs = Date.now() - checkedMs;
+    const attempted = document.createElement("div");
+    attempted.className = "stock-meta";
+    attempted.textContent = "Bot chạy gần nhất: " +
+      formatDateTime(data.last_attempt_at || data.updated_at);
 
-      if (Number.isFinite(checkedMs) && ageMs > 15 * 60 * 1000) {
-        timeEl.classList.add("stock-warning");
-        timeLines.push("⚠️ Dữ liệu kiểm tra đã cũ hơn 15 phút.");
+    const published = document.createElement("div");
+    published.className = "stock-meta";
+    published.textContent = "Dashboard ghi dữ liệu: " +
+      formatDateTime(data.updated_at);
+
+    timeEl.append(checked, attempted, published);
+
+    if (data.checked_at) {
+      const ageMinutes = (Date.now() - new Date(data.checked_at).getTime()) / 60000;
+      if (Number.isFinite(ageMinutes) && ageMinutes > 15) {
+        const warning = document.createElement("div");
+        warning.className = "stock-meta stock-warning";
+        warning.textContent =
+          "⚠️ Dữ liệu kiểm tra đã cũ hơn 15 phút. Hãy kiểm tra lần chạy bot gần nhất.";
+        timeEl.appendChild(warning);
       }
     }
 
     if (data.last_error) {
-      timeEl.classList.remove("stock-warning");
-      timeEl.classList.add("stock-error");
-      timeLines.push("⚠️ Lỗi lần chạy gần nhất: " + data.last_error);
+      const error = document.createElement("div");
+      error.className = "stock-meta stock-error";
+      error.textContent = "Lỗi lần chạy gần nhất: " + data.last_error;
+      timeEl.appendChild(error);
     }
-
-    timeEl.textContent = timeLines.join("\n");
   } catch (error) {
     statusEl.textContent = "Không đọc được dữ liệu Umeda: " + error.message;
-    timeEl.className = "sub stock-meta stock-error";
     timeEl.textContent = "Kiểm tra file umeda-status.json trên GitHub.";
   }
 }
@@ -515,9 +551,7 @@ function chooseBestReferenceRows(rows) {
 async function loadPrices() {
   const statusEl = $("prices-status");
   const updatedEl = $("prices-updated");
-  const button = $("reload-prices");
 
-  button.disabled = true;
   statusEl.textContent = "Đang tải dữ liệu giá...";
 
   try {
@@ -553,7 +587,6 @@ async function loadPrices() {
       `Osaka đã xác minh: ${actualRows.length}; chưa xác minh màu: ${unverifiedRows.length}.`;
 
     updatedEl.textContent = formatTime(data.updated_at);
-
   } catch (error) {
     statusEl.textContent = "Không đọc được price-data.json: " + error.message;
     updatedEl.textContent = "Kiểm tra file price-data.json trên GitHub.";
@@ -562,8 +595,6 @@ async function loadPrices() {
     renderPrices("promax-prices", []);
     renderPrices("duo-prices", []);
     renderPrices("unverified-prices", [], "unverified");
-  } finally {
-    button.disabled = false;
   }
 }
 
@@ -573,11 +604,14 @@ async function refreshAll() {
   button.textContent = "Đang yêu cầu chạy bot...";
 
   try {
-    const response = await fetch(WORKER_URL, { method: "POST" });
+    const response = await fetchWithTimeout(
+      WORKER_URL,
+      { method: "POST" },
+      15000
+    );
 
     if (!response.ok) {
-      alert("Không gọi được bot. HTTP " + response.status);
-      return;
+      throw new Error("HTTP " + response.status);
     }
 
     alert(
@@ -585,7 +619,7 @@ async function refreshAll() {
       "Chờ workflow hoàn tất rồi tải lại dữ liệu."
     );
   } catch (error) {
-    alert("Lỗi kết nối Worker: " + error.message);
+    alert("Lỗi gọi Worker: " + error.message);
   } finally {
     button.disabled = false;
     button.textContent = "↻ Cập nhật ngay — chạy hai bot tồn kho";
@@ -594,28 +628,46 @@ async function refreshAll() {
 
 $("reload-prices").addEventListener("click", async () => {
   const button = $("reload-prices");
+  const status = $("prices-status");
+
+  if (button.disabled) return;
+
   button.disabled = true;
   button.textContent = "Đang yêu cầu cập nhật giá...";
 
   try {
-    const before = await fetchJson("price-data.json")
-      .then(data => data.updated_at || null)
-      .catch(() => null);
+    // Lưu mốc dữ liệu trước khi chạy workflow.
+    let before = null;
 
-    const response = await fetch(
-      "https://zaiko-refresh.tuan0343412390.workers.dev/prices",
-      { method: "POST" }
-    );
-
-    const result = await response.json();
-
-    if (!response.ok || !result.ok) {
-      throw new Error(result.error || `HTTP ${response.status}`);
+    try {
+      const oldData = await fetchJson("price-data.json");
+      before = oldData.updated_at || null;
+    } catch (_) {
+      // Vẫn cho phép chạy bot nếu không đọc được mốc cũ.
     }
 
-    $("prices-status").textContent =
+    // Gửi yêu cầu chạy workflow giá, giới hạn thời gian chờ.
+    const response = await fetchWithTimeout(
+      PRICE_WORKER_URL,
+      { method: "POST" },
+      15000
+    );
+
+    let result;
+    try {
+      result = await response.json();
+    } catch (_) {
+      throw new Error("Worker không trả về JSON hợp lệ.");
+    }
+
+    if (!response.ok || !result.ok) {
+      throw new Error(result.error || ("HTTP " + response.status));
+    }
+
+    status.textContent =
       "GitHub đã nhận yêu cầu chạy bot giá. Đang chờ dữ liệu mới...";
 
+    // Chờ tối đa 3 phút; mỗi lần kiểm tra đều có timeout riêng.
     const deadline = Date.now() + 180000;
     let updated = false;
 
@@ -627,26 +679,29 @@ $("reload-prices").addEventListener("click", async () => {
 
         if (data.updated_at && data.updated_at !== before) {
           updated = true;
-          await loadPrices();
           break;
         }
       } catch (_) {
-        // Tiếp tục thử nếu dữ liệu chưa đọc được.
+        // Tiếp tục thử cho đến khi hết thời gian.
       }
     }
 
     if (updated) {
-      $("prices-status").textContent = "Cập nhật giá mới thành công.";
-    } else {
-      $("prices-status").textContent =
-        "Đã gửi yêu cầu chạy bot nhưng chưa thấy dữ liệu mới sau 3 phút. " +
-        "Kiểm tra GitHub Actions để xem workflow có lỗi không.";
-    }
+      status.textContent = "Dữ liệu giá mới đã được xuất bản.";
 
+      // Tải lại bảng giá sau khi xác nhận timestamp đổi.
+      await loadPrices();
+      status.textContent = "Cập nhật giá mới thành công.";
+    } else {
+      status.textContent =
+        "Đã gửi yêu cầu nhưng chưa thấy timestamp mới sau 3 phút. " +
+        "Kiểm tra GitHub Actions; nút đã được mở lại để thử lần sau.";
+    }
   } catch (error) {
-    $("prices-status").textContent =
-      "Không kích hoạt được bot giá: " + error.message;
+    status.textContent =
+      "Không hoàn tất được yêu cầu cập nhật giá: " + error.message;
   } finally {
+    // Luôn trả nút về trạng thái có thể bấm lại.
     button.disabled = false;
     button.textContent = "↻ Cập nhật giá mới";
   }
