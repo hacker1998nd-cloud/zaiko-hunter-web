@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-24T14:15:38.682183+00:00",
+  "updated_at": "2026-10-24T14:28:15+00:00",
   "stores": [
     {
       "store": "梅田",
@@ -7,35 +7,38 @@
       "products": [
         {
           "part_number": "MJX74J/A",
-          "name": "256GB Burgundy",
+          "name": "iPhone 18 Pro Max 256GB Burgundy",
+          "capacity": "256GB",
           "status": "AVAILABLE",
           "last_known_status": "AVAILABLE",
           "check_status": "AVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-24T14:15:10.521190+00:00",
-          "last_attempt_at": "2026-10-24T14:15:10.305237+00:00",
+          "checked_at": "2026-10-24T14:27:29+00:00",
+          "last_attempt_at": "2026-10-24T14:27:28+00:00",
           "last_error": null
         },
         {
           "part_number": "MJXC4J/A",
-          "name": "512GB Burgundy",
+          "name": "iPhone 18 Pro Max 512GB Burgundy",
+          "capacity": "512GB",
           "status": "UNAVAILABLE",
           "last_known_status": "UNAVAILABLE",
           "check_status": "UNAVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-24T14:15:13.640106+00:00",
-          "last_attempt_at": "2026-10-24T14:15:13.521356+00:00",
+          "checked_at": "2026-10-24T14:27:34+00:00",
+          "last_attempt_at": "2026-10-24T14:27:34+00:00",
           "last_error": null
         },
         {
           "part_number": "MJXG4J/A",
-          "name": "1TB Burgundy",
+          "name": "iPhone 18 Pro Max 1TB Burgundy",
+          "capacity": "1TB",
           "status": "UNAVAILABLE",
           "last_known_status": "UNAVAILABLE",
           "check_status": "UNAVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-24T14:15:16.750905+00:00",
-          "last_attempt_at": "2026-10-24T14:15:16.640277+00:00",
+          "checked_at": "2026-10-24T14:27:39+00:00",
+          "last_attempt_at": "2026-10-24T14:27:39+00:00",
           "last_error": null
         }
       ]
@@ -46,35 +49,38 @@
       "products": [
         {
           "part_number": "MJX74J/A",
-          "name": "256GB Burgundy",
+          "name": "iPhone 18 Pro Max 256GB Burgundy",
+          "capacity": "256GB",
           "status": "AVAILABLE",
           "last_known_status": "AVAILABLE",
           "check_status": "AVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-24T14:15:19.910859+00:00",
-          "last_attempt_at": "2026-10-24T14:15:19.751089+00:00",
+          "checked_at": "2026-10-24T14:27:44+00:00",
+          "last_attempt_at": "2026-10-24T14:27:44+00:00",
           "last_error": null
         },
         {
           "part_number": "MJXC4J/A",
-          "name": "512GB Burgundy",
+          "name": "iPhone 18 Pro Max 512GB Burgundy",
+          "capacity": "512GB",
           "status": "UNAVAILABLE",
           "last_known_status": "UNAVAILABLE",
           "check_status": "UNAVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-24T14:15:23.091643+00:00",
-          "last_attempt_at": "2026-10-24T14:15:22.911067+00:00",
+          "checked_at": "2026-10-24T14:27:49+00:00",
+          "last_attempt_at": "2026-10-24T14:27:49+00:00",
           "last_error": null
         },
         {
           "part_number": "MJXG4J/A",
-          "name": "1TB Burgundy",
+          "name": "iPhone 18 Pro Max 1TB Burgundy",
+          "capacity": "1TB",
           "status": "UNAVAILABLE",
           "last_known_status": "UNAVAILABLE",
           "check_status": "UNAVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-24T14:15:26.216250+00:00",
-          "last_attempt_at": "2026-10-24T14:15:26.091895+00:00",
+          "checked_at": "2026-10-24T14:27:54+00:00",
+          "last_attempt_at": "2026-10-24T14:27:54+00:00",
           "last_error": null
         }
       ]
@@ -85,38 +91,43 @@
       "products": [
         {
           "part_number": "MJX74J/A",
-          "name": "256GB Burgundy",
+          "name": "iPhone 18 Pro Max 256GB Burgundy",
+          "capacity": "256GB",
           "status": "AVAILABLE",
           "last_known_status": "AVAILABLE",
           "check_status": "AVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-24T14:15:29.445460+00:00",
-          "last_attempt_at": "2026-10-24T14:15:29.216432+00:00",
+          "checked_at": "2026-10-24T14:28:00+00:00",
+          "last_attempt_at": "2026-10-24T14:27:59+00:00",
           "last_error": null
         },
         {
           "part_number": "MJXC4J/A",
-          "name": "512GB Burgundy",
+          "name": "iPhone 18 Pro Max 512GB Burgundy",
+          "capacity": "512GB",
           "status": "UNAVAILABLE",
           "last_known_status": "UNAVAILABLE",
           "check_status": "UNAVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-24T14:15:32.564264+00:00",
-          "last_attempt_at": "2026-10-24T14:15:32.445640+00:00",
+          "checked_at": "2026-10-24T14:28:05+00:00",
+          "last_attempt_at": "2026-10-24T14:28:05+00:00",
           "last_error": null
         },
         {
           "part_number": "MJXG4J/A",
-          "name": "1TB Burgundy",
+          "name": "iPhone 18 Pro Max 1TB Burgundy",
+          "capacity": "1TB",
           "status": "UNAVAILABLE",
           "last_known_status": "UNAVAILABLE",
           "check_status": "UNAVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-24T14:15:35.680466+00:00",
-          "last_attempt_at": "2026-10-24T14:15:35.564471+00:00",
+          "checked_at": "2026-10-24T14:28:10+00:00",
+          "last_attempt_at": "2026-10-24T14:28:10+00:00",
           "last_error": null
         }
       ]
     }
-  ]
+  ],
+  "rate_limit_until": null,
+  "last_error": null
 }
