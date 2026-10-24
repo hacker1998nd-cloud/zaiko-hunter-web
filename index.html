@@ -67,6 +67,7 @@ footer { color: var(--muted); font-size: 12px; line-height: 1.6; margin-top: 20p
   main { padding: 16px 12px 32px; }
   .card { padding: 13px; }
   .price-heading { flex-direction: column; gap: 5px; }
+  .product { align-items: flex-start; }
 }
 </style>
 </head>
@@ -82,14 +83,14 @@ footer { color: var(--muted); font-size: 12px; line-height: 1.6; margin-top: 20p
 
 <section class="summary">
   <div class="card">
-    <div class="muted">Bot Umeda riêng</div>
+    <div class="muted">Bot 1 — Umeda riêng</div>
     <div class="big">3</div>
-    <div class="sub">Dung lượng theo dõi</div>
+    <div class="sub">iPhone 18 Pro Max Burgundy</div>
   </div>
   <div class="card">
-    <div class="muted">Bot 3 cửa hàng</div>
-    <div class="big">9</div>
-    <div class="sub">Tổ hợp theo dõi</div>
+    <div class="muted">Bot 2 — 2 cửa hàng</div>
+    <div class="big">16</div>
+    <div class="sub">2 cửa hàng × 8 sản phẩm</div>
   </div>
 </section>
 
@@ -102,8 +103,8 @@ footer { color: var(--muted); font-size: 12px; line-height: 1.6; margin-top: 20p
 </section>
 
 <section class="card">
-  <h2>🏬 Bot 2 — Ba cửa hàng</h2>
-  <div class="muted">iPhone 18 Pro Max Burgundy · 9 tổ hợp</div>
+  <h2>🏬 Bot 2 — Hai cửa hàng</h2>
+  <div class="muted">Shinsaibashi + Kyoto · 8 sản phẩm mỗi cửa hàng</div>
   <div id="stores-status" class="sub" style="margin-top:12px">Đang tải...</div>
   <div id="stores-list"></div>
   <div id="stores-updated" class="sub" style="margin-top:12px"></div>
@@ -145,7 +146,7 @@ footer { color: var(--muted); font-size: 12px; line-height: 1.6; margin-top: 20p
 <footer>
   Dashboard đọc dữ liệu công khai từ GitHub.
   Tải lại giá không chạy bot tồn kho.
-  Nút “Cập nhật ngay” mới yêu cầu chạy hai bot.
+  Nút “Cập nhật ngay” yêu cầu chạy hai bot.
   Tồn kho là kết quả kiểm tra gần nhất và không đảm bảo máy còn khi đặt mua.
   Nếu Apple trả HTTP 541, dữ liệu tồn kho có thể chưa được cập nhật.
 </footer>
@@ -163,6 +164,19 @@ const CAPACITIES = [
   { id: "MJXC4J/A", label: "512GB" },
   { id: "MJXG4J/A", label: "1TB" }
 ];
+
+const BOT2_PRODUCTS = [
+  { id: "MJXC4J/A", label: "Pro Max 512GB Burgundy" },
+  { id: "MJXG4J/A", label: "Pro Max 1TB Burgundy" },
+  { id: "MK244J/A", label: "Duo 256GB Star White" },
+  { id: "MK264J/A", label: "Duo 512GB Star White" },
+  { id: "MK284J/A", label: "Duo 1TB Star White" },
+  { id: "MK254J/A", label: "Duo 256GB Night Sky" },
+  { id: "MK274J/A", label: "Duo 512GB Night Sky" },
+  { id: "MK294J/A", label: "Duo 1TB Night Sky" }
+];
+
+const BOT2_STORES = ["心斎橋", "京都"];
 
 const $ = id => document.getElementById(id);
 
@@ -247,6 +261,7 @@ async function fetchJson(file) {
   return response.json();
 }
 
+/* BOT 1: UMEDA */
 async function loadUmeda() {
   const statusEl = $("umeda-status");
   const listEl = $("umeda-products");
@@ -296,9 +311,9 @@ async function loadUmeda() {
 
     timeEl.append(checked, attempted, published);
 
-    if (data.checked_at) {
-      const ageMinutes =
-        (Date.now() - new Date(data.checked_at).getTime()) / 60000;
+    const checkedDate = data.checked_at || data.updated_at;
+    if (checkedDate) {
+      const ageMinutes = (Date.now() - new Date(checkedDate).getTime()) / 60000;
 
       if (Number.isFinite(ageMinutes) && ageMinutes > 15) {
         const warning = document.createElement("div");
@@ -315,13 +330,21 @@ async function loadUmeda() {
       error.textContent = "Lỗi lần chạy gần nhất: " + data.last_error;
       timeEl.appendChild(error);
     }
+
+    if (data.rate_limit_until) {
+      const cooldown = document.createElement("div");
+      cooldown.className = "stock-meta stock-warning";
+      cooldown.textContent =
+        "Cooldown đến: " + formatDateTime(data.rate_limit_until);
+      timeEl.appendChild(cooldown);
+    }
   } catch (error) {
     statusEl.textContent = "Không đọc được dữ liệu Umeda: " + error.message;
     timeEl.textContent = "Kiểm tra file umeda-status.json trên GitHub.";
   }
 }
 
-/* BOT 2: Hiển thị metadata cho từng sản phẩm */
+/* BOT 2: SHINSAIBASHI + KYOTO, 8 SẢN PHẨM MỖI CỬA HÀNG */
 async function loadStores() {
   const statusEl = $("stores-status");
   const listEl = $("stores-list");
@@ -337,7 +360,7 @@ async function loadStores() {
     let staleCount = 0;
     let unknownCount = 0;
 
-    ["梅田", "心斎橋", "京都"].forEach(name => {
+    BOT2_STORES.forEach(name => {
       const store = stores.find(item => item.store === name);
       const card = document.createElement("div");
       card.style.marginTop = "16px";
@@ -347,16 +370,24 @@ async function loadStores() {
         (store && store.store_en ? " · " + store.store_en : "");
       card.appendChild(heading);
 
-      CAPACITIES.forEach(cap => {
-        const product = store && Array.isArray(store.products)
-          ? store.products.find(item => item.part_number === cap.id)
-          : null;
+      if (!store || !Array.isArray(store.products)) {
+        const missing = document.createElement("div");
+        missing.className = "empty";
+        missing.textContent = "Chưa có dữ liệu cho cửa hàng này.";
+        card.appendChild(missing);
+        unknownCount += BOT2_PRODUCTS.length;
+        listEl.appendChild(card);
+        return;
+      }
 
-        const status = product ? product.status : "UNKNOWN";
-        card.appendChild(makeRow(cap.label, status));
+      BOT2_PRODUCTS.forEach(config => {
+        const product = store.products.find(
+          item => item.part_number === config.id
+        );
 
-        const meta = document.createElement("div");
-        meta.className = "stock-meta";
+        const status = product && product.status
+          ? product.status
+          : "UNKNOWN";
 
         const checkStatus = String(
           product && product.check_status || status
@@ -364,27 +395,21 @@ async function loadStores() {
 
         const isStale = !product ||
           product.is_stale === true ||
-          checkStatus === "UNKNOWN";
+          checkStatus === "UNKNOWN" ||
+          !product.checked_at;
 
-        if (status === "AVAILABLE" || status === "UNAVAILABLE") {
-          if (isStale) {
-            staleCount++;
-          } else {
-            verifiedCount++;
-          }
-        } else {
-          unknownCount++;
-        }
+        card.appendChild(makeRow(config.label, status));
+
+        const meta = document.createElement("div");
+        meta.className = "stock-meta";
 
         const checked = document.createElement("div");
-        checked.textContent =
-          "Xác minh thành công gần nhất: " +
+        checked.textContent = "Kiểm tra thành công gần nhất: " +
           formatDateTime(product && product.checked_at);
         meta.appendChild(checked);
 
         const attempted = document.createElement("div");
-        attempted.textContent =
-          "Thử kiểm tra gần nhất: " +
+        attempted.textContent = "Thử kiểm tra gần nhất: " +
           formatDateTime(product && product.last_attempt_at);
         meta.appendChild(attempted);
 
@@ -398,25 +423,47 @@ async function loadStores() {
         if (product && product.last_error) {
           const error = document.createElement("div");
           error.className = "stock-error";
-          error.textContent = "Lỗi gần nhất: " + String(product.last_error);
+          error.textContent = "Lỗi gần nhất: " + product.last_error;
           meta.appendChild(error);
         }
 
         card.appendChild(meta);
+
+        if (status === "AVAILABLE" || status === "UNAVAILABLE") {
+          if (isStale) staleCount++;
+          else verifiedCount++;
+        } else {
+          unknownCount++;
+        }
       });
 
       listEl.appendChild(card);
     });
 
     statusEl.textContent =
-      `Đã tải dữ liệu 3 cửa hàng · ${verifiedCount} trạng thái đã xác minh · ` +
+      `Đã tải dữ liệu 2 cửa hàng · ${verifiedCount} trạng thái đã xác minh · ` +
       `${staleCount} trạng thái cũ · ${unknownCount} chưa xác định.`;
 
     timeEl.textContent =
       "Dashboard cập nhật: " + formatDateTime(data.updated_at);
+
+    if (data.rate_limit_until) {
+      const cooldown = document.createElement("div");
+      cooldown.className = "stock-meta stock-warning";
+      cooldown.textContent =
+        "⚠️ Cooldown đến: " + formatDateTime(data.rate_limit_until);
+      timeEl.appendChild(cooldown);
+    }
+
+    if (data.last_error) {
+      const error = document.createElement("div");
+      error.className = "stock-meta stock-error";
+      error.textContent = "Lỗi lần chạy gần nhất: " + data.last_error;
+      timeEl.appendChild(error);
+    }
   } catch (error) {
     statusEl.textContent =
-      "Không đọc được dữ liệu 3 cửa hàng: " + error.message;
+      "Không đọc được dữ liệu 2 cửa hàng: " + error.message;
     timeEl.textContent =
       "Kiểm tra file stores-status.json trên GitHub.";
   }
@@ -461,7 +508,8 @@ function priceText(row) {
   const high = Number(row.price_yen);
   const low = Number(row.price_low_yen);
 
-  if (Number.isFinite(low) && low > 0 && Number.isFinite(high) && high > low) {
+  if (Number.isFinite(low) && low > 0 &&
+      Number.isFinite(high) && high > low) {
     return yen(low) + " – " + yen(high);
   }
   return yen(high);
@@ -493,9 +541,7 @@ function appendSourceLink(parent, url) {
     link.style.display = "inline-block";
     link.style.marginTop = "6px";
     parent.appendChild(link);
-  } catch (_) {
-    // Bỏ qua URL không hợp lệ.
-  }
+  } catch (_) {}
 }
 
 function makePriceItem(row, mode = "reference") {
@@ -523,6 +569,7 @@ function makePriceItem(row, mode = "reference") {
   price.textContent = priceText(row);
 
   const tag = document.createElement("span");
+
   if (mode === "actual") {
     tag.className = "tag actual";
     tag.textContent = "Đã xác minh theo dữ liệu nguồn";
@@ -555,7 +602,8 @@ function makePriceItem(row, mode = "reference") {
   if (row.source_price_updated_at) {
     const sourceDate = document.createElement("div");
     sourceDate.className = "price-meta";
-    sourceDate.textContent = "Ngày cập nhật giá nguồn: " + row.source_price_updated_at;
+    sourceDate.textContent =
+      "Ngày cập nhật giá nguồn: " + row.source_price_updated_at;
     item.appendChild(sourceDate);
   }
 
@@ -663,7 +711,7 @@ async function loadPrices() {
   }
 }
 
-/* BUTTONS */
+/* BUTTON: CHẠY HAI BOT TỒN KHO */
 async function refreshAll() {
   const button = $("refresh-button");
   button.disabled = true;
@@ -676,13 +724,11 @@ async function refreshAll() {
       15000
     );
 
-    if (!response.ok) {
-      throw new Error("HTTP " + response.status);
-    }
+    if (!response.ok) throw new Error("HTTP " + response.status);
 
     alert(
       "Đã gửi yêu cầu chạy hai bot tồn kho. " +
-      "Chờ workflow hoàn tất rồi tải lại dữ liệu."
+      "Chờ GitHub Actions hoàn tất rồi tải lại dữ liệu."
     );
   } catch (error) {
     alert("Lỗi gọi Worker: " + error.message);
@@ -692,6 +738,7 @@ async function refreshAll() {
   }
 }
 
+/* BUTTON: CẬP NHẬT GIÁ */
 $("reload-prices").addEventListener("click", async () => {
   const button = $("reload-prices");
   const status = $("prices-status");
