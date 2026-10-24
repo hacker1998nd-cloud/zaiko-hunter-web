@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-24T14:00:11.028806+00:00",
+  "updated_at": "2026-10-24T14:15:38.682183+00:00",
   "stores": [
     {
       "store": "梅田",
@@ -8,17 +8,35 @@
         {
           "part_number": "MJX74J/A",
           "name": "256GB Burgundy",
-          "status": "AVAILABLE"
+          "status": "AVAILABLE",
+          "last_known_status": "AVAILABLE",
+          "check_status": "AVAILABLE",
+          "is_stale": false,
+          "checked_at": "2026-10-24T14:15:10.521190+00:00",
+          "last_attempt_at": "2026-10-24T14:15:10.305237+00:00",
+          "last_error": null
         },
         {
           "part_number": "MJXC4J/A",
           "name": "512GB Burgundy",
-          "status": "UNAVAILABLE"
+          "status": "UNAVAILABLE",
+          "last_known_status": "UNAVAILABLE",
+          "check_status": "UNAVAILABLE",
+          "is_stale": false,
+          "checked_at": "2026-10-24T14:15:13.640106+00:00",
+          "last_attempt_at": "2026-10-24T14:15:13.521356+00:00",
+          "last_error": null
         },
         {
           "part_number": "MJXG4J/A",
           "name": "1TB Burgundy",
-          "status": "UNAVAILABLE"
+          "status": "UNAVAILABLE",
+          "last_known_status": "UNAVAILABLE",
+          "check_status": "UNAVAILABLE",
+          "is_stale": false,
+          "checked_at": "2026-10-24T14:15:16.750905+00:00",
+          "last_attempt_at": "2026-10-24T14:15:16.640277+00:00",
+          "last_error": null
         }
       ]
     },
@@ -29,17 +47,35 @@
         {
           "part_number": "MJX74J/A",
           "name": "256GB Burgundy",
-          "status": "AVAILABLE"
+          "status": "AVAILABLE",
+          "last_known_status": "AVAILABLE",
+          "check_status": "AVAILABLE",
+          "is_stale": false,
+          "checked_at": "2026-10-24T14:15:19.910859+00:00",
+          "last_attempt_at": "2026-10-24T14:15:19.751089+00:00",
+          "last_error": null
         },
         {
           "part_number": "MJXC4J/A",
           "name": "512GB Burgundy",
-          "status": "UNAVAILABLE"
+          "status": "UNAVAILABLE",
+          "last_known_status": "UNAVAILABLE",
+          "check_status": "UNAVAILABLE",
+          "is_stale": false,
+          "checked_at": "2026-10-24T14:15:23.091643+00:00",
+          "last_attempt_at": "2026-10-24T14:15:22.911067+00:00",
+          "last_error": null
         },
         {
           "part_number": "MJXG4J/A",
           "name": "1TB Burgundy",
-          "status": "UNAVAILABLE"
+          "status": "UNAVAILABLE",
+          "last_known_status": "UNAVAILABLE",
+          "check_status": "UNAVAILABLE",
+          "is_stale": false,
+          "checked_at": "2026-10-24T14:15:26.216250+00:00",
+          "last_attempt_at": "2026-10-24T14:15:26.091895+00:00",
+          "last_error": null
         }
       ]
     },
@@ -50,17 +86,35 @@
         {
           "part_number": "MJX74J/A",
           "name": "256GB Burgundy",
-          "status": "AVAILABLE"
+          "status": "AVAILABLE",
+          "last_known_status": "AVAILABLE",
+          "check_status": "AVAILABLE",
+          "is_stale": false,
+          "checked_at": "2026-10-24T14:15:29.445460+00:00",
+          "last_attempt_at": "2026-10-24T14:15:29.216432+00:00",
+          "last_error": null
         },
         {
           "part_number": "MJXC4J/A",
           "name": "512GB Burgundy",
-          "status": "UNAVAILABLE"
+          "status": "UNAVAILABLE",
+          "last_known_status": "UNAVAILABLE",
+          "check_status": "UNAVAILABLE",
+          "is_stale": false,
+          "checked_at": "2026-10-24T14:15:32.564264+00:00",
+          "last_attempt_at": "2026-10-24T14:15:32.445640+00:00",
+          "last_error": null
         },
         {
           "part_number": "MJXG4J/A",
           "name": "1TB Burgundy",
-          "status": "UNAVAILABLE"
+          "status": "UNAVAILABLE",
+          "last_known_status": "UNAVAILABLE",
+          "check_status": "UNAVAILABLE",
+          "is_stale": false,
+          "checked_at": "2026-10-24T14:15:35.680466+00:00",
+          "last_attempt_at": "2026-10-24T14:15:35.564471+00:00",
+          "last_error": null
         }
       ]
     }
