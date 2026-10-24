@@ -68,6 +68,7 @@ footer { color: var(--muted); font-size: 12px; line-height: 1.6; margin-top: 20p
   .card { padding: 13px; }
   .price-heading { flex-direction: column; gap: 5px; }
   .product { align-items: flex-start; }
+  .status { white-space: normal; text-align: center; }
 }
 </style>
 </head>
@@ -84,8 +85,8 @@ footer { color: var(--muted); font-size: 12px; line-height: 1.6; margin-top: 20p
 <section class="summary">
   <div class="card">
     <div class="muted">Bot 1 — Umeda riêng</div>
-    <div class="big">3</div>
-    <div class="sub">iPhone 18 Pro Max Burgundy</div>
+    <div class="big" id="umeda-total">11</div>
+    <div class="sub">3 Pro Max + 8 iPhone Duo</div>
   </div>
   <div class="card">
     <div class="muted">Bot 2 — 2 cửa hàng</div>
@@ -96,7 +97,7 @@ footer { color: var(--muted); font-size: 12px; line-height: 1.6; margin-top: 20p
 
 <section class="card">
   <h2>🍷 Bot 1 — Umeda riêng</h2>
-  <div class="muted">iPhone 18 Pro Max Burgundy · 梅田</div>
+  <div class="muted">iPhone 18 Pro Max Burgundy + iPhone Duo · 梅田</div>
   <div id="umeda-status" class="sub" style="margin-top:12px">Đang tải...</div>
   <div id="umeda-products"></div>
   <div id="umeda-updated" class="sub" style="margin-top:12px"></div>
@@ -159,10 +160,20 @@ const BASE = "https://raw.githubusercontent.com/hacker1998nd-cloud/zaiko-hunter-
 const WORKER_URL = "https://zaiko-refresh.tuan0343412390.workers.dev/";
 const PRICE_WORKER_URL = WORKER_URL + "prices";
 
-const CAPACITIES = [
-  { id: "MJX74J/A", label: "256GB" },
-  { id: "MJXC4J/A", label: "512GB" },
-  { id: "MJXG4J/A", label: "1TB" }
+const UMEDA_PRODUCTS = [
+  { id: "MJX74J/A", label: "256GB · Burgundy", group: "🍷 iPhone 18 Pro Max" },
+  { id: "MJXC4J/A", label: "512GB · Burgundy", group: "🍷 iPhone 18 Pro Max" },
+  { id: "MJXG4J/A", label: "1TB · Burgundy", group: "🍷 iPhone 18 Pro Max" },
+
+  { id: "MK244J/A", label: "256GB · Star White", group: "📱 iPhone Duo" },
+  { id: "MK264J/A", label: "512GB · Star White", group: "📱 iPhone Duo" },
+  { id: "MK284J/A", label: "1TB · Star White", group: "📱 iPhone Duo" },
+  { id: "MK2A4J/A", label: "2TB · Star White", group: "📱 iPhone Duo" },
+
+  { id: "MK254J/A", label: "256GB · Night Sky", group: "📱 iPhone Duo" },
+  { id: "MK274J/A", label: "512GB · Night Sky", group: "📱 iPhone Duo" },
+  { id: "MK294J/A", label: "1TB · Night Sky", group: "📱 iPhone Duo" },
+  { id: "MK2C4J/A", label: "2TB · Night Sky", group: "📱 iPhone Duo" }
 ];
 
 const BOT2_PRODUCTS = [
@@ -261,7 +272,7 @@ async function fetchJson(file) {
   return response.json();
 }
 
-/* BOT 1: UMEDA */
+/* BOT 1: UMEDA — 3 PRO MAX + 8 DUO */
 async function loadUmeda() {
   const statusEl = $("umeda-status");
   const listEl = $("umeda-products");
@@ -269,40 +280,65 @@ async function loadUmeda() {
 
   try {
     const data = await fetchJson("umeda-status.json");
-    const list = Array.isArray(data.products)
-      ? data.products
-      : Object.entries(data.products || {}).map(([part_number, item]) => ({
-          part_number,
-          ...item
-        }));
+    const rawProducts = data.products || {};
 
-    const byId = {};
-    list.forEach(item => {
-      if (item.part_number) byId[item.part_number] = item;
-    });
+    // Hỗ trợ cả JSON dạng object và array.
+    const products = Array.isArray(rawProducts)
+      ? Object.fromEntries(
+          rawProducts.map(item => [item.part_number, item])
+        )
+      : rawProducts;
 
     listEl.replaceChildren();
 
-    CAPACITIES.forEach(cap => {
-      const product = byId[cap.id];
+    let currentGroup = "";
+
+    UMEDA_PRODUCTS.forEach(config => {
+      if (config.group !== currentGroup) {
+        currentGroup = config.group;
+        const heading = document.createElement("h3");
+        heading.textContent = currentGroup;
+        listEl.appendChild(heading);
+      }
+
+      const product = products[config.id];
       listEl.appendChild(
-        makeRow(cap.label, product ? product.status : "UNKNOWN")
+        makeRow(config.label, product ? product.status : "UNKNOWN")
       );
     });
 
-    statusEl.textContent = "Đã tải dữ liệu bot Umeda riêng.";
+    const availableCount = UMEDA_PRODUCTS.filter(config =>
+      String(products[config.id]?.status || "").toUpperCase() === "AVAILABLE"
+    ).length;
+
+    const unavailableCount = UMEDA_PRODUCTS.filter(config =>
+      String(products[config.id]?.status || "").toUpperCase() === "UNAVAILABLE"
+    ).length;
+
+    const unknownCount =
+      UMEDA_PRODUCTS.length - availableCount - unavailableCount;
+
+    $("umeda-total").textContent = String(UMEDA_PRODUCTS.length);
+
+    statusEl.textContent =
+      `Đã tải dữ liệu Umeda · ${UMEDA_PRODUCTS.length} sản phẩm · ` +
+      `${availableCount} có hàng · ${unavailableCount} hết hàng · ` +
+      `${unknownCount} chưa xác định.`;
 
     timeEl.replaceChildren();
+
+    const checkedDate = data.checked_at || data.updated_at;
+    const attemptedDate = data.last_attempt_at || data.updated_at;
 
     const checked = document.createElement("div");
     checked.className = "stock-meta";
     checked.textContent = "Apple kiểm tra thành công: " +
-      formatDateTime(data.checked_at || data.updated_at);
+      formatDateTime(checkedDate);
 
     const attempted = document.createElement("div");
     attempted.className = "stock-meta";
     attempted.textContent = "Bot chạy gần nhất: " +
-      formatDateTime(data.last_attempt_at || data.updated_at);
+      formatDateTime(attemptedDate);
 
     const published = document.createElement("div");
     published.className = "stock-meta";
@@ -311,15 +347,31 @@ async function loadUmeda() {
 
     timeEl.append(checked, attempted, published);
 
-    const checkedDate = data.checked_at || data.updated_at;
-    if (checkedDate) {
-      const ageMinutes = (Date.now() - new Date(checkedDate).getTime()) / 60000;
+    const checkedMs = checkedDate
+      ? new Date(checkedDate).getTime()
+      : NaN;
 
-      if (Number.isFinite(ageMinutes) && ageMinutes > 15) {
+    if (!Number.isFinite(checkedMs)) {
+      const warning = document.createElement("div");
+      warning.className = "stock-meta stock-warning";
+      warning.textContent =
+        "⚠️ Không xác định được thời điểm kiểm tra thành công.";
+      timeEl.appendChild(warning);
+    } else {
+      const ageMinutes = (Date.now() - checkedMs) / 60000;
+
+      if (ageMinutes > 15) {
         const warning = document.createElement("div");
         warning.className = "stock-meta stock-warning";
         warning.textContent =
-          "⚠️ Dữ liệu kiểm tra đã cũ hơn 15 phút. Hãy kiểm tra lần chạy bot gần nhất.";
+          "⚠️ Lần kiểm tra thành công đã quá 15 phút. " +
+          "Hãy kiểm tra lần chạy bot gần nhất.";
+        timeEl.appendChild(warning);
+      } else if (ageMinutes < -2) {
+        const warning = document.createElement("div");
+        warning.className = "stock-meta stock-warning";
+        warning.textContent =
+          "⚠️ Thời gian kiểm tra đang ở tương lai so với đồng hồ thiết bị.";
         timeEl.appendChild(warning);
       }
     }
@@ -327,7 +379,8 @@ async function loadUmeda() {
     if (data.last_error) {
       const error = document.createElement("div");
       error.className = "stock-meta stock-error";
-      error.textContent = "Lỗi lần chạy gần nhất: " + data.last_error;
+      error.textContent =
+        "Lỗi lần chạy gần nhất: " + data.last_error;
       timeEl.appendChild(error);
     }
 
@@ -339,12 +392,14 @@ async function loadUmeda() {
       timeEl.appendChild(cooldown);
     }
   } catch (error) {
-    statusEl.textContent = "Không đọc được dữ liệu Umeda: " + error.message;
-    timeEl.textContent = "Kiểm tra file umeda-status.json trên GitHub.";
+    statusEl.textContent =
+      "Không đọc được dữ liệu Umeda: " + error.message;
+    timeEl.textContent =
+      "Kiểm tra file umeda-status.json trên GitHub.";
   }
 }
 
-/* BOT 2: SHINSAIBASHI + KYOTO, 8 SẢN PHẨM MỖI CỬA HÀNG */
+/* BOT 2: SHINSAIBASHI + KYOTO */
 async function loadStores() {
   const statusEl = $("stores-status");
   const listEl = $("stores-list");
