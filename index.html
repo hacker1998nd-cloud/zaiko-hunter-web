@@ -269,8 +269,9 @@ async function loadUmeda() {
     listEl.replaceChildren();
 
     CAPACITIES.forEach(cap => {
+      const product = byId[cap.id];
       listEl.appendChild(
-        makeRow(cap.label, byId[cap.id] ? byId[cap.id].status : "UNKNOWN")
+        makeRow(cap.label, product ? product.status : "UNKNOWN")
       );
     });
 
@@ -296,7 +297,9 @@ async function loadUmeda() {
     timeEl.append(checked, attempted, published);
 
     if (data.checked_at) {
-      const ageMinutes = (Date.now() - new Date(data.checked_at).getTime()) / 60000;
+      const ageMinutes =
+        (Date.now() - new Date(data.checked_at).getTime()) / 60000;
+
       if (Number.isFinite(ageMinutes) && ageMinutes > 15) {
         const warning = document.createElement("div");
         warning.className = "stock-meta stock-warning";
@@ -318,6 +321,7 @@ async function loadUmeda() {
   }
 }
 
+/* BOT 2: Hiển thị metadata cho từng sản phẩm */
 async function loadStores() {
   const statusEl = $("stores-status");
   const listEl = $("stores-list");
@@ -326,7 +330,12 @@ async function loadStores() {
   try {
     const data = await fetchJson("stores-status.json");
     const stores = Array.isArray(data.stores) ? data.stores : [];
+
     listEl.replaceChildren();
+
+    let verifiedCount = 0;
+    let staleCount = 0;
+    let unknownCount = 0;
 
     ["梅田", "心斎橋", "京都"].forEach(name => {
       const store = stores.find(item => item.store === name);
@@ -342,22 +351,78 @@ async function loadStores() {
         const product = store && Array.isArray(store.products)
           ? store.products.find(item => item.part_number === cap.id)
           : null;
-        card.appendChild(
-          makeRow(cap.label, product ? product.status : "UNKNOWN")
-        );
+
+        const status = product ? product.status : "UNKNOWN";
+        card.appendChild(makeRow(cap.label, status));
+
+        const meta = document.createElement("div");
+        meta.className = "stock-meta";
+
+        const checkStatus = String(
+          product && product.check_status || status
+        ).toUpperCase();
+
+        const isStale = !product ||
+          product.is_stale === true ||
+          checkStatus === "UNKNOWN";
+
+        if (status === "AVAILABLE" || status === "UNAVAILABLE") {
+          if (isStale) {
+            staleCount++;
+          } else {
+            verifiedCount++;
+          }
+        } else {
+          unknownCount++;
+        }
+
+        const checked = document.createElement("div");
+        checked.textContent =
+          "Xác minh thành công gần nhất: " +
+          formatDateTime(product && product.checked_at);
+        meta.appendChild(checked);
+
+        const attempted = document.createElement("div");
+        attempted.textContent =
+          "Thử kiểm tra gần nhất: " +
+          formatDateTime(product && product.last_attempt_at);
+        meta.appendChild(attempted);
+
+        const state = document.createElement("div");
+        state.className = isStale ? "stock-warning" : "";
+        state.textContent = isStale
+          ? "⚠️ Dữ liệu cũ hoặc lượt kiểm tra chưa xác minh"
+          : "✓ Trạng thái đã được xác minh";
+        meta.appendChild(state);
+
+        if (product && product.last_error) {
+          const error = document.createElement("div");
+          error.className = "stock-error";
+          error.textContent = "Lỗi gần nhất: " + String(product.last_error);
+          meta.appendChild(error);
+        }
+
+        card.appendChild(meta);
       });
 
       listEl.appendChild(card);
     });
 
-    statusEl.textContent = "Đã tải dữ liệu bot 3 cửa hàng.";
-    timeEl.textContent = formatTime(data.updated_at);
+    statusEl.textContent =
+      `Đã tải dữ liệu 3 cửa hàng · ${verifiedCount} trạng thái đã xác minh · ` +
+      `${staleCount} trạng thái cũ · ${unknownCount} chưa xác định.`;
+
+    timeEl.textContent =
+      "Dashboard cập nhật: " + formatDateTime(data.updated_at);
   } catch (error) {
-    statusEl.textContent = "Không đọc được dữ liệu 3 cửa hàng: " + error.message;
-    timeEl.textContent = "Kiểm tra file stores-status.json trên GitHub.";
+    statusEl.textContent =
+      "Không đọc được dữ liệu 3 cửa hàng: " + error.message;
+    timeEl.textContent =
+      "Kiểm tra file stores-status.json trên GitHub.";
   }
 }
 
+/* PRICE DASHBOARD */
 function sourceKind(row) {
   const source = String(row.source || "").toLowerCase();
   if (source.includes("mobile") || source.includes("ichiban")) return "mobile";
@@ -598,6 +663,7 @@ async function loadPrices() {
   }
 }
 
+/* BUTTONS */
 async function refreshAll() {
   const button = $("refresh-button");
   button.disabled = true;
@@ -636,17 +702,13 @@ $("reload-prices").addEventListener("click", async () => {
   button.textContent = "Đang yêu cầu cập nhật giá...";
 
   try {
-    // Lưu mốc dữ liệu trước khi chạy workflow.
     let before = null;
 
     try {
       const oldData = await fetchJson("price-data.json");
       before = oldData.updated_at || null;
-    } catch (_) {
-      // Vẫn cho phép chạy bot nếu không đọc được mốc cũ.
-    }
+    } catch (_) {}
 
-    // Gửi yêu cầu chạy workflow giá, giới hạn thời gian chờ.
     const response = await fetchWithTimeout(
       PRICE_WORKER_URL,
       { method: "POST" },
@@ -667,7 +729,6 @@ $("reload-prices").addEventListener("click", async () => {
     status.textContent =
       "GitHub đã nhận yêu cầu chạy bot giá. Đang chờ dữ liệu mới...";
 
-    // Chờ tối đa 3 phút; mỗi lần kiểm tra đều có timeout riêng.
     const deadline = Date.now() + 180000;
     let updated = false;
 
@@ -681,27 +742,21 @@ $("reload-prices").addEventListener("click", async () => {
           updated = true;
           break;
         }
-      } catch (_) {
-        // Tiếp tục thử cho đến khi hết thời gian.
-      }
+      } catch (_) {}
     }
 
     if (updated) {
-      status.textContent = "Dữ liệu giá mới đã được xuất bản.";
-
-      // Tải lại bảng giá sau khi xác nhận timestamp đổi.
       await loadPrices();
       status.textContent = "Cập nhật giá mới thành công.";
     } else {
       status.textContent =
         "Đã gửi yêu cầu nhưng chưa thấy timestamp mới sau 3 phút. " +
-        "Kiểm tra GitHub Actions; nút đã được mở lại để thử lần sau.";
+        "Kiểm tra GitHub Actions.";
     }
   } catch (error) {
     status.textContent =
       "Không hoàn tất được yêu cầu cập nhật giá: " + error.message;
   } finally {
-    // Luôn trả nút về trạng thái có thể bấm lại.
     button.disabled = false;
     button.textContent = "↻ Cập nhật giá mới";
   }
@@ -725,7 +780,7 @@ $("github-button").addEventListener("click", () => {
   );
 });
 
-// Khi mở dashboard, chỉ đọc JSON; không tự chạy bot.
+// Chỉ đọc dữ liệu khi mở dashboard, không tự chạy bot.
 Promise.all([loadUmeda(), loadStores(), loadPrices()]);
 </script>
 </body>
