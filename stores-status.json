@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-25T21:43:59+00:00",
+  "updated_at": "2026-10-25T21:44:25+00:00",
   "stores": [
     {
       "store": "心斎橋",
@@ -13,110 +13,8 @@
           "last_known_status": "AVAILABLE",
           "check_status": "AVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-25T21:43:11+00:00",
-          "last_attempt_at": "2026-10-25T21:43:11+00:00",
-          "last_error": null
-        },
-        {
-          "part_number": "MJXG4J/A",
-          "name": "iPhone 18 Pro Max 1TB Burgundy",
-          "capacity": "1TB",
-          "status": "AVAILABLE",
-          "last_known_status": "AVAILABLE",
-          "check_status": "AVAILABLE",
-          "is_stale": false,
-          "checked_at": "2026-10-25T21:43:14+00:00",
-          "last_attempt_at": "2026-10-25T21:43:14+00:00",
-          "last_error": null
-        },
-        {
-          "part_number": "MK244J/A",
-          "name": "iPhone Duo 256GB Star White",
-          "capacity": "256GB",
-          "status": "UNAVAILABLE",
-          "last_known_status": "UNAVAILABLE",
-          "check_status": "UNAVAILABLE",
-          "is_stale": false,
-          "checked_at": "2026-10-25T21:43:18+00:00",
-          "last_attempt_at": "2026-10-25T21:43:17+00:00",
-          "last_error": null
-        },
-        {
-          "part_number": "MK264J/A",
-          "name": "iPhone Duo 512GB Star White",
-          "capacity": "512GB",
-          "status": "UNAVAILABLE",
-          "last_known_status": "UNAVAILABLE",
-          "check_status": "UNAVAILABLE",
-          "is_stale": false,
-          "checked_at": "2026-10-25T21:43:21+00:00",
-          "last_attempt_at": "2026-10-25T21:43:21+00:00",
-          "last_error": null
-        },
-        {
-          "part_number": "MK284J/A",
-          "name": "iPhone Duo 1TB Star White",
-          "capacity": "1TB",
-          "status": "UNAVAILABLE",
-          "last_known_status": "UNAVAILABLE",
-          "check_status": "UNAVAILABLE",
-          "is_stale": false,
-          "checked_at": "2026-10-25T21:43:24+00:00",
-          "last_attempt_at": "2026-10-25T21:43:24+00:00",
-          "last_error": null
-        },
-        {
-          "part_number": "MK254J/A",
-          "name": "iPhone Duo 256GB Night Sky",
-          "capacity": "256GB",
-          "status": "UNAVAILABLE",
-          "last_known_status": "UNAVAILABLE",
-          "check_status": "UNAVAILABLE",
-          "is_stale": false,
-          "checked_at": "2026-10-25T21:43:27+00:00",
-          "last_attempt_at": "2026-10-25T21:43:27+00:00",
-          "last_error": null
-        },
-        {
-          "part_number": "MK274J/A",
-          "name": "iPhone Duo 512GB Night Sky",
-          "capacity": "512GB",
-          "status": "UNAVAILABLE",
-          "last_known_status": "UNAVAILABLE",
-          "check_status": "UNAVAILABLE",
-          "is_stale": false,
-          "checked_at": "2026-10-25T21:43:30+00:00",
-          "last_attempt_at": "2026-10-25T21:43:30+00:00",
-          "last_error": null
-        },
-        {
-          "part_number": "MK294J/A",
-          "name": "iPhone Duo 1TB Night Sky",
-          "capacity": "1TB",
-          "status": "UNAVAILABLE",
-          "last_known_status": "UNAVAILABLE",
-          "check_status": "UNAVAILABLE",
-          "is_stale": false,
-          "checked_at": "2026-10-25T21:43:34+00:00",
-          "last_attempt_at": "2026-10-25T21:43:33+00:00",
-          "last_error": null
-        }
-      ]
-    },
-    {
-      "store": "京都",
-      "store_en": "Kyoto",
-      "products": [
-        {
-          "part_number": "MJXC4J/A",
-          "name": "iPhone 18 Pro Max 512GB Burgundy",
-          "capacity": "512GB",
-          "status": "AVAILABLE",
-          "last_known_status": "AVAILABLE",
-          "check_status": "AVAILABLE",
-          "is_stale": false,
           "checked_at": "2026-10-25T21:43:37+00:00",
-          "last_attempt_at": "2026-10-25T21:43:37+00:00",
+          "last_attempt_at": "2026-10-25T21:43:36+00:00",
           "last_error": null
         },
         {
@@ -151,7 +49,7 @@
           "last_known_status": "UNAVAILABLE",
           "check_status": "UNAVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-25T21:43:47+00:00",
+          "checked_at": "2026-10-25T21:43:46+00:00",
           "last_attempt_at": "2026-10-25T21:43:46+00:00",
           "last_error": null
         },
@@ -164,7 +62,7 @@
           "check_status": "UNAVAILABLE",
           "is_stale": false,
           "checked_at": "2026-10-25T21:43:50+00:00",
-          "last_attempt_at": "2026-10-25T21:43:50+00:00",
+          "last_attempt_at": "2026-10-25T21:43:49+00:00",
           "last_error": null
         },
         {
@@ -201,6 +99,108 @@
           "is_stale": false,
           "checked_at": "2026-10-25T21:43:59+00:00",
           "last_attempt_at": "2026-10-25T21:43:59+00:00",
+          "last_error": null
+        }
+      ]
+    },
+    {
+      "store": "京都",
+      "store_en": "Kyoto",
+      "products": [
+        {
+          "part_number": "MJXC4J/A",
+          "name": "iPhone 18 Pro Max 512GB Burgundy",
+          "capacity": "512GB",
+          "status": "AVAILABLE",
+          "last_known_status": "AVAILABLE",
+          "check_status": "AVAILABLE",
+          "is_stale": false,
+          "checked_at": "2026-10-25T21:44:03+00:00",
+          "last_attempt_at": "2026-10-25T21:44:02+00:00",
+          "last_error": null
+        },
+        {
+          "part_number": "MJXG4J/A",
+          "name": "iPhone 18 Pro Max 1TB Burgundy",
+          "capacity": "1TB",
+          "status": "AVAILABLE",
+          "last_known_status": "AVAILABLE",
+          "check_status": "AVAILABLE",
+          "is_stale": false,
+          "checked_at": "2026-10-25T21:44:06+00:00",
+          "last_attempt_at": "2026-10-25T21:44:06+00:00",
+          "last_error": null
+        },
+        {
+          "part_number": "MK244J/A",
+          "name": "iPhone Duo 256GB Star White",
+          "capacity": "256GB",
+          "status": "UNAVAILABLE",
+          "last_known_status": "UNAVAILABLE",
+          "check_status": "UNAVAILABLE",
+          "is_stale": false,
+          "checked_at": "2026-10-25T21:44:09+00:00",
+          "last_attempt_at": "2026-10-25T21:44:09+00:00",
+          "last_error": null
+        },
+        {
+          "part_number": "MK264J/A",
+          "name": "iPhone Duo 512GB Star White",
+          "capacity": "512GB",
+          "status": "UNAVAILABLE",
+          "last_known_status": "UNAVAILABLE",
+          "check_status": "UNAVAILABLE",
+          "is_stale": false,
+          "checked_at": "2026-10-25T21:44:12+00:00",
+          "last_attempt_at": "2026-10-25T21:44:12+00:00",
+          "last_error": null
+        },
+        {
+          "part_number": "MK284J/A",
+          "name": "iPhone Duo 1TB Star White",
+          "capacity": "1TB",
+          "status": "UNAVAILABLE",
+          "last_known_status": "UNAVAILABLE",
+          "check_status": "UNAVAILABLE",
+          "is_stale": false,
+          "checked_at": "2026-10-25T21:44:15+00:00",
+          "last_attempt_at": "2026-10-25T21:44:15+00:00",
+          "last_error": null
+        },
+        {
+          "part_number": "MK254J/A",
+          "name": "iPhone Duo 256GB Night Sky",
+          "capacity": "256GB",
+          "status": "UNAVAILABLE",
+          "last_known_status": "UNAVAILABLE",
+          "check_status": "UNAVAILABLE",
+          "is_stale": false,
+          "checked_at": "2026-10-25T21:44:19+00:00",
+          "last_attempt_at": "2026-10-25T21:44:18+00:00",
+          "last_error": null
+        },
+        {
+          "part_number": "MK274J/A",
+          "name": "iPhone Duo 512GB Night Sky",
+          "capacity": "512GB",
+          "status": "UNAVAILABLE",
+          "last_known_status": "UNAVAILABLE",
+          "check_status": "UNAVAILABLE",
+          "is_stale": false,
+          "checked_at": "2026-10-25T21:44:22+00:00",
+          "last_attempt_at": "2026-10-25T21:44:22+00:00",
+          "last_error": null
+        },
+        {
+          "part_number": "MK294J/A",
+          "name": "iPhone Duo 1TB Night Sky",
+          "capacity": "1TB",
+          "status": "UNAVAILABLE",
+          "last_known_status": "UNAVAILABLE",
+          "check_status": "UNAVAILABLE",
+          "is_stale": false,
+          "checked_at": "2026-10-25T21:44:25+00:00",
+          "last_attempt_at": "2026-10-25T21:44:25+00:00",
           "last_error": null
         }
       ]
