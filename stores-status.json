@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-26T06:09:59+00:00",
+  "updated_at": "2026-10-26T06:11:57+00:00",
   "stores": [
     {
       "store": "心斎橋",
@@ -13,8 +13,8 @@
           "last_known_status": "AVAILABLE",
           "check_status": "AVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-26T06:09:08+00:00",
-          "last_attempt_at": "2026-10-26T06:09:08+00:00",
+          "checked_at": "2026-10-26T06:11:08+00:00",
+          "last_attempt_at": "2026-10-26T06:11:08+00:00",
           "last_error": null
         },
         {
@@ -25,44 +25,44 @@
           "last_known_status": "AVAILABLE",
           "check_status": "AVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-26T06:09:11+00:00",
-          "last_attempt_at": "2026-10-26T06:09:11+00:00",
+          "checked_at": "2026-10-26T06:11:12+00:00",
+          "last_attempt_at": "2026-10-26T06:11:11+00:00",
           "last_error": null
         },
         {
           "part_number": "MK244J/A",
           "name": "iPhone Duo 256GB Star White",
           "capacity": "256GB",
-          "status": "UNAVAILABLE",
-          "last_known_status": "UNAVAILABLE",
-          "check_status": "UNAVAILABLE",
+          "status": "AVAILABLE",
+          "last_known_status": "AVAILABLE",
+          "check_status": "AVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-26T06:09:15+00:00",
-          "last_attempt_at": "2026-10-26T06:09:14+00:00",
+          "checked_at": "2026-10-26T06:11:15+00:00",
+          "last_attempt_at": "2026-10-26T06:11:15+00:00",
           "last_error": null
         },
         {
           "part_number": "MK264J/A",
           "name": "iPhone Duo 512GB Star White",
           "capacity": "512GB",
-          "status": "UNAVAILABLE",
-          "last_known_status": "UNAVAILABLE",
-          "check_status": "UNAVAILABLE",
+          "status": "AVAILABLE",
+          "last_known_status": "AVAILABLE",
+          "check_status": "AVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-26T06:09:18+00:00",
-          "last_attempt_at": "2026-10-26T06:09:18+00:00",
+          "checked_at": "2026-10-26T06:11:18+00:00",
+          "last_attempt_at": "2026-10-26T06:11:18+00:00",
           "last_error": null
         },
         {
           "part_number": "MK284J/A",
           "name": "iPhone Duo 1TB Star White",
           "capacity": "1TB",
-          "status": "UNAVAILABLE",
-          "last_known_status": "UNAVAILABLE",
-          "check_status": "UNAVAILABLE",
+          "status": "AVAILABLE",
+          "last_known_status": "AVAILABLE",
+          "check_status": "AVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-26T06:09:22+00:00",
-          "last_attempt_at": "2026-10-26T06:09:21+00:00",
+          "checked_at": "2026-10-26T06:11:21+00:00",
+          "last_attempt_at": "2026-10-26T06:11:21+00:00",
           "last_error": null
         },
         {
@@ -73,8 +73,8 @@
           "last_known_status": "UNAVAILABLE",
           "check_status": "UNAVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-26T06:09:25+00:00",
-          "last_attempt_at": "2026-10-26T06:09:25+00:00",
+          "checked_at": "2026-10-26T06:11:25+00:00",
+          "last_attempt_at": "2026-10-26T06:11:24+00:00",
           "last_error": null
         },
         {
@@ -85,20 +85,20 @@
           "last_known_status": "UNAVAILABLE",
           "check_status": "UNAVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-26T06:09:28+00:00",
-          "last_attempt_at": "2026-10-26T06:09:28+00:00",
+          "checked_at": "2026-10-26T06:11:28+00:00",
+          "last_attempt_at": "2026-10-26T06:11:28+00:00",
           "last_error": null
         },
         {
           "part_number": "MK294J/A",
           "name": "iPhone Duo 1TB Night Sky",
           "capacity": "1TB",
-          "status": "UNAVAILABLE",
-          "last_known_status": "UNAVAILABLE",
-          "check_status": "UNAVAILABLE",
+          "status": "AVAILABLE",
+          "last_known_status": "AVAILABLE",
+          "check_status": "AVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-26T06:09:32+00:00",
-          "last_attempt_at": "2026-10-26T06:09:31+00:00",
+          "checked_at": "2026-10-26T06:11:31+00:00",
+          "last_attempt_at": "2026-10-26T06:11:31+00:00",
           "last_error": null
         }
       ]
@@ -115,8 +115,8 @@
           "last_known_status": "AVAILABLE",
           "check_status": "AVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-26T06:09:35+00:00",
-          "last_attempt_at": "2026-10-26T06:09:35+00:00",
+          "checked_at": "2026-10-26T06:11:34+00:00",
+          "last_attempt_at": "2026-10-26T06:11:34+00:00",
           "last_error": null
         },
         {
@@ -127,8 +127,8 @@
           "last_known_status": "AVAILABLE",
           "check_status": "AVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-26T06:09:39+00:00",
-          "last_attempt_at": "2026-10-26T06:09:38+00:00",
+          "checked_at": "2026-10-26T06:11:38+00:00",
+          "last_attempt_at": "2026-10-26T06:11:37+00:00",
           "last_error": null
         },
         {
@@ -139,8 +139,8 @@
           "last_known_status": "UNAVAILABLE",
           "check_status": "UNAVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-26T06:09:42+00:00",
-          "last_attempt_at": "2026-10-26T06:09:42+00:00",
+          "checked_at": "2026-10-26T06:11:41+00:00",
+          "last_attempt_at": "2026-10-26T06:11:41+00:00",
           "last_error": null
         },
         {
@@ -151,8 +151,8 @@
           "last_known_status": "UNAVAILABLE",
           "check_status": "UNAVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-26T06:09:45+00:00",
-          "last_attempt_at": "2026-10-26T06:09:45+00:00",
+          "checked_at": "2026-10-26T06:11:44+00:00",
+          "last_attempt_at": "2026-10-26T06:11:44+00:00",
           "last_error": null
         },
         {
@@ -163,8 +163,8 @@
           "last_known_status": "UNAVAILABLE",
           "check_status": "UNAVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-26T06:09:49+00:00",
-          "last_attempt_at": "2026-10-26T06:09:48+00:00",
+          "checked_at": "2026-10-26T06:11:47+00:00",
+          "last_attempt_at": "2026-10-26T06:11:47+00:00",
           "last_error": null
         },
         {
@@ -175,8 +175,8 @@
           "last_known_status": "UNAVAILABLE",
           "check_status": "UNAVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-26T06:09:52+00:00",
-          "last_attempt_at": "2026-10-26T06:09:52+00:00",
+          "checked_at": "2026-10-26T06:11:51+00:00",
+          "last_attempt_at": "2026-10-26T06:11:50+00:00",
           "last_error": null
         },
         {
@@ -187,8 +187,8 @@
           "last_known_status": "UNAVAILABLE",
           "check_status": "UNAVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-26T06:09:55+00:00",
-          "last_attempt_at": "2026-10-26T06:09:55+00:00",
+          "checked_at": "2026-10-26T06:11:54+00:00",
+          "last_attempt_at": "2026-10-26T06:11:54+00:00",
           "last_error": null
         },
         {
@@ -199,8 +199,8 @@
           "last_known_status": "UNAVAILABLE",
           "check_status": "UNAVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-26T06:09:59+00:00",
-          "last_attempt_at": "2026-10-26T06:09:58+00:00",
+          "checked_at": "2026-10-26T06:11:57+00:00",
+          "last_attempt_at": "2026-10-26T06:11:57+00:00",
           "last_error": null
         }
       ]
