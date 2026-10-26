@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-26T11:28:23+00:00",
+  "updated_at": "2026-10-26T11:44:56+00:00",
   "stores": [
     {
       "store": "心斎橋",
@@ -11,10 +11,10 @@
           "capacity": "512GB",
           "status": "AVAILABLE",
           "last_known_status": "AVAILABLE",
-          "check_status": "UNKNOWN",
+          "check_status": "AVAILABLE",
           "is_stale": true,
-          "checked_at": "2026-10-26T10:24:11+00:00",
-          "last_attempt_at": "2026-10-26T11:28:23+00:00",
+          "checked_at": "2026-10-26T11:44:27+00:00",
+          "last_attempt_at": "2026-10-26T11:44:26+00:00",
           "last_error": "Apple trả HTTP 541; bot tạm nghỉ 15 phút."
         },
         {
@@ -25,8 +25,8 @@
           "last_known_status": "AVAILABLE",
           "check_status": "AVAILABLE",
           "is_stale": true,
-          "checked_at": "2026-10-26T10:24:14+00:00",
-          "last_attempt_at": "2026-10-26T10:24:14+00:00",
+          "checked_at": "2026-10-26T11:44:30+00:00",
+          "last_attempt_at": "2026-10-26T11:44:30+00:00",
           "last_error": "Apple trả HTTP 541; bot tạm nghỉ 15 phút."
         },
         {
@@ -37,8 +37,8 @@
           "last_known_status": "UNAVAILABLE",
           "check_status": "UNAVAILABLE",
           "is_stale": true,
-          "checked_at": "2026-10-26T10:24:17+00:00",
-          "last_attempt_at": "2026-10-26T10:24:17+00:00",
+          "checked_at": "2026-10-26T11:44:34+00:00",
+          "last_attempt_at": "2026-10-26T11:44:33+00:00",
           "last_error": "Apple trả HTTP 541; bot tạm nghỉ 15 phút."
         },
         {
@@ -49,8 +49,8 @@
           "last_known_status": "UNAVAILABLE",
           "check_status": "UNAVAILABLE",
           "is_stale": true,
-          "checked_at": "2026-10-26T10:24:20+00:00",
-          "last_attempt_at": "2026-10-26T10:24:20+00:00",
+          "checked_at": "2026-10-26T11:44:37+00:00",
+          "last_attempt_at": "2026-10-26T11:44:37+00:00",
           "last_error": "Apple trả HTTP 541; bot tạm nghỉ 15 phút."
         },
         {
@@ -61,8 +61,8 @@
           "last_known_status": "UNAVAILABLE",
           "check_status": "UNAVAILABLE",
           "is_stale": true,
-          "checked_at": "2026-10-26T10:24:23+00:00",
-          "last_attempt_at": "2026-10-26T10:24:23+00:00",
+          "checked_at": "2026-10-26T11:44:40+00:00",
+          "last_attempt_at": "2026-10-26T11:44:40+00:00",
           "last_error": "Apple trả HTTP 541; bot tạm nghỉ 15 phút."
         },
         {
@@ -73,8 +73,8 @@
           "last_known_status": "UNAVAILABLE",
           "check_status": "UNAVAILABLE",
           "is_stale": true,
-          "checked_at": "2026-10-26T10:24:26+00:00",
-          "last_attempt_at": "2026-10-26T10:24:26+00:00",
+          "checked_at": "2026-10-26T11:44:43+00:00",
+          "last_attempt_at": "2026-10-26T11:44:43+00:00",
           "last_error": "Apple trả HTTP 541; bot tạm nghỉ 15 phút."
         },
         {
@@ -85,8 +85,8 @@
           "last_known_status": "UNAVAILABLE",
           "check_status": "UNAVAILABLE",
           "is_stale": true,
-          "checked_at": "2026-10-26T10:24:30+00:00",
-          "last_attempt_at": "2026-10-26T10:24:29+00:00",
+          "checked_at": "2026-10-26T11:44:47+00:00",
+          "last_attempt_at": "2026-10-26T11:44:46+00:00",
           "last_error": "Apple trả HTTP 541; bot tạm nghỉ 15 phút."
         },
         {
@@ -97,8 +97,8 @@
           "last_known_status": "UNAVAILABLE",
           "check_status": "UNAVAILABLE",
           "is_stale": true,
-          "checked_at": "2026-10-26T10:24:33+00:00",
-          "last_attempt_at": "2026-10-26T10:24:33+00:00",
+          "checked_at": "2026-10-26T11:44:50+00:00",
+          "last_attempt_at": "2026-10-26T11:44:50+00:00",
           "last_error": "Apple trả HTTP 541; bot tạm nghỉ 15 phút."
         }
       ]
@@ -115,8 +115,8 @@
           "last_known_status": "AVAILABLE",
           "check_status": "AVAILABLE",
           "is_stale": true,
-          "checked_at": "2026-10-26T10:24:36+00:00",
-          "last_attempt_at": "2026-10-26T10:24:36+00:00",
+          "checked_at": "2026-10-26T11:44:53+00:00",
+          "last_attempt_at": "2026-10-26T11:44:53+00:00",
           "last_error": "Apple trả HTTP 541; bot tạm nghỉ 15 phút."
         },
         {
@@ -125,10 +125,10 @@
           "capacity": "1TB",
           "status": "AVAILABLE",
           "last_known_status": "AVAILABLE",
-          "check_status": "AVAILABLE",
+          "check_status": "UNKNOWN",
           "is_stale": true,
           "checked_at": "2026-10-26T10:24:39+00:00",
-          "last_attempt_at": "2026-10-26T10:24:39+00:00",
+          "last_attempt_at": "2026-10-26T11:44:56+00:00",
           "last_error": "Apple trả HTTP 541; bot tạm nghỉ 15 phút."
         },
         {
@@ -206,6 +206,6 @@
       ]
     }
   ],
-  "rate_limit_until": "2026-10-26T11:43:23+00:00",
+  "rate_limit_until": "2026-10-26T11:59:56+00:00",
   "last_error": "Apple giới hạn yêu cầu. Bot đang tạm nghỉ để tránh gọi dồn dập."
 }
