@@ -1,7 +1,7 @@
 {
   "store": "梅田",
   "store_en": "Umeda",
-  "updated_at": "2026-10-27T22:14:51.399166+00:00",
+  "updated_at": "2026-10-27T22:15:50.576952+00:00",
   "products": {
     "MJX74J/A": {
       "name": "iPhone 18 Pro Max 256GB Burgundy",
@@ -59,8 +59,8 @@
       "last_known_status": "UNAVAILABLE"
     }
   },
-  "last_attempt_at": "2026-10-27T22:14:51.399148+00:00",
-  "last_error": "Apple trả về HTTP 541. Dừng lượt kiểm tra; cooldown đến 2026-10-27T22:29:50.908337+00:00.",
+  "last_attempt_at": "2026-10-27T22:15:50.576938+00:00",
+  "last_error": "Apple trả về HTTP 541. Dừng lượt kiểm tra; cooldown đến 2026-10-27T22:30:50.209294+00:00.",
   "checked_at": "2026-10-27T21:36:34.556908+00:00",
-  "rate_limit_until": "2026-10-27T22:29:50.908337+00:00"
+  "rate_limit_until": "2026-10-27T22:30:50.209294+00:00"
 }
