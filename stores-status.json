@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27T17:54:13+00:00",
+  "updated_at": "2026-10-27T18:09:27+00:00",
   "stores": [
     {
       "store": "心斎橋",
@@ -11,10 +11,10 @@
           "capacity": "512GB",
           "status": "AVAILABLE",
           "last_known_status": "AVAILABLE",
-          "check_status": "AVAILABLE",
+          "check_status": "UNKNOWN",
           "is_stale": true,
           "checked_at": "2026-10-27T17:53:24+00:00",
-          "last_attempt_at": "2026-10-27T17:53:23+00:00",
+          "last_attempt_at": "2026-10-27T18:09:27+00:00",
           "last_error": "Apple trả HTTP 541; bot tạm nghỉ 15 phút."
         },
         {
@@ -206,6 +206,6 @@
       ]
     }
   ],
-  "rate_limit_until": "2026-10-27T18:09:13+00:00",
+  "rate_limit_until": "2026-10-27T18:24:27+00:00",
   "last_error": "Apple giới hạn yêu cầu. Bot đang tạm nghỉ để tránh gọi dồn dập."
 }
