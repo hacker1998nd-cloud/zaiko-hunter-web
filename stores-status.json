@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27T02:00:37+00:00",
+  "updated_at": "2026-10-27T02:16:22+00:00",
   "stores": [
     {
       "store": "心斎橋",
@@ -13,9 +13,9 @@
           "last_known_status": "AVAILABLE",
           "check_status": "AVAILABLE",
           "is_stale": true,
-          "checked_at": "2026-10-27T01:59:49+00:00",
-          "last_attempt_at": "2026-10-27T01:59:48+00:00",
-          "last_error": "Apple trả HTTP 503; bot tạm nghỉ 15 phút."
+          "checked_at": "2026-10-27T02:15:52+00:00",
+          "last_attempt_at": "2026-10-27T02:15:52+00:00",
+          "last_error": "Apple trả HTTP 541; bot tạm nghỉ 15 phút."
         },
         {
           "part_number": "MJXG4J/A",
@@ -25,9 +25,9 @@
           "last_known_status": "AVAILABLE",
           "check_status": "AVAILABLE",
           "is_stale": true,
-          "checked_at": "2026-10-27T01:59:52+00:00",
-          "last_attempt_at": "2026-10-27T01:59:52+00:00",
-          "last_error": "Apple trả HTTP 503; bot tạm nghỉ 15 phút."
+          "checked_at": "2026-10-27T02:15:56+00:00",
+          "last_attempt_at": "2026-10-27T02:15:55+00:00",
+          "last_error": "Apple trả HTTP 541; bot tạm nghỉ 15 phút."
         },
         {
           "part_number": "MK244J/A",
@@ -37,9 +37,9 @@
           "last_known_status": "UNAVAILABLE",
           "check_status": "UNAVAILABLE",
           "is_stale": true,
-          "checked_at": "2026-10-27T01:59:56+00:00",
-          "last_attempt_at": "2026-10-27T01:59:55+00:00",
-          "last_error": "Apple trả HTTP 503; bot tạm nghỉ 15 phút."
+          "checked_at": "2026-10-27T02:15:59+00:00",
+          "last_attempt_at": "2026-10-27T02:15:59+00:00",
+          "last_error": "Apple trả HTTP 541; bot tạm nghỉ 15 phút."
         },
         {
           "part_number": "MK264J/A",
@@ -49,9 +49,9 @@
           "last_known_status": "UNAVAILABLE",
           "check_status": "UNAVAILABLE",
           "is_stale": true,
-          "checked_at": "2026-10-27T01:59:59+00:00",
-          "last_attempt_at": "2026-10-27T01:59:59+00:00",
-          "last_error": "Apple trả HTTP 503; bot tạm nghỉ 15 phút."
+          "checked_at": "2026-10-27T02:16:02+00:00",
+          "last_attempt_at": "2026-10-27T02:16:02+00:00",
+          "last_error": "Apple trả HTTP 541; bot tạm nghỉ 15 phút."
         },
         {
           "part_number": "MK284J/A",
@@ -61,9 +61,9 @@
           "last_known_status": "UNAVAILABLE",
           "check_status": "UNAVAILABLE",
           "is_stale": true,
-          "checked_at": "2026-10-27T02:00:02+00:00",
-          "last_attempt_at": "2026-10-27T02:00:02+00:00",
-          "last_error": "Apple trả HTTP 503; bot tạm nghỉ 15 phút."
+          "checked_at": "2026-10-27T02:16:05+00:00",
+          "last_attempt_at": "2026-10-27T02:16:05+00:00",
+          "last_error": "Apple trả HTTP 541; bot tạm nghỉ 15 phút."
         },
         {
           "part_number": "MK254J/A",
@@ -73,9 +73,9 @@
           "last_known_status": "UNAVAILABLE",
           "check_status": "UNAVAILABLE",
           "is_stale": true,
-          "checked_at": "2026-10-27T02:00:05+00:00",
-          "last_attempt_at": "2026-10-27T02:00:05+00:00",
-          "last_error": "Apple trả HTTP 503; bot tạm nghỉ 15 phút."
+          "checked_at": "2026-10-27T02:16:09+00:00",
+          "last_attempt_at": "2026-10-27T02:16:08+00:00",
+          "last_error": "Apple trả HTTP 541; bot tạm nghỉ 15 phút."
         },
         {
           "part_number": "MK274J/A",
@@ -85,9 +85,9 @@
           "last_known_status": "UNAVAILABLE",
           "check_status": "UNAVAILABLE",
           "is_stale": true,
-          "checked_at": "2026-10-27T02:00:09+00:00",
-          "last_attempt_at": "2026-10-27T02:00:08+00:00",
-          "last_error": "Apple trả HTTP 503; bot tạm nghỉ 15 phút."
+          "checked_at": "2026-10-27T02:16:12+00:00",
+          "last_attempt_at": "2026-10-27T02:16:12+00:00",
+          "last_error": "Apple trả HTTP 541; bot tạm nghỉ 15 phút."
         },
         {
           "part_number": "MK294J/A",
@@ -97,9 +97,9 @@
           "last_known_status": "UNAVAILABLE",
           "check_status": "UNAVAILABLE",
           "is_stale": true,
-          "checked_at": "2026-10-27T02:00:12+00:00",
-          "last_attempt_at": "2026-10-27T02:00:12+00:00",
-          "last_error": "Apple trả HTTP 503; bot tạm nghỉ 15 phút."
+          "checked_at": "2026-10-27T02:16:15+00:00",
+          "last_attempt_at": "2026-10-27T02:16:15+00:00",
+          "last_error": "Apple trả HTTP 541; bot tạm nghỉ 15 phút."
         }
       ]
     },
@@ -115,9 +115,9 @@
           "last_known_status": "AVAILABLE",
           "check_status": "AVAILABLE",
           "is_stale": true,
-          "checked_at": "2026-10-27T02:00:15+00:00",
-          "last_attempt_at": "2026-10-27T02:00:15+00:00",
-          "last_error": "Apple trả HTTP 503; bot tạm nghỉ 15 phút."
+          "checked_at": "2026-10-27T02:16:19+00:00",
+          "last_attempt_at": "2026-10-27T02:16:18+00:00",
+          "last_error": "Apple trả HTTP 541; bot tạm nghỉ 15 phút."
         },
         {
           "part_number": "MJXG4J/A",
@@ -125,11 +125,11 @@
           "capacity": "1TB",
           "status": "AVAILABLE",
           "last_known_status": "AVAILABLE",
-          "check_status": "AVAILABLE",
+          "check_status": "UNKNOWN",
           "is_stale": true,
           "checked_at": "2026-10-27T02:00:18+00:00",
-          "last_attempt_at": "2026-10-27T02:00:18+00:00",
-          "last_error": "Apple trả HTTP 503; bot tạm nghỉ 15 phút."
+          "last_attempt_at": "2026-10-27T02:16:22+00:00",
+          "last_error": "Apple trả HTTP 541; bot tạm nghỉ 15 phút."
         },
         {
           "part_number": "MK244J/A",
@@ -141,7 +141,7 @@
           "is_stale": true,
           "checked_at": "2026-10-27T02:00:21+00:00",
           "last_attempt_at": "2026-10-27T02:00:21+00:00",
-          "last_error": "Apple trả HTTP 503; bot tạm nghỉ 15 phút."
+          "last_error": "Apple trả HTTP 541; bot tạm nghỉ 15 phút."
         },
         {
           "part_number": "MK264J/A",
@@ -153,7 +153,7 @@
           "is_stale": true,
           "checked_at": "2026-10-27T02:00:25+00:00",
           "last_attempt_at": "2026-10-27T02:00:24+00:00",
-          "last_error": "Apple trả HTTP 503; bot tạm nghỉ 15 phút."
+          "last_error": "Apple trả HTTP 541; bot tạm nghỉ 15 phút."
         },
         {
           "part_number": "MK284J/A",
@@ -165,7 +165,7 @@
           "is_stale": true,
           "checked_at": "2026-10-27T02:00:28+00:00",
           "last_attempt_at": "2026-10-27T02:00:28+00:00",
-          "last_error": "Apple trả HTTP 503; bot tạm nghỉ 15 phút."
+          "last_error": "Apple trả HTTP 541; bot tạm nghỉ 15 phút."
         },
         {
           "part_number": "MK254J/A",
@@ -177,7 +177,7 @@
           "is_stale": true,
           "checked_at": "2026-10-27T02:00:31+00:00",
           "last_attempt_at": "2026-10-27T02:00:31+00:00",
-          "last_error": "Apple trả HTTP 503; bot tạm nghỉ 15 phút."
+          "last_error": "Apple trả HTTP 541; bot tạm nghỉ 15 phút."
         },
         {
           "part_number": "MK274J/A",
@@ -189,7 +189,7 @@
           "is_stale": true,
           "checked_at": "2026-10-27T02:00:34+00:00",
           "last_attempt_at": "2026-10-27T02:00:34+00:00",
-          "last_error": "Apple trả HTTP 503; bot tạm nghỉ 15 phút."
+          "last_error": "Apple trả HTTP 541; bot tạm nghỉ 15 phút."
         },
         {
           "part_number": "MK294J/A",
@@ -201,11 +201,11 @@
           "is_stale": true,
           "checked_at": "2026-10-27T01:26:28+00:00",
           "last_attempt_at": "2026-10-27T02:00:37+00:00",
-          "last_error": "Apple trả HTTP 503; bot tạm nghỉ 15 phút."
+          "last_error": "Apple trả HTTP 541; bot tạm nghỉ 15 phút."
         }
       ]
     }
   ],
-  "rate_limit_until": "2026-10-27T02:15:37+00:00",
+  "rate_limit_until": "2026-10-27T02:31:22+00:00",
   "last_error": "Apple giới hạn yêu cầu. Bot đang tạm nghỉ để tránh gọi dồn dập."
 }
