@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28T02:26:31+00:00",
+  "updated_at": "2026-10-28T02:28:11+00:00",
   "stores": [
     {
       "store": "心斎橋",
@@ -9,12 +9,12 @@
           "part_number": "MJXC4J/A",
           "name": "iPhone 18 Pro Max 512GB Burgundy",
           "capacity": "512GB",
-          "status": "AVAILABLE",
-          "last_known_status": "AVAILABLE",
-          "check_status": "AVAILABLE",
+          "status": "UNAVAILABLE",
+          "last_known_status": "UNAVAILABLE",
+          "check_status": "UNAVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-28T02:25:21+00:00",
-          "last_attempt_at": "2026-10-28T02:25:21+00:00",
+          "checked_at": "2026-10-28T02:27:22+00:00",
+          "last_attempt_at": "2026-10-28T02:27:22+00:00",
           "last_error": null
         },
         {
@@ -25,8 +25,8 @@
           "last_known_status": "UNAVAILABLE",
           "check_status": "UNAVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-28T02:25:24+00:00",
-          "last_attempt_at": "2026-10-28T02:25:24+00:00",
+          "checked_at": "2026-10-28T02:27:25+00:00",
+          "last_attempt_at": "2026-10-28T02:27:25+00:00",
           "last_error": null
         },
         {
@@ -37,8 +37,8 @@
           "last_known_status": "UNAVAILABLE",
           "check_status": "UNAVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-28T02:25:28+00:00",
-          "last_attempt_at": "2026-10-28T02:25:27+00:00",
+          "checked_at": "2026-10-28T02:27:29+00:00",
+          "last_attempt_at": "2026-10-28T02:27:28+00:00",
           "last_error": null
         },
         {
@@ -47,11 +47,11 @@
           "capacity": "512GB",
           "status": "UNAVAILABLE",
           "last_known_status": "UNAVAILABLE",
-          "check_status": "UNKNOWN",
-          "is_stale": true,
-          "checked_at": "2026-10-28T01:53:23+00:00",
-          "last_attempt_at": "2026-10-28T02:25:31+00:00",
-          "last_error": "HTTPSConnectionPool(host='www.apple.com', port=443): Read timed out. (read timeout=20)"
+          "check_status": "UNAVAILABLE",
+          "is_stale": false,
+          "checked_at": "2026-10-28T02:27:32+00:00",
+          "last_attempt_at": "2026-10-28T02:27:32+00:00",
+          "last_error": null
         },
         {
           "part_number": "MK284J/A",
@@ -61,20 +61,20 @@
           "last_known_status": "UNAVAILABLE",
           "check_status": "UNAVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-28T02:25:55+00:00",
-          "last_attempt_at": "2026-10-28T02:25:54+00:00",
+          "checked_at": "2026-10-28T02:27:35+00:00",
+          "last_attempt_at": "2026-10-28T02:27:35+00:00",
           "last_error": null
         },
         {
           "part_number": "MK254J/A",
           "name": "iPhone Duo 256GB Night Sky",
           "capacity": "256GB",
-          "status": "UNAVAILABLE",
-          "last_known_status": "UNAVAILABLE",
-          "check_status": "UNAVAILABLE",
+          "status": "AVAILABLE",
+          "last_known_status": "AVAILABLE",
+          "check_status": "AVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-28T02:25:58+00:00",
-          "last_attempt_at": "2026-10-28T02:25:58+00:00",
+          "checked_at": "2026-10-28T02:27:38+00:00",
+          "last_attempt_at": "2026-10-28T02:27:38+00:00",
           "last_error": null
         },
         {
@@ -85,8 +85,8 @@
           "last_known_status": "UNAVAILABLE",
           "check_status": "UNAVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-28T02:26:01+00:00",
-          "last_attempt_at": "2026-10-28T02:26:01+00:00",
+          "checked_at": "2026-10-28T02:27:42+00:00",
+          "last_attempt_at": "2026-10-28T02:27:41+00:00",
           "last_error": null
         },
         {
@@ -97,8 +97,8 @@
           "last_known_status": "UNAVAILABLE",
           "check_status": "UNAVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-28T02:26:04+00:00",
-          "last_attempt_at": "2026-10-28T02:26:04+00:00",
+          "checked_at": "2026-10-28T02:27:45+00:00",
+          "last_attempt_at": "2026-10-28T02:27:45+00:00",
           "last_error": null
         }
       ]
@@ -115,20 +115,20 @@
           "last_known_status": "UNAVAILABLE",
           "check_status": "UNAVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-28T02:26:08+00:00",
-          "last_attempt_at": "2026-10-28T02:26:07+00:00",
+          "checked_at": "2026-10-28T02:27:48+00:00",
+          "last_attempt_at": "2026-10-28T02:27:48+00:00",
           "last_error": null
         },
         {
           "part_number": "MJXG4J/A",
           "name": "iPhone 18 Pro Max 1TB Burgundy",
           "capacity": "1TB",
-          "status": "UNAVAILABLE",
-          "last_known_status": "UNAVAILABLE",
-          "check_status": "UNAVAILABLE",
+          "status": "AVAILABLE",
+          "last_known_status": "AVAILABLE",
+          "check_status": "AVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-28T02:26:11+00:00",
-          "last_attempt_at": "2026-10-28T02:26:11+00:00",
+          "checked_at": "2026-10-28T02:27:51+00:00",
+          "last_attempt_at": "2026-10-28T02:27:51+00:00",
           "last_error": null
         },
         {
@@ -139,8 +139,8 @@
           "last_known_status": "UNAVAILABLE",
           "check_status": "UNAVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-28T02:26:14+00:00",
-          "last_attempt_at": "2026-10-28T02:26:14+00:00",
+          "checked_at": "2026-10-28T02:27:55+00:00",
+          "last_attempt_at": "2026-10-28T02:27:54+00:00",
           "last_error": null
         },
         {
@@ -151,8 +151,8 @@
           "last_known_status": "UNAVAILABLE",
           "check_status": "UNAVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-28T02:26:17+00:00",
-          "last_attempt_at": "2026-10-28T02:26:17+00:00",
+          "checked_at": "2026-10-28T02:27:58+00:00",
+          "last_attempt_at": "2026-10-28T02:27:58+00:00",
           "last_error": null
         },
         {
@@ -163,8 +163,8 @@
           "last_known_status": "UNAVAILABLE",
           "check_status": "UNAVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-28T02:26:21+00:00",
-          "last_attempt_at": "2026-10-28T02:26:20+00:00",
+          "checked_at": "2026-10-28T02:28:01+00:00",
+          "last_attempt_at": "2026-10-28T02:28:01+00:00",
           "last_error": null
         },
         {
@@ -175,8 +175,8 @@
           "last_known_status": "UNAVAILABLE",
           "check_status": "UNAVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-28T02:26:24+00:00",
-          "last_attempt_at": "2026-10-28T02:26:24+00:00",
+          "checked_at": "2026-10-28T02:28:04+00:00",
+          "last_attempt_at": "2026-10-28T02:28:04+00:00",
           "last_error": null
         },
         {
@@ -187,8 +187,8 @@
           "last_known_status": "UNAVAILABLE",
           "check_status": "UNAVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-28T02:26:27+00:00",
-          "last_attempt_at": "2026-10-28T02:26:27+00:00",
+          "checked_at": "2026-10-28T02:28:08+00:00",
+          "last_attempt_at": "2026-10-28T02:28:07+00:00",
           "last_error": null
         },
         {
@@ -199,8 +199,8 @@
           "last_known_status": "UNAVAILABLE",
           "check_status": "UNAVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-28T02:26:31+00:00",
-          "last_attempt_at": "2026-10-28T02:26:30+00:00",
+          "checked_at": "2026-10-28T02:28:11+00:00",
+          "last_attempt_at": "2026-10-28T02:28:11+00:00",
           "last_error": null
         }
       ]
