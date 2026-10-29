@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-29T16:15:57+00:00",
+  "updated_at": "2026-10-29T16:32:00+00:00",
   "stores": [
     {
       "store": "心斎橋",
@@ -14,7 +14,7 @@
           "check_status": "UNKNOWN",
           "is_stale": true,
           "checked_at": "2026-10-29T16:13:55+00:00",
-          "last_attempt_at": "2026-10-29T16:15:56+00:00",
+          "last_attempt_at": "2026-10-29T16:31:59+00:00",
           "last_error": "Apple trả HTTP 541; bot tạm nghỉ 15 phút."
         },
         {
@@ -206,6 +206,6 @@
       ]
     }
   ],
-  "rate_limit_until": "2026-10-29T16:30:57+00:00",
+  "rate_limit_until": "2026-10-29T16:47:00+00:00",
   "last_error": "Apple giới hạn yêu cầu. Bot đang tạm nghỉ để tránh gọi dồn dập."
 }
