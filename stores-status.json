@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31T03:34:53+00:00",
+  "updated_at": "2026-10-31T03:36:54+00:00",
   "stores": [
     {
       "store": "心斎橋",
@@ -13,8 +13,8 @@
           "last_known_status": "AVAILABLE",
           "check_status": "AVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-31T03:34:04+00:00",
-          "last_attempt_at": "2026-10-31T03:34:03+00:00",
+          "checked_at": "2026-10-31T03:36:05+00:00",
+          "last_attempt_at": "2026-10-31T03:36:05+00:00",
           "last_error": null
         },
         {
@@ -25,8 +25,8 @@
           "last_known_status": "AVAILABLE",
           "check_status": "AVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-31T03:34:07+00:00",
-          "last_attempt_at": "2026-10-31T03:34:07+00:00",
+          "checked_at": "2026-10-31T03:36:08+00:00",
+          "last_attempt_at": "2026-10-31T03:36:08+00:00",
           "last_error": null
         },
         {
@@ -37,8 +37,8 @@
           "last_known_status": "UNAVAILABLE",
           "check_status": "UNAVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-31T03:34:11+00:00",
-          "last_attempt_at": "2026-10-31T03:34:10+00:00",
+          "checked_at": "2026-10-31T03:36:11+00:00",
+          "last_attempt_at": "2026-10-31T03:36:11+00:00",
           "last_error": null
         },
         {
@@ -49,8 +49,8 @@
           "last_known_status": "UNAVAILABLE",
           "check_status": "UNAVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-31T03:34:14+00:00",
-          "last_attempt_at": "2026-10-31T03:34:14+00:00",
+          "checked_at": "2026-10-31T03:36:15+00:00",
+          "last_attempt_at": "2026-10-31T03:36:14+00:00",
           "last_error": null
         },
         {
@@ -61,8 +61,8 @@
           "last_known_status": "UNAVAILABLE",
           "check_status": "UNAVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-31T03:34:17+00:00",
-          "last_attempt_at": "2026-10-31T03:34:17+00:00",
+          "checked_at": "2026-10-31T03:36:18+00:00",
+          "last_attempt_at": "2026-10-31T03:36:18+00:00",
           "last_error": null
         },
         {
@@ -73,8 +73,8 @@
           "last_known_status": "UNAVAILABLE",
           "check_status": "UNAVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-31T03:34:20+00:00",
-          "last_attempt_at": "2026-10-31T03:34:20+00:00",
+          "checked_at": "2026-10-31T03:36:21+00:00",
+          "last_attempt_at": "2026-10-31T03:36:21+00:00",
           "last_error": null
         },
         {
@@ -85,8 +85,8 @@
           "last_known_status": "UNAVAILABLE",
           "check_status": "UNAVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-31T03:34:24+00:00",
-          "last_attempt_at": "2026-10-31T03:34:23+00:00",
+          "checked_at": "2026-10-31T03:36:25+00:00",
+          "last_attempt_at": "2026-10-31T03:36:24+00:00",
           "last_error": null
         },
         {
@@ -97,8 +97,8 @@
           "last_known_status": "UNAVAILABLE",
           "check_status": "UNAVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-31T03:34:27+00:00",
-          "last_attempt_at": "2026-10-31T03:34:27+00:00",
+          "checked_at": "2026-10-31T03:36:28+00:00",
+          "last_attempt_at": "2026-10-31T03:36:28+00:00",
           "last_error": null
         }
       ]
@@ -115,8 +115,8 @@
           "last_known_status": "AVAILABLE",
           "check_status": "AVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-31T03:34:30+00:00",
-          "last_attempt_at": "2026-10-31T03:34:30+00:00",
+          "checked_at": "2026-10-31T03:36:31+00:00",
+          "last_attempt_at": "2026-10-31T03:36:31+00:00",
           "last_error": null
         },
         {
@@ -127,8 +127,8 @@
           "last_known_status": "AVAILABLE",
           "check_status": "AVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-31T03:34:34+00:00",
-          "last_attempt_at": "2026-10-31T03:34:33+00:00",
+          "checked_at": "2026-10-31T03:36:34+00:00",
+          "last_attempt_at": "2026-10-31T03:36:34+00:00",
           "last_error": null
         },
         {
@@ -139,8 +139,8 @@
           "last_known_status": "UNAVAILABLE",
           "check_status": "UNAVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-31T03:34:37+00:00",
-          "last_attempt_at": "2026-10-31T03:34:37+00:00",
+          "checked_at": "2026-10-31T03:36:37+00:00",
+          "last_attempt_at": "2026-10-31T03:36:37+00:00",
           "last_error": null
         },
         {
@@ -151,8 +151,8 @@
           "last_known_status": "UNAVAILABLE",
           "check_status": "UNAVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-31T03:34:40+00:00",
-          "last_attempt_at": "2026-10-31T03:34:40+00:00",
+          "checked_at": "2026-10-31T03:36:41+00:00",
+          "last_attempt_at": "2026-10-31T03:36:40+00:00",
           "last_error": null
         },
         {
@@ -163,8 +163,8 @@
           "last_known_status": "UNAVAILABLE",
           "check_status": "UNAVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-31T03:34:44+00:00",
-          "last_attempt_at": "2026-10-31T03:34:43+00:00",
+          "checked_at": "2026-10-31T03:36:44+00:00",
+          "last_attempt_at": "2026-10-31T03:36:44+00:00",
           "last_error": null
         },
         {
@@ -175,8 +175,8 @@
           "last_known_status": "UNAVAILABLE",
           "check_status": "UNAVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-31T03:34:47+00:00",
-          "last_attempt_at": "2026-10-31T03:34:47+00:00",
+          "checked_at": "2026-10-31T03:36:47+00:00",
+          "last_attempt_at": "2026-10-31T03:36:47+00:00",
           "last_error": null
         },
         {
@@ -187,8 +187,8 @@
           "last_known_status": "UNAVAILABLE",
           "check_status": "UNAVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-31T03:34:50+00:00",
-          "last_attempt_at": "2026-10-31T03:34:50+00:00",
+          "checked_at": "2026-10-31T03:36:50+00:00",
+          "last_attempt_at": "2026-10-31T03:36:50+00:00",
           "last_error": null
         },
         {
@@ -199,8 +199,8 @@
           "last_known_status": "UNAVAILABLE",
           "check_status": "UNAVAILABLE",
           "is_stale": false,
-          "checked_at": "2026-10-31T03:34:53+00:00",
-          "last_attempt_at": "2026-10-31T03:34:53+00:00",
+          "checked_at": "2026-10-31T03:36:54+00:00",
+          "last_attempt_at": "2026-10-31T03:36:53+00:00",
           "last_error": null
         }
       ]
