@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-04T16:26:49.913789+00:00",
+  "updated_at": "2026-11-04T17:25:27.858336+00:00",
   "schedule_minutes": 30,
   "osaka_rows": [],
   "scope": {
@@ -22,7 +22,7 @@
       "price_yen": 229000,
       "currency": "JPY",
       "condition": "unopened_new",
-      "observed_at": "2026-11-04T16:26:48.292963+00:00",
+      "observed_at": "2026-11-04T17:25:26.451027+00:00",
       "verification": "color_unverified",
       "price_type": "base_price_color_unverified"
     },
@@ -36,7 +36,7 @@
       "price_yen": 265000,
       "currency": "JPY",
       "condition": "unopened_new",
-      "observed_at": "2026-11-04T16:26:48.292963+00:00",
+      "observed_at": "2026-11-04T17:25:26.451027+00:00",
       "verification": "color_unverified",
       "price_type": "base_price_color_unverified"
     },
@@ -50,7 +50,7 @@
       "price_yen": 334000,
       "currency": "JPY",
       "condition": "unopened_new",
-      "observed_at": "2026-11-04T16:26:48.292963+00:00",
+      "observed_at": "2026-11-04T17:25:26.451027+00:00",
       "verification": "color_unverified",
       "price_type": "base_price_color_unverified"
     },
@@ -64,7 +64,7 @@
       "price_yen": 395000,
       "currency": "JPY",
       "condition": "unopened_new",
-      "observed_at": "2026-11-04T16:26:48.292963+00:00",
+      "observed_at": "2026-11-04T17:25:26.451027+00:00",
       "verification": "color_unverified",
       "price_type": "base_price_color_unverified"
     },
@@ -78,7 +78,7 @@
       "price_yen": 386000,
       "currency": "JPY",
       "condition": "unopened_new",
-      "observed_at": "2026-11-04T16:26:48.989279+00:00",
+      "observed_at": "2026-11-04T17:25:27.053795+00:00",
       "verification": "comparison_only",
       "price_type": "market_range_high",
       "matched_text": "iPhone Duo 256GB ¥381,000〜¥386,000 定価 ¥364,800 最高： ナイトスカイ ・ モバイルミックス",
@@ -94,7 +94,7 @@
       "price_yen": 436000,
       "currency": "JPY",
       "condition": "unopened_new",
-      "observed_at": "2026-11-04T16:26:48.989279+00:00",
+      "observed_at": "2026-11-04T17:25:27.053795+00:00",
       "verification": "comparison_only",
       "price_type": "market_range_high",
       "matched_text": "iPhone Duo 512GB ¥431,000〜¥436,000 定価 ¥399,800 最高： ナイトスカイ ・ モバイルミックス",
@@ -110,7 +110,7 @@
       "price_yen": 510000,
       "currency": "JPY",
       "condition": "unopened_new",
-      "observed_at": "2026-11-04T16:26:48.989279+00:00",
+      "observed_at": "2026-11-04T17:25:27.053795+00:00",
       "verification": "comparison_only",
       "price_type": "market_summary",
       "matched_text": "iPhone Duo 1TB ¥510,000 定価 ¥469,800 最高： スターホワイト ・ モバイルミックス"
@@ -125,7 +125,7 @@
       "price_yen": 617000,
       "currency": "JPY",
       "condition": "unopened_new",
-      "observed_at": "2026-11-04T16:26:48.989279+00:00",
+      "observed_at": "2026-11-04T17:25:27.053795+00:00",
       "verification": "comparison_only",
       "price_type": "market_summary",
       "matched_text": "iPhone Duo 2TB ¥617,000 定価 ¥574,800 最高： スターホワイト ・ モバイルミックス"
@@ -140,7 +140,7 @@
       "price_yen": 237000,
       "currency": "JPY",
       "condition": "unopened_new",
-      "observed_at": "2026-11-04T16:26:48.989279+00:00",
+      "observed_at": "2026-11-04T17:25:27.053795+00:00",
       "verification": "comparison_only",
       "price_type": "market_range_high",
       "matched_text": "iPhone 18 Pro Max 256GB ¥228,000〜¥237,000 定価 ¥239,800 最高： バーガンディ ・ モバイルミックス",
@@ -156,7 +156,7 @@
       "price_yen": 268000,
       "currency": "JPY",
       "condition": "unopened_new",
-      "observed_at": "2026-11-04T16:26:48.989279+00:00",
+      "observed_at": "2026-11-04T17:25:27.053795+00:00",
       "verification": "comparison_only",
       "price_type": "market_range_high",
       "matched_text": "iPhone 18 Pro Max 512GB ¥260,500〜¥268,000 定価 ¥274,800 最高： バーガンディ ・ 買取BASE",
@@ -172,7 +172,7 @@
       "price_yen": 339000,
       "currency": "JPY",
       "condition": "unopened_new",
-      "observed_at": "2026-11-04T16:26:48.989279+00:00",
+      "observed_at": "2026-11-04T17:25:27.053795+00:00",
       "verification": "comparison_only",
       "price_type": "market_range_high",
       "matched_text": "iPhone 18 Pro Max 1TB ¥326,000〜¥339,000 定価 ¥344,800 最高： バーガンディ ・ 森森買取",
@@ -188,7 +188,7 @@
       "price_yen": 398000,
       "currency": "JPY",
       "condition": "unopened_new",
-      "observed_at": "2026-11-04T16:26:48.989279+00:00",
+      "observed_at": "2026-11-04T17:25:27.053795+00:00",
       "verification": "comparison_only",
       "price_type": "market_range_high",
       "matched_text": "iPhone 18 Pro Max 2TB ¥387,000〜¥398,000 定価 ¥449,800 最高： バーガンディ ・ 家電市場",
@@ -204,7 +204,7 @@
       "price_yen": 617000,
       "currency": "JPY",
       "condition": "unopened_new",
-      "observed_at": "2026-11-04T16:26:48.989279+00:00",
+      "observed_at": "2026-11-04T17:25:27.053795+00:00",
       "verification": "comparison_only",
       "price_type": "market_listed_price",
       "matched_text": "1位 iPhone Duo 2TB スターホワイト MK2A4J/A SIMフリー （他 1 カラー同額） ¥617,000 27社"
@@ -219,7 +219,7 @@
       "price_yen": 617000,
       "currency": "JPY",
       "condition": "unopened_new",
-      "observed_at": "2026-11-04T16:26:48.989279+00:00",
+      "observed_at": "2026-11-04T17:25:27.053795+00:00",
       "verification": "comparison_only",
       "price_type": "market_listed_price",
       "matched_text": "1位 iPhone Duo 2TB スターホワイト MK2A4J/A SIMフリー （他 1 カラー同額） ¥617,000 27社 (他 1 カラー同額)"
@@ -234,7 +234,7 @@
       "price_yen": 510000,
       "currency": "JPY",
       "condition": "unopened_new",
-      "observed_at": "2026-11-04T16:26:48.989279+00:00",
+      "observed_at": "2026-11-04T17:25:27.053795+00:00",
       "verification": "comparison_only",
       "price_type": "market_listed_price",
       "matched_text": "2位 iPhone Duo 1TB スターホワイト MK284J/A SIMフリー （他 1 カラー同額） ¥510,000 27社"
@@ -249,7 +249,7 @@
       "price_yen": 510000,
       "currency": "JPY",
       "condition": "unopened_new",
-      "observed_at": "2026-11-04T16:26:48.989279+00:00",
+      "observed_at": "2026-11-04T17:25:27.053795+00:00",
       "verification": "comparison_only",
       "price_type": "market_listed_price",
       "matched_text": "2位 iPhone Duo 1TB スターホワイト MK284J/A SIMフリー （他 1 カラー同額） ¥510,000 27社 (他 1 カラー同額)"
@@ -264,7 +264,7 @@
       "price_yen": 436000,
       "currency": "JPY",
       "condition": "unopened_new",
-      "observed_at": "2026-11-04T16:26:48.989279+00:00",
+      "observed_at": "2026-11-04T17:25:27.053795+00:00",
       "verification": "comparison_only",
       "price_type": "market_listed_price",
       "matched_text": "3位 iPhone Duo 512GB ナイトスカイ MK274J/A SIMフリー ¥436,000 27社"
@@ -279,7 +279,7 @@
       "price_yen": 431000,
       "currency": "JPY",
       "condition": "unopened_new",
-      "observed_at": "2026-11-04T16:26:48.989279+00:00",
+      "observed_at": "2026-11-04T17:25:27.053795+00:00",
       "verification": "comparison_only",
       "price_type": "market_listed_price",
       "matched_text": "4位 iPhone Duo 512GB スターホワイト MK264J/A SIMフリー ¥431,000 27社"
@@ -294,7 +294,7 @@
       "price_yen": 398000,
       "currency": "JPY",
       "condition": "unopened_new",
-      "observed_at": "2026-11-04T16:26:48.989279+00:00",
+      "observed_at": "2026-11-04T17:25:27.053795+00:00",
       "verification": "comparison_only",
       "price_type": "market_listed_price",
       "matched_text": "5位 iPhone 18 Pro Max 2TB バーガンディ MJXL4J/A SIMフリー ¥398,000 27社"
@@ -309,7 +309,7 @@
       "price_yen": 386000,
       "currency": "JPY",
       "condition": "unopened_new",
-      "observed_at": "2026-11-04T16:26:48.989279+00:00",
+      "observed_at": "2026-11-04T17:25:27.053795+00:00",
       "verification": "comparison_only",
       "price_type": "market_listed_price",
       "matched_text": "7位 iPhone Duo 256GB ナイトスカイ MK254J/A SIMフリー ¥386,000 27社"
@@ -324,7 +324,7 @@
       "price_yen": 381000,
       "currency": "JPY",
       "condition": "unopened_new",
-      "observed_at": "2026-11-04T16:26:48.989279+00:00",
+      "observed_at": "2026-11-04T17:25:27.053795+00:00",
       "verification": "comparison_only",
       "price_type": "market_listed_price",
       "matched_text": "9位 iPhone Duo 256GB スターホワイト MK244J/A SIMフリー ¥381,000 27社"
