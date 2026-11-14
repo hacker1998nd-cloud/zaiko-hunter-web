@@ -1,7 +1,7 @@
 {
   "store": "梅田",
   "store_en": "Umeda",
-  "updated_at": "2026-11-14T14:59:12.525533+00:00",
+  "updated_at": "2026-11-14T15:31:22.641914+00:00",
   "products": {
     "MJX74J/A": {
       "name": "iPhone 18 Pro Max 256GB Burgundy",
@@ -40,8 +40,8 @@
     },
     "MK254J/A": {
       "name": "iPhone Duo 256GB Night Sky",
-      "status": "AVAILABLE",
-      "last_known_status": "AVAILABLE"
+      "status": "UNAVAILABLE",
+      "last_known_status": "UNAVAILABLE"
     },
     "MK274J/A": {
       "name": "iPhone Duo 512GB Night Sky",
@@ -59,8 +59,8 @@
       "last_known_status": "UNAVAILABLE"
     }
   },
-  "last_attempt_at": "2026-11-14T14:59:12.525513+00:00",
+  "last_attempt_at": "2026-11-14T15:31:22.641895+00:00",
   "last_error": null,
-  "checked_at": "2026-11-14T14:59:12.525530+00:00",
+  "checked_at": "2026-11-14T15:31:22.641910+00:00",
   "rate_limit_until": null
 }
