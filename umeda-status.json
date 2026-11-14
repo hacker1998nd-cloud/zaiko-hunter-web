@@ -1,7 +1,7 @@
 {
   "store": "梅田",
   "store_en": "Umeda",
-  "updated_at": "2026-11-14T22:19:21.324274+00:00",
+  "updated_at": "2026-11-14T22:55:37.859891+00:00",
   "products": {
     "MJX74J/A": {
       "name": "iPhone 18 Pro Max 256GB Burgundy",
@@ -20,13 +20,13 @@
     },
     "MK244J/A": {
       "name": "iPhone Duo 256GB Star White",
-      "status": "AVAILABLE",
-      "last_known_status": "AVAILABLE"
+      "status": "UNAVAILABLE",
+      "last_known_status": "UNAVAILABLE"
     },
     "MK264J/A": {
       "name": "iPhone Duo 512GB Star White",
-      "status": "AVAILABLE",
-      "last_known_status": "AVAILABLE"
+      "status": "UNAVAILABLE",
+      "last_known_status": "UNAVAILABLE"
     },
     "MK284J/A": {
       "name": "iPhone Duo 1TB Star White",
@@ -59,8 +59,8 @@
       "last_known_status": "UNAVAILABLE"
     }
   },
-  "last_attempt_at": "2026-11-14T22:19:21.324256+00:00",
+  "last_attempt_at": "2026-11-14T22:55:37.859872+00:00",
   "last_error": null,
-  "checked_at": "2026-11-14T22:19:21.324269+00:00",
+  "checked_at": "2026-11-14T22:55:37.859888+00:00",
   "rate_limit_until": null
 }
