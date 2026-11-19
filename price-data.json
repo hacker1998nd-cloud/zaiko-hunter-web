@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-19T01:51:25.724587+00:00",
+  "updated_at": "2026-11-19T02:51:27.554292+00:00",
   "schedule_minutes": 30,
   "osaka_rows": [],
   "scope": {
@@ -19,13 +19,13 @@
       "retail_yen": 364800,
       "source": "KaitoriX",
       "source_url": "https://kaitorix.app/series/iphone-18",
-      "price_yen": 364000,
+      "price_yen": 362000,
       "currency": "JPY",
       "condition": "unopened_new",
-      "observed_at": "2026-11-19T01:51:24.580363+00:00",
+      "observed_at": "2026-11-19T02:51:26.617728+00:00",
       "verification": "comparison_only",
       "price_type": "market_summary",
-      "matched_text": "iPhone Duo 256GB ¥364,000 定価 ¥364,800 最高： スターホワイト ・ 買取BASE"
+      "matched_text": "iPhone Duo 256GB ¥362,000 定価 ¥364,800 最高： スターホワイト ・ 買取BASE"
     },
     {
       "model": "iPhone Duo",
@@ -34,13 +34,13 @@
       "retail_yen": 399800,
       "source": "KaitoriX",
       "source_url": "https://kaitorix.app/series/iphone-18",
-      "price_yen": 405000,
+      "price_yen": 401000,
       "currency": "JPY",
       "condition": "unopened_new",
-      "observed_at": "2026-11-19T01:51:24.580363+00:00",
+      "observed_at": "2026-11-19T02:51:26.617728+00:00",
       "verification": "comparison_only",
       "price_type": "market_summary",
-      "matched_text": "iPhone Duo 512GB ¥405,000 定価 ¥399,800 最高： スターホワイト ・ 買取BASE"
+      "matched_text": "iPhone Duo 512GB ¥401,000 定価 ¥399,800 最高： スターホワイト ・ モバイルトリリオン"
     },
     {
       "model": "iPhone Duo",
@@ -49,13 +49,13 @@
       "retail_yen": 469800,
       "source": "KaitoriX",
       "source_url": "https://kaitorix.app/series/iphone-18",
-      "price_yen": 482000,
+      "price_yen": 481000,
       "currency": "JPY",
       "condition": "unopened_new",
-      "observed_at": "2026-11-19T01:51:24.580363+00:00",
+      "observed_at": "2026-11-19T02:51:26.617728+00:00",
       "verification": "comparison_only",
       "price_type": "market_summary",
-      "matched_text": "iPhone Duo 1TB ¥482,000 定価 ¥469,800 最高： スターホワイト ・ 買取ソムリエ"
+      "matched_text": "iPhone Duo 1TB ¥481,000 定価 ¥469,800 最高： スターホワイト ・ 携帯空間"
     },
     {
       "model": "iPhone Duo",
@@ -64,13 +64,13 @@
       "retail_yen": 574800,
       "source": "KaitoriX",
       "source_url": "https://kaitorix.app/series/iphone-18",
-      "price_yen": 581500,
+      "price_yen": 575000,
       "currency": "JPY",
       "condition": "unopened_new",
-      "observed_at": "2026-11-19T01:51:24.580363+00:00",
+      "observed_at": "2026-11-19T02:51:26.617728+00:00",
       "verification": "comparison_only",
       "price_type": "market_summary",
-      "matched_text": "iPhone Duo 2TB ¥581,500 定価 ¥574,800 最高： スターホワイト ・ 買取ソムリエ"
+      "matched_text": "iPhone Duo 2TB ¥575,000 定価 ¥574,800 最高： スターホワイト ・ 買取ギルド"
     },
     {
       "model": "iPhone 18 Pro Max",
@@ -79,14 +79,14 @@
       "retail_yen": 449800,
       "source": "KaitoriX",
       "source_url": "https://kaitorix.app/series/iphone-18",
-      "price_yen": 400000,
+      "price_yen": 401000,
       "currency": "JPY",
       "condition": "unopened_new",
-      "observed_at": "2026-11-19T01:51:24.580363+00:00",
+      "observed_at": "2026-11-19T02:51:26.617728+00:00",
       "verification": "comparison_only",
       "price_type": "market_range_high",
-      "matched_text": "iPhone 18 Pro Max 2TB ¥391,500〜¥400,000 定価 ¥449,800 最高： バーガンディ ・ 買取wiki",
-      "price_low_yen": 391500
+      "matched_text": "iPhone 18 Pro Max 2TB ¥392,000〜¥401,000 定価 ¥449,800 最高： バーガンディ ・ 買取ソムリエ",
+      "price_low_yen": 392000
     },
     {
       "model": "iPhone Duo",
@@ -95,13 +95,13 @@
       "retail_yen": 574800,
       "source": "KaitoriX",
       "source_url": "https://kaitorix.app/series/iphone-18",
-      "price_yen": 581500,
+      "price_yen": 575000,
       "currency": "JPY",
       "condition": "unopened_new",
-      "observed_at": "2026-11-19T01:51:24.580363+00:00",
+      "observed_at": "2026-11-19T02:51:26.617728+00:00",
       "verification": "comparison_only",
       "price_type": "market_listed_price",
-      "matched_text": "1位 iPhone Duo 2TB ナイトスカイ MK2C4J/A SIMフリー （他 1 カラー同額） ¥581,500 30社"
+      "matched_text": "1位 iPhone Duo 2TB ナイトスカイ MK2C4J/A SIMフリー （他 1 カラー同額） ¥575,000 33社"
     },
     {
       "model": "iPhone Duo",
@@ -110,28 +110,13 @@
       "retail_yen": 574800,
       "source": "KaitoriX",
       "source_url": "https://kaitorix.app/series/iphone-18",
-      "price_yen": 581500,
+      "price_yen": 575000,
       "currency": "JPY",
       "condition": "unopened_new",
-      "observed_at": "2026-11-19T01:51:24.580363+00:00",
+      "observed_at": "2026-11-19T02:51:26.617728+00:00",
       "verification": "comparison_only",
       "price_type": "market_listed_price",
-      "matched_text": "1位 iPhone Duo 2TB ナイトスカイ MK2C4J/A SIMフリー （他 1 カラー同額） ¥581,500 30社 (他 1 カラー同額)"
-    },
-    {
-      "model": "iPhone Duo",
-      "capacity": "1TB",
-      "color": "Star White",
-      "retail_yen": 469800,
-      "source": "KaitoriX",
-      "source_url": "https://kaitorix.app/series/iphone-18",
-      "price_yen": 482000,
-      "currency": "JPY",
-      "condition": "unopened_new",
-      "observed_at": "2026-11-19T01:51:24.580363+00:00",
-      "verification": "comparison_only",
-      "price_type": "market_listed_price",
-      "matched_text": "2位 iPhone Duo 1TB スターホワイト MK284J/A SIMフリー （他 1 カラー同額） ¥482,000 31社"
+      "matched_text": "1位 iPhone Duo 2TB ナイトスカイ MK2C4J/A SIMフリー （他 1 カラー同額） ¥575,000 33社 (他 1 カラー同額)"
     },
     {
       "model": "iPhone Duo",
@@ -140,13 +125,28 @@
       "retail_yen": 469800,
       "source": "KaitoriX",
       "source_url": "https://kaitorix.app/series/iphone-18",
-      "price_yen": 482000,
+      "price_yen": 481000,
       "currency": "JPY",
       "condition": "unopened_new",
-      "observed_at": "2026-11-19T01:51:24.580363+00:00",
+      "observed_at": "2026-11-19T02:51:26.617728+00:00",
       "verification": "comparison_only",
       "price_type": "market_listed_price",
-      "matched_text": "2位 iPhone Duo 1TB スターホワイト MK284J/A SIMフリー （他 1 カラー同額） ¥482,000 31社 (他 1 カラー同額)"
+      "matched_text": "2位 iPhone Duo 1TB ナイトスカイ MK294J/A SIMフリー （他 1 カラー同額） ¥481,000 34社"
+    },
+    {
+      "model": "iPhone Duo",
+      "capacity": "1TB",
+      "color": "Star White",
+      "retail_yen": 469800,
+      "source": "KaitoriX",
+      "source_url": "https://kaitorix.app/series/iphone-18",
+      "price_yen": 481000,
+      "currency": "JPY",
+      "condition": "unopened_new",
+      "observed_at": "2026-11-19T02:51:26.617728+00:00",
+      "verification": "comparison_only",
+      "price_type": "market_listed_price",
+      "matched_text": "2位 iPhone Duo 1TB ナイトスカイ MK294J/A SIMフリー （他 1 カラー同額） ¥481,000 34社 (他 1 カラー同額)"
     },
     {
       "model": "iPhone Duo",
@@ -155,13 +155,13 @@
       "retail_yen": 399800,
       "source": "KaitoriX",
       "source_url": "https://kaitorix.app/series/iphone-18",
-      "price_yen": 405000,
+      "price_yen": 401000,
       "currency": "JPY",
       "condition": "unopened_new",
-      "observed_at": "2026-11-19T01:51:24.580363+00:00",
+      "observed_at": "2026-11-19T02:51:26.617728+00:00",
       "verification": "comparison_only",
       "price_type": "market_listed_price",
-      "matched_text": "3位 iPhone Duo 512GB ナイトスカイ MK274J/A SIMフリー （他 1 カラー同額） ¥405,000 31社"
+      "matched_text": "3位 iPhone Duo 512GB ナイトスカイ MK274J/A SIMフリー （他 1 カラー同額） ¥401,000 34社"
     },
     {
       "model": "iPhone Duo",
@@ -170,13 +170,13 @@
       "retail_yen": 399800,
       "source": "KaitoriX",
       "source_url": "https://kaitorix.app/series/iphone-18",
-      "price_yen": 405000,
+      "price_yen": 401000,
       "currency": "JPY",
       "condition": "unopened_new",
-      "observed_at": "2026-11-19T01:51:24.580363+00:00",
+      "observed_at": "2026-11-19T02:51:26.617728+00:00",
       "verification": "comparison_only",
       "price_type": "market_listed_price",
-      "matched_text": "3位 iPhone Duo 512GB ナイトスカイ MK274J/A SIMフリー （他 1 カラー同額） ¥405,000 31社 (他 1 カラー同額)"
+      "matched_text": "3位 iPhone Duo 512GB ナイトスカイ MK274J/A SIMフリー （他 1 カラー同額） ¥401,000 34社 (他 1 カラー同額)"
     },
     {
       "model": "iPhone 18 Pro Max",
@@ -185,28 +185,13 @@
       "retail_yen": 449800,
       "source": "KaitoriX",
       "source_url": "https://kaitorix.app/series/iphone-18",
-      "price_yen": 400000,
+      "price_yen": 401000,
       "currency": "JPY",
       "condition": "unopened_new",
-      "observed_at": "2026-11-19T01:51:24.580363+00:00",
+      "observed_at": "2026-11-19T02:51:26.617728+00:00",
       "verification": "comparison_only",
       "price_type": "market_listed_price",
-      "matched_text": "4位 iPhone 18 Pro Max 2TB バーガンディ MJXL4J/A SIMフリー ¥400,000 31社"
-    },
-    {
-      "model": "iPhone Duo",
-      "capacity": "256GB",
-      "color": "Star White",
-      "retail_yen": 364800,
-      "source": "KaitoriX",
-      "source_url": "https://kaitorix.app/series/iphone-18",
-      "price_yen": 364000,
-      "currency": "JPY",
-      "condition": "unopened_new",
-      "observed_at": "2026-11-19T01:51:24.580363+00:00",
-      "verification": "comparison_only",
-      "price_type": "market_listed_price",
-      "matched_text": "8位 iPhone Duo 256GB スターホワイト MK244J/A SIMフリー （他 1 カラー同額） ¥364,000 30社"
+      "matched_text": "4位 iPhone 18 Pro Max 2TB バーガンディ MJXL4J/A SIMフリー ¥401,000 32社"
     },
     {
       "model": "iPhone Duo",
@@ -215,13 +200,28 @@
       "retail_yen": 364800,
       "source": "KaitoriX",
       "source_url": "https://kaitorix.app/series/iphone-18",
-      "price_yen": 364000,
+      "price_yen": 362000,
       "currency": "JPY",
       "condition": "unopened_new",
-      "observed_at": "2026-11-19T01:51:24.580363+00:00",
+      "observed_at": "2026-11-19T02:51:26.617728+00:00",
       "verification": "comparison_only",
       "price_type": "market_listed_price",
-      "matched_text": "8位 iPhone Duo 256GB スターホワイト MK244J/A SIMフリー （他 1 カラー同額） ¥364,000 30社 (他 1 カラー同額)"
+      "matched_text": "8位 iPhone Duo 256GB ナイトスカイ MK254J/A SIMフリー （他 1 カラー同額） ¥362,000 34社"
+    },
+    {
+      "model": "iPhone Duo",
+      "capacity": "256GB",
+      "color": "Star White",
+      "retail_yen": 364800,
+      "source": "KaitoriX",
+      "source_url": "https://kaitorix.app/series/iphone-18",
+      "price_yen": 362000,
+      "currency": "JPY",
+      "condition": "unopened_new",
+      "observed_at": "2026-11-19T02:51:26.617728+00:00",
+      "verification": "comparison_only",
+      "price_type": "market_listed_price",
+      "matched_text": "8位 iPhone Duo 256GB ナイトスカイ MK254J/A SIMフリー （他 1 カラー同額） ¥362,000 34社 (他 1 カラー同額)"
     },
     {
       "model": "iPhone 18 Pro Max",
@@ -230,13 +230,13 @@
       "retail_yen": 344800,
       "source": "KaitoriX",
       "source_url": "https://kaitorix.app/series/iphone-18",
-      "price_yen": 333000,
+      "price_yen": 332000,
       "currency": "JPY",
       "condition": "unopened_new",
-      "observed_at": "2026-11-19T01:51:24.580363+00:00",
+      "observed_at": "2026-11-19T02:51:26.617728+00:00",
       "verification": "comparison_only",
       "price_type": "market_listed_price",
-      "matched_text": "9位 iPhone 18 Pro Max 1TB バーガンディ MJXG4J/A SIMフリー （他 2 カラー同額） ¥333,000 34社"
+      "matched_text": "10位 iPhone 18 Pro Max 1TB バーガンディ MJXG4J/A SIMフリー ¥332,000 35社"
     }
   ],
   "source_errors": []
